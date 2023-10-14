@@ -10,6 +10,7 @@ const router = createBrowserRouter([
     path: "/register",
     element: <LoginRegister />,
   },
+
   {
     path: "/login",
     element: <LoginRegister />,
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
 ]);
 
 
-function App() {
+const App = () => {
   return (
     <RouterProvider router={router} />
   );
