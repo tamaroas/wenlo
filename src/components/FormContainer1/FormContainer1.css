@@ -1,0 +1,45 @@
+
+.form-container-1-comp-span {
+  color: #db242f;
+}
+.form-container-1-comp-howDidYouContainer {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.form-container-1-comp-frameChild {
+  align-self: stretch;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 13px 14px;
+}
+.form-container-1-comp-howDidYouHearAboutWenloParent {
+  width: 558px;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-container-1-comp-frameContainer,
+.form-container-1-comp-frameWrapper,
+.form-container-1-comp-howDidYouHearAboutWenloParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.form-container-1-comp-frameContainer {
+  align-self: stretch;
+  flex-direction: row;
+}
+.form-container-1-comp-frameWrapper {
+  width: 496px;
+  flex-direction: column;
+  text-align: left;
+  font-size: 14px;
+  color: #939393;
+  font-family: Inter;
+}

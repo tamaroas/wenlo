@@ -1,0 +1,207 @@
+.container-form-comp-starterPlan {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 600;
+}
+.container-form-comp-frameChild {
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #b8b8b8;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+}
+.container-form-comp-starterPlanParent {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-form-comp-frameWrapper {
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  width: 508px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 0 24px;
+}
+.container-form-comp-div,
+.container-form-comp-topUpFee {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.container-form-comp-div {
+  color: #39a191;
+  text-align: center;
+}
+.container-form-comp-topUpFeeParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+.container-form-comp-k,
+.container-form-comp-priorityInRequest {
+  position: relative;
+  letter-spacing: -0.41px;
+}
+.container-form-comp-priorityInRequest {
+  line-height: 140%;
+  font-weight: 500;
+  display: inline-block;
+  width: 302px;
+  flex-shrink: 0;
+}
+.container-form-comp-k {
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 600;
+  color: #26283f;
+  text-align: center;
+}
+.container-form-comp-frameDiv,
+.container-form-comp-frameParent1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.container-form-comp-frameParent1 {
+  width: 508px;
+  gap: 16px;
+  text-align: left;
+  font-size: 14px;
+  color: #828282;
+}
+.container-form-comp-frameDiv {
+  gap: 24px;
+}
+.container-form-comp-free {
+  position: relative;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: left;
+}
+.container-form-comp-freeWrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 17px 40px;
+  background-color: #3949a1;
+  align-self: stretch;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.container-form-comp-freeWrapper:hover {
+  background-color: #142aa4;
+}
+.container-form-comp-frameContainer,
+.container-form-comp-frameWrapper1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.container-form-comp-frameContainer {
+  flex: 1;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #f2f2f2;
+  flex-direction: column;
+  padding: 32px;
+  gap: 40px;
+}
+.container-form-comp-frameWrapper1 {
+  align-self: stretch;
+  border-bottom: 1px solid #e0e0e0;
+  flex-direction: row;
+  padding: 8px 0 24px;
+}
+.container-form-comp-frameParent4 {
+  align-self: stretch;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  font-size: 14px;
+  color: #828282;
+}
+.container-form-comp-frameGroup,
+.container-form-comp-frameParent3,
+.container-form-comp-frameParent4 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.container-form-comp-frameParent3 {
+  align-self: stretch;
+  flex-direction: column;
+  gap: 24px;
+}
+.container-form-comp-frameGroup {
+  width: 1184px;
+  flex-direction: row;
+  gap: 40px;
+}
+.container-form-comp-frameInner {
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 6px solid #3949a1;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+}
+.container-form-comp-frameParent6 {
+  flex: 1;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #3949a1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 32px;
+  gap: 40px;
+}
+.container-form-comp-enterpriseLevelPlanParent {
+  width: 508px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-form-comp-frameParent,
+.container-form-comp-frameWrapper3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.container-form-comp-frameWrapper3 {
+  border-bottom: 1px solid #e0e0e0;
+  flex-direction: row;
+  padding: 8px 0 24px;
+}
+.container-form-comp-frameParent {
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: #26283f;
+  font-family: Inter;
+}

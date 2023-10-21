@@ -1,0 +1,81 @@
+.invoice-container-comp-text,
+.invoice-container-comp-text1 {
+  position: relative;
+  line-height: 100%;
+}
+.invoice-container-comp-text1 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #3949a1;
+}
+.invoice-container-comp-title {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.invoice-container-comp-emergencyHomeIcon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.invoice-container-comp-supportingText {
+  position: relative;
+  line-height: 100%;
+  font-weight: 500;
+}
+.invoice-container-comp-emergencyHomeParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  font-size: 16px;
+  color: #a78736;
+}
+.invoice-container-comp-textAndSupportingText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  z-index: 0;
+}
+.invoice-container-comp-xCloseIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.invoice-container-comp-button,
+.invoice-container-comp-header {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.invoice-container-comp-button {
+  margin: 0 !important;
+  top: 24px;
+  right: 24px;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  z-index: 1;
+}
+.invoice-container-comp-header {
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ebebeb;
+  box-sizing: border-box;
+  width: 480px;
+  justify-content: flex-start;
+  padding: 24px;
+  text-align: left;
+  font-size: 24px;
+  color: #26283f;
+  font-family: Inter;
+}

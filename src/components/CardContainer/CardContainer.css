@@ -1,0 +1,128 @@
+.card-container-comp-starterPlan {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 600;
+}
+.card-container-comp-frameChild {
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #b8b8b8;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+}
+.card-container-comp-starterPlanParent {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-container-comp-frameWrapper {
+  align-self: stretch;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 0 24px;
+}
+.card-container-comp-div,
+.card-container-comp-topUpFee {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.card-container-comp-div {
+  color: #39a191;
+  text-align: center;
+}
+.card-container-comp-topUpFeeParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+.card-container-comp-k,
+.card-container-comp-priorityInRequest {
+  position: relative;
+  letter-spacing: -0.41px;
+}
+.card-container-comp-priorityInRequest {
+  line-height: 140%;
+  font-weight: 500;
+  display: inline-block;
+  width: 302px;
+  flex-shrink: 0;
+}
+.card-container-comp-k {
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 600;
+  color: #26283f;
+  text-align: center;
+}
+.card-container-comp-frameContainer,
+.card-container-comp-frameDiv {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.card-container-comp-frameDiv {
+  gap: 16px;
+  text-align: left;
+  font-size: 14px;
+  color: #828282;
+}
+.card-container-comp-frameContainer {
+  gap: 24px;
+}
+.card-container-comp-free {
+  position: relative;
+  line-height: 100%;
+  font-weight: 500;
+}
+.card-container-comp-freeWrapper {
+  align-self: stretch;
+  border-radius: 8px;
+  background-color: #3949a1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 40px;
+  text-align: left;
+  font-size: 14px;
+  color: #fff;
+}
+.card-container-comp-frameGroup,
+.card-container-comp-frameParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+}
+.card-container-comp-frameGroup {
+  flex: 1;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #f2f2f2;
+  flex-direction: column;
+  padding: 32px;
+}
+.card-container-comp-frameParent {
+  width: 1184px;
+  flex-direction: row;
+  text-align: center;
+  font-size: 20px;
+  color: #26283f;
+  font-family: Inter;
+}

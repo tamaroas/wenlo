@@ -1,0 +1,176 @@
+.container-card-form-comp-amountDue,
+.container-card-form-comp-invoicesAreIssued {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: inherit;
+}
+.container-card-form-comp-container-card-form-comp-invoicesAreIssued {
+  font-size: 12px;
+  line-height: 130%;
+  color: #939393;
+  display: inline-block;
+  width: 236px;
+}
+.container-card-form-comp-amountDueParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.container-card-form-comp-moreVertIcon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+.container-card-form-comp-frameContainer {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 0 0;
+}
+.container-card-form-comp-h4,
+.container-card-form-comp-payNow {
+  position: relative;
+  line-height: 100%;
+}
+.container-card-form-comp-h4 {
+  margin: 0;
+  font-size: inherit;
+  letter-spacing: -0.41px;
+  font-weight: 700;
+  font-family: inherit;
+}
+.container-card-form-comp-payNow {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: left;
+}
+.container-card-form-comp-parent,
+.container-card-form-comp-payNowWrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-card-form-comp-payNowWrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 9px 14px;
+  background-color: #3949a1;
+  border-radius: 8px;
+  width: 112px;
+}
+.container-card-form-comp-payNowWrapper:hover {
+  background-color: #142aa4;
+}
+.container-card-form-comp-parent {
+  border-bottom: 1px solid #ebebeb;
+  width: 400px;
+  padding: 0 0 16px;
+  font-size: 16px;
+}
+.container-card-form-comp-accountSpendingLimit {
+  font-weight: 500;
+}
+.container-card-form-comp-accountSpendingLimitContainer {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-family: inherit;
+}
+.container-card-form-comp-groupChild {
+  border-radius: 16px;
+  background-color: rgba(224, 81, 99, 0.1);
+  width: 400px;
+}
+.container-card-form-comp-groupChild,
+.container-card-form-comp-groupItem,
+.container-card-form-comp-rectangleParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+}
+.container-card-form-comp-groupItem {
+  border-radius: 16px;
+  background-color: #e05163;
+  width: 196px;
+}
+.container-card-form-comp-rectangleParent {
+  width: 400px;
+}
+.container-card-form-comp-frameChild,
+.container-card-form-comp-groupWrapper {
+  position: relative;
+  width: 296px;
+  height: 6px;
+}
+.container-card-form-comp-frameChild {
+  border-radius: 50%;
+  background-color: #e05163;
+  width: 6px;
+}
+.container-card-form-comp-available {
+  font-weight: 600;
+  color: #3949a1;
+}
+.container-card-form-comp-spent2781000Container {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  display: inline-block;
+  width: 296px;
+  flex-shrink: 0;
+  font-family: inherit;
+}
+.container-card-form-comp-ellipseParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #939393;
+}
+.container-card-form-comp-frameDiv {
+  align-items: flex-start;
+  gap: 12px;
+}
+.container-card-form-comp-frameDiv,
+.container-card-form-comp-frameGroup,
+.container-card-form-comp-frameParent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.container-card-form-comp-frameGroup {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e8e8e8;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 16px;
+  z-index: 2;
+}
+.container-card-form-comp-frameParent {
+  align-items: center;
+  text-align: left;
+  font-size: 14px;
+  color: #26283f;
+  font-family: Inter;
+}

@@ -1,0 +1,229 @@
+.price-container-comp-starterPlan {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 600;
+}
+.price-container-comp-frameChild {
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #b8b8b8;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+}
+.price-container-comp-starterPlanParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.price-container-comp-sedDoEiusmod {
+  align-self: stretch;
+  position: relative;
+  font-size: 12px;
+  letter-spacing: -0.41px;
+  line-height: 140%;
+  font-weight: 500;
+  color: #939393;
+  text-align: left;
+}
+.price-container-comp-frameParent1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.price-container-comp-saveUpTo {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.price-container-comp-saveUpTo15Wrapper {
+  border-radius: 3px;
+  background-color: rgba(52, 153, 89, 0.12);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 4px 6px;
+}
+.price-container-comp-month {
+  position: relative;
+  font-size: 14px;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+  color: #939393;
+}
+.price-container-comp-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 24px;
+  color: #26283f;
+}
+.price-container-comp-frameDiv,
+.price-container-comp-frameParent2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.price-container-comp-frameParent2 {
+  text-align: left;
+  font-size: 12px;
+  color: #349959;
+}
+.price-container-comp-frameDiv {
+  align-self: stretch;
+}
+.price-container-comp-arrowNarrowRightIcon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.price-container-comp-getStartedParent {
+  align-self: stretch;
+  border-radius: 8px;
+  background-color: #3949a1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 40px;
+  gap: 8px;
+  text-align: left;
+  font-size: 12px;
+  color: #fff;
+}
+.price-container-comp-frameContainer {
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 24px;
+  gap: 24px;
+}
+.price-container-comp-topUpFee {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+  display: inline-block;
+  width: 156px;
+  flex-shrink: 0;
+}
+.price-container-comp-maximumAdAccounts {
+  margin: 0;
+}
+.price-container-comp-maximumAdAccountsContainer,
+.price-container-comp-yes {
+  position: relative;
+  letter-spacing: -0.41px;
+  font-weight: 500;
+}
+.price-container-comp-maximumAdAccountsContainer {
+  line-height: 140%;
+  display: inline-block;
+  width: 156px;
+  flex-shrink: 0;
+}
+.price-container-comp-yes {
+  line-height: 100%;
+  color: #3949a1;
+}
+.price-container-comp-frameParent4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.price-container-comp-frameWrapper,
+.price-container-comp-seeCompareParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.price-container-comp-seeCompareParent {
+  border-radius: 8px;
+  background-color: #f6f7f8;
+  overflow: hidden;
+  padding: 10px 16px;
+  gap: 8px;
+  color: #26283f;
+}
+.price-container-comp-frameGroup,
+.price-container-comp-frameParent3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.price-container-comp-frameParent3 {
+  align-self: stretch;
+  gap: 24px;
+  text-align: left;
+  font-size: 12px;
+  color: #828282;
+}
+.price-container-comp-frameGroup {
+  border-radius: 12px;
+  background-color: #fff;
+  border: 1px solid #f2f2f2;
+  padding: 24px;
+  gap: 16px;
+}
+.price-container-comp-frameInner {
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 4px solid #3949a1;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+}
+.price-container-comp-frameParent,
+.price-container-comp-frameParent12 {
+  display: flex;
+  justify-content: flex-start;
+}
+.price-container-comp-frameParent12 {
+  border-radius: 12px;
+  background-color: #fff;
+  border: 1px solid #3949a1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 16px;
+}
+.price-container-comp-frameParent {
+  position: absolute;
+  top: 436px;
+  left: 108px;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #26283f;
+  font-family: Inter;
+}

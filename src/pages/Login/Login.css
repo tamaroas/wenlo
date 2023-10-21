@@ -1,0 +1,177 @@
+.login-loginChild {
+  position: absolute;
+  top: 596px;
+  left: 779px;
+  width: 661px;
+  height: 404px;
+  opacity: 0.6;
+}
+.login-loginInner,
+.login-loginItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 637px;
+  height: 468px;
+}
+.login-loginInner {
+  top: 16px;
+  left: 16px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  width: 704px;
+  height: 968px;
+}
+.login-image1Icon {
+  position: relative;
+  width: 188.6px;
+  height: 56px;
+  object-fit: cover;
+}
+.login-welcomeToWenlo {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  font-weight: 500;
+}
+.login-frameGroup,
+.login-image1Parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.login-frameGroup {
+  gap: 96px;
+}
+.login-login1 {
+  position: relative;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: left;
+}
+.login-loginWrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 13px 14px;
+  background-color: #3949a1;
+  border-radius: 8px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.login-loginWrapper:hover {
+  background-color: #142aa4;
+}
+.login-doesntHaveAn {
+  font-weight: 500;
+}
+.login-signUp {
+  font-weight: 600;
+  color: #3949a1;
+}
+.login-doesntHaveAnContainer {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  color: inherit;
+}
+.login-frameContainer,
+.login-frameParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-frameContainer {
+  width: 214px;
+  height: 87px;
+  justify-content: flex-start;
+  gap: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #939393;
+}
+.login-frameParent {
+  position: absolute;
+  top: 194px;
+  left: 768px;
+  height: 532px;
+  justify-content: center;
+  gap: 40px;
+}
+.login-frameChild,
+.login-frameItem {
+  position: relative;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+}
+.login-frameChild {
+  object-fit: cover;
+}
+.login-frameItem {
+  background-color: #d9d9d9;
+}
+.login-ellipseParent {
+  position: absolute;
+  top: 938px;
+  left: 316px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.login-loremIpsumDolor,
+.login-sedDoEiusmod {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 120%;
+  display: inline-block;
+  width: 424px;
+}
+.login-sedDoEiusmod {
+  font-size: 14px;
+  line-height: 140%;
+  font-weight: 500;
+  color: #939393;
+  width: 528px;
+}
+.login-astronautParent,
+.login-frameDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 56px;
+}
+.login-astronautParent {
+  position: absolute;
+  top: 120px;
+  left: 104px;
+  gap: 24px;
+  text-align: center;
+  font-size: 32px;
+}
+.login-login {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 1000px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  color: #26283f;
+  font-family: Inter;
+}

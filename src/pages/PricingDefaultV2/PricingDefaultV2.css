@@ -1,0 +1,215 @@
+.pricing-default-v2-pricingDefaultV2Child {
+  position: absolute;
+  top: 1980px;
+  left: 779px;
+  width: 661px;
+  height: 340px;
+  opacity: 0.6;
+}
+.pricing-default-v2-pricingDefaultV2Item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 565px;
+  height: 428px;
+  opacity: 0.7;
+}
+.pricing-default-v2-image1Icon {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 107.8px;
+  height: 32px;
+  object-fit: cover;
+}
+.pricing-default-v2-monthly {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 600;
+}
+.pricing-default-v2-frameChild,
+.pricing-default-v2-frameItem {
+  position: relative;
+  border-radius: 50%;
+  background-color: #3949a1;
+  width: 16px;
+  height: 16px;
+}
+.pricing-default-v2-frameItem {
+  background-color: #fff;
+}
+.pricing-default-v2-ellipseParent {
+  border-radius: 24px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2px;
+}
+.pricing-default-v2-annually {
+  color: #939393;
+}
+.pricing-default-v2-annually,
+.pricing-default-v2-save15 {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.pricing-default-v2-monthlyParent,
+.pricing-default-v2-save15Wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.pricing-default-v2-save15Wrapper {
+  border-radius: 7px;
+  background-color: #fff;
+  border: 1px solid #3949a1;
+  align-items: flex-start;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #3949a1;
+}
+.pricing-default-v2-monthlyParent {
+  align-items: center;
+  gap: 16px;
+}
+.pricing-default-v2-frameContainer,
+.pricing-default-v2-frameGroup,
+.pricing-default-v2-frameParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+}
+.pricing-default-v2-frameContainer {
+  width: 1184px;
+  flex-direction: row;
+}
+.pricing-default-v2-frameGroup,
+.pricing-default-v2-frameParent {
+  flex-direction: column;
+}
+.pricing-default-v2-frameParent {
+  position: absolute;
+  top: 416px;
+  left: 128px;
+  align-items: center;
+  gap: 48px;
+}
+.pricing-default-v2-cantFindYour {
+  font-weight: 500;
+}
+.pricing-default-v2-customYourPlan {
+  text-decoration: underline;
+  font-weight: 600;
+  color: #26283f;
+}
+.pricing-default-v2-cantFindYourContainer {
+  position: absolute;
+  top: 2144px;
+  left: 522px;
+  font-size: 16px;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  text-align: center;
+  color: #828282;
+}
+.pricing-default-v2-back {
+  position: relative;
+  line-height: 100%;
+  font-weight: 500;
+  z-index: 0;
+}
+.pricing-default-v2-groupChild,
+.pricing-default-v2-groupItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 32px;
+  background-color: #3949a1;
+  filter: blur(24px);
+  width: 26.4px;
+  height: 28px;
+}
+.pricing-default-v2-groupItem {
+  left: 1.6px;
+  background-color: #39a191;
+}
+.pricing-default-v2-rectangleGroup,
+.pricing-default-v2-rectangleParent {
+  position: absolute;
+  margin: 0 !important;
+  top: -6px;
+  left: 8px;
+  width: 28px;
+  height: 28px;
+  opacity: 0.07;
+  z-index: 1;
+}
+.pricing-default-v2-rectangleGroup {
+  top: 29px;
+  left: 107px;
+  z-index: 2;
+}
+.pricing-default-v2-backParent {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+  border: 1px solid #ebebeb;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 48px;
+  position: relative;
+  gap: 8px;
+}
+.pricing-default-v2-next {
+  position: relative;
+  line-height: 100%;
+  font-weight: 500;
+}
+.pricing-default-v2-frameParent1,
+.pricing-default-v2-nextWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.pricing-default-v2-nextWrapper {
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  border: 1px solid #cfcfcf;
+  box-sizing: border-box;
+  width: 129px;
+  overflow: hidden;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 17px 40px;
+  color: #828282;
+}
+.pricing-default-v2-frameParent1 {
+  position: absolute;
+  top: 2240px;
+  left: 32px;
+  width: 1376px;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #26283f;
+}
+.pricing-default-v2-pricingDefaultV2 {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 2320px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 20px;
+  color: #424242;
+  font-family: Inter;
+}

@@ -1,0 +1,164 @@
+.premium-plan-container-comp-frameChild {
+  position: relative;
+  border-radius: 50%;
+  background-color: rgba(57, 73, 161, 0.1);
+  width: 96px;
+  height: 96px;
+  z-index: 0;
+}
+.premium-plan-container-comp-premiumPlan {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 600;
+}
+.premium-plan-container-comp-frameItem {
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #b8b8b8;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+}
+.premium-plan-container-comp-premiumPlanParent {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.premium-plan-container-comp-frameWrapper {
+  align-self: stretch;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 0 24px;
+  z-index: 1;
+}
+.premium-plan-container-comp-div,
+.premium-plan-container-comp-topUpFee {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.premium-plan-container-comp-div {
+  color: #39a191;
+  text-align: center;
+}
+.premium-plan-container-comp-topUpFeeParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+.premium-plan-container-comp-checkCircleIcon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+.premium-plan-container-comp-k,
+.premium-plan-container-comp-priorityInRequest {
+  position: relative;
+  letter-spacing: -0.41px;
+}
+.premium-plan-container-comp-priorityInRequest {
+  line-height: 140%;
+  font-weight: 500;
+  display: inline-block;
+  width: 302px;
+  flex-shrink: 0;
+}
+.premium-plan-container-comp-k {
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 600;
+  color: #26283f;
+  text-align: center;
+}
+.premium-plan-container-comp-frameGroup {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  z-index: 2;
+  text-align: left;
+  font-size: 14px;
+  color: #828282;
+}
+.premium-plan-container-comp-imageIcon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.premium-plan-container-comp-smilingFaceWithSunglasses {
+  position: absolute;
+  margin: 0 !important;
+  top: 20px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 3;
+}
+.premium-plan-container-comp-ellipseParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  gap: 24px;
+}
+.premium-plan-container-comp-mo {
+  position: relative;
+  line-height: 100%;
+  font-weight: 500;
+}
+.premium-plan-container-comp-frameParent,
+.premium-plan-container-comp-moWrapper {
+  border-radius: 8px;
+  display: flex;
+}
+.premium-plan-container-comp-moWrapper {
+  align-self: stretch;
+  background-color: #3949a1;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 40px;
+  text-align: left;
+  font-size: 14px;
+  color: #fff;
+}
+.premium-plan-container-comp-frameParent {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #f2f2f2;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 32px;
+  gap: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: #26283f;
+  font-family: Inter;
+}
