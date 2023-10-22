@@ -1,5 +1,5 @@
 import { FunctionComponent, useMemo, type CSSProperties } from "react";
-import "./ThemeColorIdentityDefaultIcon.css";
+import styles from "./ThemeColorIdentityDefaultIcon.module.css";
 
 type ThemeColorIdentityDefaultIconType = {
   themeColorIdentityDefault?: string;
@@ -36,7 +36,7 @@ const ThemeColorIdentityDefaultIcon: FunctionComponent<
 
   return (
     <img
-      className="themecolorIdentitydefaultIcon-comp"
+      className={styles.themecolorIdentitydefaultIcon}
       alt=""
       src={themeColorIdentityDefault}
       style={themeColorIdentityDefaultIconStyle}

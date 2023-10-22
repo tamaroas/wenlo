@@ -1,0 +1,132 @@
+.span {
+  color: #db242f;
+}
+.whatIsYourContainer {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 140%;
+  font-weight: 500;
+  color: #939393;
+}
+.radioButton {
+  cursor: pointer;
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+.kPerMonth {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.radioButtonGroup,
+.radioButtonParent {
+  flex: 1;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  padding: 13px 14px;
+  gap: 8px;
+}
+.radioButtonParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.radioButtonGroup {
+  align-items: flex-start;
+}
+.frameDiv,
+.frameGroup,
+.radioButtonGroup,
+.radioButtonParent1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.frameGroup {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 12px;
+}
+.frameDiv,
+.radioButtonParent1 {
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  width: 200px;
+  align-items: center;
+  padding: 13px 14px;
+  gap: 8px;
+}
+.radioButtonParent1 {
+  align-items: flex-start;
+}
+.frameWrapper,
+.whatIsYourAverageMonthlyAParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.whatIsYourAverageMonthlyAParent {
+  flex: 1;
+  width: 624px;
+  gap: 12px;
+}
+.frameWrapper {
+  color: #26283f;
+}
+.doYouHaveContainer {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.doYouHaveExperienceWithAgParent,
+.frameParent1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.frameParent1 {
+  align-self: stretch;
+  flex-direction: row;
+  color: #26283f;
+}
+.doYouHaveExperienceWithAgParent {
+  width: 624px;
+  flex-direction: column;
+}
+.frameWrapper1 {
+  flex-direction: column;
+}
+.frameChild,
+.frameParent,
+.frameWrapper1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameChild {
+  align-self: stretch;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  flex-direction: row;
+  padding: 13px 14px;
+}
+.frameParent {
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+  font-size: 14px;
+  color: #939393;
+  font-family: Inter;
+}

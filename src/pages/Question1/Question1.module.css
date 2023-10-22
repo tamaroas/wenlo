@@ -1,0 +1,223 @@
+.question1Child,
+.question1Item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 637px;
+  height: 468px;
+}
+.question1Item {
+  top: 16px;
+  left: 16px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  width: 704px;
+  height: 968px;
+}
+.frameChild,
+.frameItem {
+  position: relative;
+  border-radius: 50%;
+  background-color: #262626;
+  width: 14px;
+  height: 14px;
+}
+.frameItem {
+  background-color: #d9d9d9;
+}
+.ellipseParent {
+  position: absolute;
+  top: 938px;
+  left: 316px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.image1Icon {
+  position: relative;
+  width: 188.6px;
+  height: 56px;
+  object-fit: cover;
+}
+.welcomeToWenlo {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  font-weight: 500;
+}
+.image1Parent {
+  position: absolute;
+  top: 120px;
+  left: 986px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.frameChild1,
+.vectorIcon {
+  position: absolute;
+  top: 11px;
+  left: 35.5px;
+  width: 155px;
+  height: 2px;
+}
+.frameChild1 {
+  left: 212.5px;
+}
+.frameChild2 {
+  position: relative;
+  border-radius: 50%;
+  background-color: #3949a1;
+  border: 5px solid #3949a1;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+}
+.ellipseGroup {
+  position: absolute;
+  top: 0;
+  left: -23px;
+  width: 93px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+}
+.frameChild3 {
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 5px solid #3949a1;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+}
+.ellipseContainer {
+  position: absolute;
+  top: 0;
+  left: 154px;
+  width: 93px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+}
+.frameChild4 {
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+}
+.frameDiv {
+  position: absolute;
+  top: 0;
+  left: 331px;
+  width: 93px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  color: #939393;
+}
+.vectorParent {
+  position: absolute;
+  top: 264px;
+  left: 870px;
+  width: 420px;
+  height: 54px;
+  opacity: 0.9;
+}
+.frameGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.previous {
+  position: relative;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: Inter;
+  color: #26283f;
+  text-align: left;
+}
+.previousWrapper {
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  padding: 13px 14px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.next {
+  position: relative;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: left;
+}
+.nextWrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 13px 14px;
+  background-color: #3949a1;
+  border-radius: 8px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.nextWrapper:hover {
+  background-color: #142aa4;
+}
+.frameContainer,
+.frameParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.frameParent {
+  position: absolute;
+  top: 414px;
+  left: 768px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  opacity: 0.9;
+}
+.question1 {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 1000px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  color: #26283f;
+  font-family: Inter;
+}

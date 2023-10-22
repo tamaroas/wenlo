@@ -1,0 +1,203 @@
+.registerChild {
+  position: absolute;
+  top: 596px;
+  left: 779px;
+  width: 661px;
+  height: 404px;
+  opacity: 0.6;
+}
+.registerInner,
+.registerItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 637px;
+  height: 468px;
+}
+.registerInner {
+  top: 16px;
+  left: 16px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  width: 704px;
+  height: 968px;
+}
+.image1Icon {
+  position: relative;
+  width: 188.6px;
+  height: 56px;
+  object-fit: cover;
+}
+.welcomeToWenlo {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: inherit;
+}
+.frameParent,
+.image1Parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.frameParent {
+  position: absolute;
+  top: 160px;
+  left: 768px;
+  height: 611px;
+  gap: 96px;
+  text-align: left;
+}
+.next {
+  position: relative;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: left;
+}
+.nextWrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 13px 14px;
+  background-color: #3949a1;
+  border-radius: 8px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.nextWrapper:hover {
+  background-color: #1c35c1;
+}
+.alreadyHaveAn {
+  font-weight: 500;
+}
+.signIn {
+  font-weight: 600;
+  color: #3949a1;
+}
+.alreadyHaveAnContainer {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  color: inherit;
+}
+.frameGroup {
+  position: absolute;
+  top: 674px;
+  left: 976px;
+  width: 209px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  font-size: 14px;
+  color: #939393;
+}
+.frameChild,
+.frameItem {
+  position: relative;
+  border-radius: 50%;
+  background-color: #262626;
+  width: 14px;
+  height: 14px;
+}
+.frameItem {
+  background-color: #d9d9d9;
+}
+.ellipseParent {
+  position: absolute;
+  top: 938px;
+  left: 316px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.loremIpsumDolor,
+.sedDoEiusmod {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.41px;
+  line-height: 120%;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  width: 424px;
+}
+.sedDoEiusmod {
+  font-size: 14px;
+  line-height: 140%;
+  font-weight: 500;
+  color: #939393;
+  width: 528px;
+}
+.astronautParent,
+.frameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 56px;
+}
+.astronautParent {
+  position: absolute;
+  top: 120px;
+  left: 104px;
+  gap: 24px;
+  font-size: 32px;
+}
+.register {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 1000px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 16px;
+  color: #26283f;
+  font-family: Inter;
+}
+.register:hover {
+  background-color: #f6f6f6;
+}
+@media screen and (max-width: 960px) {
+  .astronautParent,
+  .registerInner {
+    display: block;
+  }
+}
+@media screen and (max-width: 420px) {
+  .registerInner {
+    background-color: #fff;
+    width: 100%;
+    display: block;
+  }
+  .frameParent {
+    align-items: center;
+    justify-content: center;
+  }
+  .ellipseParent {
+    display: block;
+  }
+  .register {
+    width: 100%;
+  }
+}

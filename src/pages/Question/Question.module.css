@@ -1,0 +1,136 @@
+.questionChild,
+.questionItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 637px;
+  height: 468px;
+}
+.questionItem {
+  top: -312px;
+  left: 823px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  width: 704px;
+  height: 968px;
+}
+.frameChild,
+.frameItem {
+  position: relative;
+  border-radius: 50%;
+  background-color: #262626;
+  width: 14px;
+  height: 14px;
+}
+.frameItem {
+  background-color: #d9d9d9;
+}
+.ellipseParent {
+  position: absolute;
+  top: 938px;
+  left: 316px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.image1Icon {
+  position: relative;
+  width: 188.6px;
+  height: 56px;
+  object-fit: cover;
+}
+.welcomeToWenlo {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  font-weight: 500;
+}
+.image1Parent {
+  position: absolute;
+  top: 120px;
+  left: 986px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.previous {
+  position: relative;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: Inter;
+  color: #26283f;
+  text-align: left;
+}
+.previousWrapper {
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  padding: 13px 14px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.next {
+  position: relative;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: left;
+}
+.nextWrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 13px 14px;
+  background-color: #3949a1;
+  border-radius: 8px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.nextWrapper:hover {
+  background-color: #142aa4;
+}
+.frameGroup,
+.frameParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.frameParent {
+  position: absolute;
+  top: 414px;
+  left: 768px;
+  width: 624px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.question {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 1000px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  color: #26283f;
+  font-family: Inter;
+}

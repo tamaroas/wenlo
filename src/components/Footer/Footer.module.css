@@ -1,0 +1,30 @@
+.expirationDate {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.expirationDateParent,
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.wrapper {
+  align-self: stretch;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  flex-direction: row;
+  padding: 13px 14px;
+  color: #26283f;
+}
+.expirationDateParent {
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #939393;
+  font-family: Inter;
+}

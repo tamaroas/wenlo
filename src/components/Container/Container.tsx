@@ -1,166 +1,166 @@
 import { FunctionComponent } from "react";
-import "./Container.css";
+import styles from "./Container.module.css";
 import ThemeColorIdentityDefaultIcon from "../ThemeColorIdentityDefaultIcon/ThemeColorIdentityDefaultIcon";
 
 const Container: FunctionComponent = () => {
   return (
-    <div className="container-comp-astronautParent">
+    <div className={styles.astronautParent}>
       <ThemeColorIdentityDefaultIcon
-        themeColorIdentityDefault="/images/astronaut.svg"
+        themeColorIdentityDefault="/astronaut.svg"
         themeColorIdentityDefaultWidth="120px"
         themeColorIdentityDefaultHeight="120px"
         themeColorIdentityDefaultPosition="relative"
         themeColorIdentityDefaultFlexShrink="0"
       />
-      <div className="container-comp-frameParent">
-        <div className="container-comp-loremIpsumDolorSitAmetCoParent">
-          <b className="container-comp-loremIpsumDolor">
+      <div className={styles.frameParent}>
+        <div className={styles.loremIpsumDolorSitAmetCoParent}>
+          <b className={styles.loremIpsumDolor}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </b>
-          <div className="container-comp-sedDoEiusmod">
+          <div className={styles.sedDoEiusmod}>
             Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat
           </div>
         </div>
-        <div className="container-comp-frameGroup">
-          <div className="container-comp-frameContainer">
-            <div className="container-comp-frameDiv">
-              <div className="container-comp-amountDueParent">
-                <div className="container-comp-amountDue">Amount Due</div>
-                <div className="container-comp-invoicesAreIssued">
+        <div className={styles.frameGroup}>
+          <div className={styles.frameContainer}>
+            <div className={styles.frameDiv}>
+              <div className={styles.amountDueParent}>
+                <div className={styles.amountDue}>Amount Due</div>
+                <div className={styles.invoicesAreIssued}>
                   Invoices are issued between the 1st and 5th of each month and
                   are due 30 days later.
                 </div>
               </div>
               <img
-                className="container-comp-moreVertIcon"
+                className={styles.moreVertIcon}
                 alt=""
-                src="images/more-vert.svg"
+                src="/more-vert.svg"
               />
             </div>
-            <div className="container-comp-parent">
-              <b className="container-comp-b">$26,667.73</b>
-              <button className="container-comp-payNowWrapper">
-                <div className="container-comp-payNow">Pay now</div>
+            <div className={styles.parent}>
+              <b className={styles.b}>$26,667.73</b>
+              <button className={styles.payNowWrapper}>
+                <div className={styles.payNow}>Pay now</div>
               </button>
             </div>
-            <div className="container-comp-accountSpendingLimit2781Parent">
-              <div className="container-comp-accountSpendingLimit2781Parent">
-                <div className="container-comp-b">
+            <div className={styles.accountSpendingLimit2781Parent}>
+              <div className={styles.accountSpendingLimit2781Parent}>
+                <div className={styles.b}>
                   <span
-                    className="container-comp-accountSpendingLimit"
+                    className={styles.accountSpendingLimit}
                   >{`Account Spending Limit: `}</span>
                   <b>$27,810.00</b>
                 </div>
-                <div className="container-comp-groupWrapper">
-                  <div className="container-comp-rectangleParent">
-                    <div className="container-comp-groupChild" />
-                    <div className="container-comp-groupItem" />
+                <div className={styles.groupWrapper}>
+                  <div className={styles.rectangleParent}>
+                    <div className={styles.groupChild} />
+                    <div className={styles.groupItem} />
                   </div>
                 </div>
               </div>
-              <div className="container-comp-ellipseParent">
-                <div className="container-comp-frameChild" />
-                <div className="container-comp-spent2781000Container">
+              <div className={styles.ellipseParent}>
+                <div className={styles.frameChild} />
+                <div className={styles.spent2781000Container}>
                   <span
-                    className="container-comp-accountSpendingLimit"
+                    className={styles.accountSpendingLimit}
                   >{`$26,667.73 spent / `}</span>
-                  <span className="container-comp-available">$27,810.00 available</span>
+                  <span className={styles.available}>$27,810.00 available</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="container-comp-frameParent2">
-            <div className="container-comp-frameDiv">
-              <div className="container-comp-amountDueParent">
-                <div className="container-comp-amountDue">Amount Due</div>
-                <div className="container-comp-invoicesAreIssued">
+          <div className={styles.frameParent2}>
+            <div className={styles.frameDiv}>
+              <div className={styles.amountDueParent}>
+                <div className={styles.amountDue}>Amount Due</div>
+                <div className={styles.invoicesAreIssued}>
                   Invoices are issued between the 1st and 5th of each month and
                   are due 30 days later.
                 </div>
               </div>
               <img
-                className="container-comp-moreVertIcon"
+                className={styles.moreVertIcon}
                 alt=""
-                src="images/more-vert.svg"
+                src="/more-vert.svg"
               />
             </div>
-            <div className="container-comp-group">
-              <b className="container-comp-b">$26,667.73</b>
-              <div className="container-comp-payNowContainer">
-                <div className="container-comp-payNow1">Pay now</div>
+            <div className={styles.group}>
+              <b className={styles.b}>$26,667.73</b>
+              <div className={styles.payNowContainer}>
+                <div className={styles.payNow1}>Pay now</div>
               </div>
             </div>
-            <div className="container-comp-accountSpendingLimit2781Parent">
-              <div className="container-comp-accountSpendingLimit2781Parent">
-                <div className="container-comp-b">
+            <div className={styles.accountSpendingLimit2781Parent}>
+              <div className={styles.accountSpendingLimit2781Parent}>
+                <div className={styles.b}>
                   <span
-                    className="container-comp-accountSpendingLimit"
+                    className={styles.accountSpendingLimit}
                   >{`Account Spending Limit: `}</span>
                   <b>$27,810.00</b>
                 </div>
-                <div className="container-comp-groupWrapper">
-                  <div className="container-comp-rectangleGroup">
-                    <div className="container-comp-groupInner" />
-                    <div className="container-comp-groupItem" />
+                <div className={styles.groupWrapper}>
+                  <div className={styles.rectangleGroup}>
+                    <div className={styles.groupInner} />
+                    <div className={styles.groupItem} />
                   </div>
                 </div>
               </div>
-              <div className="container-comp-ellipseParent">
-                <div className="container-comp-frameChild" />
-                <div className="container-comp-spent2781000Container">
+              <div className={styles.ellipseParent}>
+                <div className={styles.frameChild} />
+                <div className={styles.spent2781000Container}>
                   <span
-                    className="container-comp-accountSpendingLimit"
+                    className={styles.accountSpendingLimit}
                   >{`$26,667.73 spent / `}</span>
-                  <span className="container-comp-available">$27,810.00 available</span>
+                  <span className={styles.available}>$27,810.00 available</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="container-comp-frameParent5">
-            <div className="container-comp-frameDiv">
-              <div className="container-comp-amountDueParent">
-                <div className="container-comp-amountDue">Amount Due</div>
-                <div className="container-comp-invoicesAreIssued">
+          <div className={styles.frameParent5}>
+            <div className={styles.frameDiv}>
+              <div className={styles.amountDueParent}>
+                <div className={styles.amountDue}>Amount Due</div>
+                <div className={styles.invoicesAreIssued}>
                   Invoices are issued between the 1st and 5th of each month and
                   are due 30 days later.
                 </div>
               </div>
               <img
-                className="container-comp-moreVertIcon"
+                className={styles.moreVertIcon}
                 alt=""
-                src="images/more-vert.svg"
+                src="/more-vert.svg"
               />
             </div>
-            <div className="container-comp-group">
-              <b className="container-comp-b">$26,667.73</b>
-              <div className="container-comp-payNowContainer">
-                <div className="container-comp-payNow1">Pay now</div>
+            <div className={styles.group}>
+              <b className={styles.b}>$26,667.73</b>
+              <div className={styles.payNowContainer}>
+                <div className={styles.payNow1}>Pay now</div>
               </div>
             </div>
-            <div className="container-comp-accountSpendingLimit2781Parent">
-              <div className="container-comp-accountSpendingLimit2781Parent">
-                <div className="container-comp-b">
+            <div className={styles.accountSpendingLimit2781Parent}>
+              <div className={styles.accountSpendingLimit2781Parent}>
+                <div className={styles.b}>
                   <span
-                    className="container-comp-accountSpendingLimit"
+                    className={styles.accountSpendingLimit}
                   >{`Account Spending Limit: `}</span>
                   <b>$27,810.00</b>
                 </div>
-                <div className="container-comp-groupWrapper">
-                  <div className="container-comp-rectangleContainer">
-                    <div className="container-comp-groupChild1" />
-                    <div className="container-comp-groupItem" />
+                <div className={styles.groupWrapper}>
+                  <div className={styles.rectangleContainer}>
+                    <div className={styles.groupChild1} />
+                    <div className={styles.groupItem} />
                   </div>
                 </div>
               </div>
-              <div className="container-comp-ellipseParent">
-                <div className="container-comp-frameChild" />
-                <div className="container-comp-spent2781000Container">
+              <div className={styles.ellipseParent}>
+                <div className={styles.frameChild} />
+                <div className={styles.spent2781000Container}>
                   <span
-                    className="container-comp-accountSpendingLimit"
+                    className={styles.accountSpendingLimit}
                   >{`$26,667.73 spent / `}</span>
-                  <span className="container-comp-available">$27,810.00 available</span>
+                  <span className={styles.available}>$27,810.00 available</span>
                 </div>
               </div>
             </div>

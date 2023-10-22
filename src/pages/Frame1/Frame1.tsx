@@ -1,24 +1,24 @@
 import { FunctionComponent } from "react";
-import "./Frame1.css";
+import InvoiceContainer from "../../components/InvoiceContainer/InvoiceContainer";
 import PremiumPlanCard from "../../components/PremiumPlanCard/PremiumPlanCard";
 import PaymentForm from "../../components/PaymentForm/PaymentForm";
-import InvoiceContainer from "../../components/InvoiceContainer/InvoiceContainer";
+import styles from "./Frame1.module.css";
 
 const Frame1: FunctionComponent = () => {
   return (
-    <div className="frame-1-headerParent">
+    <div className={styles.headerParent}>
       <InvoiceContainer
-        requestStatusMessage="images/new-releases.svg"
+        requestStatusMessage="/new-releases.svg"
         requestStatusIcon="Your request is approved!"
         buttonColor="#147a3d"
       />
       <PremiumPlanCard />
       <PaymentForm />
-      <div className="frame-1-cancelParent">
-        <div className="frame-1-cancel">Cancel</div>
-        <div className="frame-1-download01Parent">
-          <img className="frame-1-download01Icon" alt="" src="images/download01.svg" />
-          <div className="frame-1-cancel">Download PDF</div>
+      <div className={styles.cancelParent}>
+        <div className={styles.cancel}>Cancel</div>
+        <div className={styles.download01Parent}>
+          <img className={styles.download01Icon} alt="" src="/download01.svg" />
+          <div className={styles.cancel}>Download PDF</div>
         </div>
       </div>
     </div>

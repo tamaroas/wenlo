@@ -1,110 +1,80 @@
 import { FunctionComponent } from 'react';
-import './SpendingIssuesFormContainer.css';
+import styles from './SpendingIssuesFormContainer.module.css';
 
 const SpendingIssuesFormContainer: FunctionComponent = () => {
   return (
-    <div className="spending-issues-form-container-comp-frameParent">
-      <div className="spending-issues-form-container-comp-frameWrapper">
-        <div className="spending-issues-form-container-comp-whatIsYourAverageMonthlyAParent">
-          <div className="spending-issues-form-container-comp-whatIsYourContainer">
+    <div className={styles.frameParent}>
+      <div className={styles.frameWrapper}>
+        <div className={styles.whatIsYourAverageMonthlyAParent}>
+          <div className={styles.whatIsYourContainer}>
             <span>
               What is your average monthly advertising budget for social media?
               (Facebook Ads, Google Adwords, TikTok Ads ….)
             </span>
-            <span className="spending-issues-form-container-comp-span">*</span>
+            <span className={styles.span}>*</span>
           </div>
-          <div className="spending-issues-form-container-comp-frameGroup">
-            <div className="spending-issues-form-container-comp-radioButtonParent">
+          <div className={styles.frameGroup}>
+            <div className={styles.radioButtonParent}>
               <input
-                className="spending-issues-form-container-comp-radioButton"
+                className={styles.radioButton}
                 checked={true}
                 id="average"
                 type="radio"
               />
-              <div className="spending-issues-form-container-comp-kPerMonth">
-                $0 – $1k per month
-              </div>
+              <div className={styles.kPerMonth}>$0 – $1k per month</div>
             </div>
-            <div className="spending-issues-form-container-comp-radioButtonGroup">
-              <input
-                className="spending-issues-form-container-comp-radioButton"
-                id="average"
-                type="radio"
-              />
-              <div className="spending-issues-form-container-comp-kPerMonth">
-                $1k - $10k per month
-              </div>
+            <div className={styles.radioButtonGroup}>
+              <input className={styles.radioButton} id="average" type="radio" />
+              <div className={styles.kPerMonth}>$1k - $10k per month</div>
             </div>
-            <div className="spending-issues-form-container-comp-radioButtonGroup">
-              <input
-                className="spending-issues-form-container-comp-radioButton"
-                type="radio"
-              />
-              <div className="spending-issues-form-container-comp-kPerMonth">
-                $10k - $50k per month
-              </div>
+            <div className={styles.radioButtonGroup}>
+              <input className={styles.radioButton} type="radio" />
+              <div className={styles.kPerMonth}>$10k - $50k per month</div>
             </div>
           </div>
-          <div className="spending-issues-form-container-comp-frameGroup">
-            <div className="spending-issues-form-container-comp-frameDiv">
-              <input
-                className="spending-issues-form-container-comp-radioButton"
-                type="radio"
-              />
-              <div className="spending-issues-form-container-comp-kPerMonth">
-                $50k – $200k per month
-              </div>
+          <div className={styles.frameGroup}>
+            <div className={styles.frameDiv}>
+              <input className={styles.radioButton} type="radio" />
+              <div className={styles.kPerMonth}>$50k – $200k per month</div>
             </div>
-            <div className="spending-issues-form-container-comp-radioButtonParent1">
-              <input
-                className="spending-issues-form-container-comp-radioButton"
-                type="radio"
-              />
-              <div className="spending-issues-form-container-comp-kPerMonth">
-                $200k+ per month
-              </div>
+            <div className={styles.radioButtonParent1}>
+              <input className={styles.radioButton} type="radio" />
+              <div className={styles.kPerMonth}>$200k+ per month</div>
             </div>
           </div>
         </div>
       </div>
-      <div className="spending-issues-form-container-comp-frameWrapper1">
-        <div className="spending-issues-form-container-comp-doYouHaveExperienceWithAgParent">
-          <div className="spending-issues-form-container-comp-doYouHaveContainer">
+      <div className={styles.frameWrapper1}>
+        <div className={styles.doYouHaveExperienceWithAgParent}>
+          <div className={styles.doYouHaveContainer}>
             <span>Do you have experience with agency ads accounts?</span>
-            <span className="spending-issues-form-container-comp-span">*</span>
+            <span className={styles.span}>*</span>
           </div>
-          <div className="spending-issues-form-container-comp-frameParent1">
-            <div className="spending-issues-form-container-comp-radioButtonParent">
+          <div className={styles.frameParent1}>
+            <div className={styles.radioButtonParent}>
               <input
-                className="spending-issues-form-container-comp-radioButton"
+                className={styles.radioButton}
                 checked={true}
                 type="radio"
               />
-              <div className="spending-issues-form-container-comp-kPerMonth">
-                Yes
-              </div>
+              <div className={styles.kPerMonth}>Yes</div>
             </div>
-            <div className="spending-issues-form-container-comp-radioButtonGroup">
-              <input
-                className="spending-issues-form-container-comp-radioButton"
-                type="radio"
-              />
-              <div className="spending-issues-form-container-comp-kPerMonth">
-                No
-              </div>
+            <div className={styles.radioButtonGroup}>
+              <input className={styles.radioButton} type="radio" />
+              <div className={styles.kPerMonth}>No</div>
             </div>
           </div>
         </div>
       </div>
-      <div className="spending-issues-form-container-comp-frameWrapper1">
-        <div className="spending-issues-form-container-comp-whatIsYourAverageMonthlyAParent">
-          <div className="spending-issues-form-container-comp-kPerMonth">
+      <div className={styles.frameWrapper1}>
+        <div className={styles.whatIsYourAverageMonthlyAParent}>
+          <div className={styles.kPerMonth}>
             <span>
               What kind of issues do you have with online adverstising?
             </span>
-            <span className="spending-issues-form-container-comp-span">*</span>
+            <span className={styles.span}>*</span>
           </div>
-          <select className="spending-issues-form-container-comp-frameChild" />
+          <select className={styles.frameChild} />
         </div>
       </div>
     </div>

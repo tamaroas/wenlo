@@ -1,5 +1,5 @@
 import { FunctionComponent, useMemo, type CSSProperties } from "react";
-import "./CardContainer.css";
+import styles from "./CardContainer.module.css";
 
 type CardContainerType = {
   planName?: string;
@@ -36,151 +36,151 @@ const CardContainer: FunctionComponent<CardContainerType> = ({
   }, [noBorder]);
 
   return (
-    <div className="card-container-comp-frameParent">
-      <div className="card-container-comp-frameGroup" style={frameDiv6Style}>
-        <div className="card-container-comp-frameContainer">
-          <div className="card-container-comp-frameWrapper">
-            <div className="card-container-comp-starterPlanParent">
-              <div className="card-container-comp-starterPlan">{planName}</div>
-              <div className="card-container-comp-frameChild" style={ellipseDiv1Style} />
+    <div className={styles.frameParent}>
+      <div className={styles.frameGroup} style={frameDiv6Style}>
+        <div className={styles.frameContainer}>
+          <div className={styles.frameWrapper}>
+            <div className={styles.starterPlanParent}>
+              <div className={styles.starterPlan}>{planName}</div>
+              <div className={styles.frameChild} style={ellipseDiv1Style} />
             </div>
           </div>
-          <div className="card-container-comp-frameDiv">
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">Top-up fee</div>
-              <div className="card-container-comp-div">9%</div>
+          <div className={styles.frameDiv}>
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>Top-up fee</div>
+              <div className={styles.div}>9%</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Maximum ad accounts per month
               </div>
-              <div className="card-container-comp-div">3</div>
+              <div className={styles.div}>3</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Restricted ad account review service
               </div>
-              <div className="card-container-comp-div">Yes</div>
+              <div className={styles.div}>Yes</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-priorityInRequest">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.priorityInRequest}>
                 Priority in request processing (Top-up, ad account, balance
                 transfer ...)
               </div>
-              <div className="card-container-comp-div">Low</div>
+              <div className={styles.div}>Low</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-priorityInRequest">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.priorityInRequest}>
                 Management of all advertising platforms (Meta, Google, TikTok,
                 Bing, Snapchat, Twitter…)
               </div>
-              <div className="card-container-comp-div">Yes</div>
+              <div className={styles.div}>Yes</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
+            <div className={styles.topUpFeeParent}>
               <div
-                className="card-container-comp-topUpFee"
+                className={styles.topUpFee}
               >{`Live chat & Customer service`}</div>
-              <div className="card-container-comp-div">Yes</div>
+              <div className={styles.div}>Yes</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Personalized assistance and ongoing management
               </div>
-              <div className="card-container-comp-div">No</div>
+              <div className={styles.div}>No</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Full customization of the ad account name (no "wenlo" suffix)
               </div>
-              <div className="card-container-comp-div">No</div>
+              <div className={styles.div}>No</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Multi-user (Add your team members)
               </div>
-              <div className="card-container-comp-div">No</div>
+              <div className={styles.div}>No</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">Total monthly top-up limit</div>
-              <div className="card-container-comp-k">$10k</div>
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>Total monthly top-up limit</div>
+              <div className={styles.k}>$10k</div>
             </div>
           </div>
         </div>
-        <div className="card-container-comp-freeWrapper">
-          <div className="card-container-comp-free">{subscriptionType}</div>
+        <div className={styles.freeWrapper}>
+          <div className={styles.free}>{subscriptionType}</div>
         </div>
       </div>
-      <div className="card-container-comp-frameGroup">
-        <div className="card-container-comp-frameContainer">
-          <div className="card-container-comp-frameWrapper">
-            <div className="card-container-comp-starterPlanParent">
-              <div className="card-container-comp-starterPlan">{pricingPlanName}</div>
-              <div className="card-container-comp-frameChild" />
+      <div className={styles.frameGroup}>
+        <div className={styles.frameContainer}>
+          <div className={styles.frameWrapper}>
+            <div className={styles.starterPlanParent}>
+              <div className={styles.starterPlan}>{pricingPlanName}</div>
+              <div className={styles.frameChild} />
             </div>
           </div>
-          <div className="card-container-comp-frameDiv">
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">Top-up fee</div>
-              <div className="card-container-comp-div">9%</div>
+          <div className={styles.frameDiv}>
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>Top-up fee</div>
+              <div className={styles.div}>9%</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Maximum ad accounts per month
               </div>
-              <div className="card-container-comp-div">3</div>
+              <div className={styles.div}>3</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Restricted ad account review service
               </div>
-              <div className="card-container-comp-div">Yes</div>
+              <div className={styles.div}>Yes</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-priorityInRequest">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.priorityInRequest}>
                 Priority in request processing (Top-up, ad account, balance
                 transfer ...)
               </div>
-              <div className="card-container-comp-div">Low</div>
+              <div className={styles.div}>Low</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-priorityInRequest">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.priorityInRequest}>
                 Management of all advertising platforms (Meta, Google, TikTok,
                 Bing, Snapchat, Twitter…)
               </div>
-              <div className="card-container-comp-div">Yes</div>
+              <div className={styles.div}>Yes</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
+            <div className={styles.topUpFeeParent}>
               <div
-                className="card-container-comp-topUpFee"
+                className={styles.topUpFee}
               >{`Live chat & Customer service`}</div>
-              <div className="card-container-comp-div">Yes</div>
+              <div className={styles.div}>Yes</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Personalized assistance and ongoing management
               </div>
-              <div className="card-container-comp-div">No</div>
+              <div className={styles.div}>No</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Full customization of the ad account name (no "wenlo" suffix)
               </div>
-              <div className="card-container-comp-div">No</div>
+              <div className={styles.div}>No</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>
                 Multi-user (Add your team members)
               </div>
-              <div className="card-container-comp-div">No</div>
+              <div className={styles.div}>No</div>
             </div>
-            <div className="card-container-comp-topUpFeeParent">
-              <div className="card-container-comp-topUpFee">Total monthly top-up limit</div>
-              <div className="card-container-comp-k">$10k</div>
+            <div className={styles.topUpFeeParent}>
+              <div className={styles.topUpFee}>Total monthly top-up limit</div>
+              <div className={styles.k}>$10k</div>
             </div>
           </div>
         </div>
-        <div className="card-container-comp-freeWrapper">
-          <div className="card-container-comp-free">{monthlyPrice}</div>
+        <div className={styles.freeWrapper}>
+          <div className={styles.free}>{monthlyPrice}</div>
         </div>
       </div>
     </div>

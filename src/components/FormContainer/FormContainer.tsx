@@ -1,5 +1,5 @@
 import { FunctionComponent, useMemo, type CSSProperties } from "react";
-import "./FormContainer.css";
+import styles from "./FormContainer.module.css";
 
 type FormContainerType = {
   /** Style props */
@@ -38,45 +38,45 @@ const FormContainer: FunctionComponent<FormContainerType> = ({
   }, [propWidth2]);
 
   return (
-    <div className="form-container-comp-frameParent" style={frameDiv7Style}>
-      <div className="form-container-comp-frameGroup">
-        <div className="form-container-comp-amountDueParent">
-          <div className="form-container-comp-amountDue">Amount Due</div>
-          <div className="form-container-comp-invoicesAreIssued">
+    <div className={styles.frameParent} style={frameDiv7Style}>
+      <div className={styles.frameGroup}>
+        <div className={styles.amountDueParent}>
+          <div className={styles.amountDue}>Amount Due</div>
+          <div className={styles.invoicesAreIssued}>
             Invoices are issued between the 1st and 5th of each month and are
             due 30 days later.
           </div>
         </div>
-        <img className="form-container-comp-moreVertIcon" alt="" src="images/more-vert.svg" />
+        <img className={styles.moreVertIcon} alt="" src="/more-vert.svg" />
       </div>
-      <div className="form-container-comp-parent">
-        <b className="form-container-comp-b">$26,667.73</b>
-        <div className="form-container-comp-payNowWrapper">
-          <div className="form-container-comp-payNow">Pay now</div>
+      <div className={styles.parent}>
+        <b className={styles.b}>$26,667.73</b>
+        <div className={styles.payNowWrapper}>
+          <div className={styles.payNow}>Pay now</div>
         </div>
       </div>
-      <div className="form-container-comp-frameContainer">
-        <div className="form-container-comp-frameContainer">
-          <div className="form-container-comp-b">
+      <div className={styles.frameContainer}>
+        <div className={styles.frameContainer}>
+          <div className={styles.b}>
             <span
-              className="form-container-comp-accountSpendingLimit"
+              className={styles.accountSpendingLimit}
             >{`Account Spending Limit: `}</span>
             <b>$27,810.00</b>
           </div>
-          <div className="form-container-comp-frameWrapper">
-            <div className="form-container-comp-rectangleParent" style={frameDiv8Style}>
-              <div className="form-container-comp-frameChild" style={rectangleDivStyle} />
-              <div className="form-container-comp-frameItem" />
+          <div className={styles.frameWrapper}>
+            <div className={styles.rectangleParent} style={frameDiv8Style}>
+              <div className={styles.frameChild} style={rectangleDivStyle} />
+              <div className={styles.frameItem} />
             </div>
           </div>
         </div>
-        <div className="form-container-comp-ellipseParent">
-          <div className="form-container-comp-frameInner" />
-          <div className="form-container-comp-spent2781000Container">
+        <div className={styles.ellipseParent}>
+          <div className={styles.frameInner} />
+          <div className={styles.spent2781000Container}>
             <span
-              className="form-container-comp-accountSpendingLimit"
+              className={styles.accountSpendingLimit}
             >{`$26,667.73 spent / `}</span>
-            <span className="form-container-comp-available">$27,810.00 available</span>
+            <span className={styles.available}>$27,810.00 available</span>
           </div>
         </div>
       </div>

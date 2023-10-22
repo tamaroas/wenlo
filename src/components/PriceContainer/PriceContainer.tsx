@@ -1,5 +1,5 @@
 import { FunctionComponent, useMemo, type CSSProperties } from "react";
-import "./PriceContainer.css";
+import styles from "./PriceContainer.module.css";
 
 type PriceContainerType = {
   price?: string;
@@ -33,319 +33,319 @@ const PriceContainer: FunctionComponent<PriceContainerType> = ({
   }, [frameDivBorder1]);
 
   return (
-    <div className="price-container-comp-frameParent">
-      <div className="price-container-comp-frameGroup">
-        <div className="price-container-comp-frameContainer">
-          <div className="price-container-comp-frameDiv">
-            <div className="price-container-comp-frameParent1">
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-starterPlan">Starter Plan</div>
-                <div className="price-container-comp-frameChild" />
+    <div className={styles.frameParent}>
+      <div className={styles.frameGroup}>
+        <div className={styles.frameContainer}>
+          <div className={styles.frameDiv}>
+            <div className={styles.frameParent1}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.starterPlan}>Starter Plan</div>
+                <div className={styles.frameChild} />
               </div>
               <div
-                className="price-container-comp-sedDoEiusmod"
+                className={styles.sedDoEiusmod}
               >{`Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut `}</div>
             </div>
-            <div className="price-container-comp-frameParent2">
-              <div className="price-container-comp-saveUpTo15Wrapper">
-                <div className="price-container-comp-saveUpTo">Save up to 15%</div>
+            <div className={styles.frameParent2}>
+              <div className={styles.saveUpTo15Wrapper}>
+                <div className={styles.saveUpTo}>Save up to 15%</div>
               </div>
-              <div className="price-container-comp-parent">
-                <div className="price-container-comp-starterPlan">{price}</div>
-                <div className="price-container-comp-month">/Month</div>
+              <div className={styles.parent}>
+                <div className={styles.starterPlan}>{price}</div>
+                <div className={styles.month}>/Month</div>
               </div>
             </div>
           </div>
-          <div className="price-container-comp-getStartedParent">
-            <div className="price-container-comp-saveUpTo">Get Started</div>
+          <div className={styles.getStartedParent}>
+            <div className={styles.saveUpTo}>Get Started</div>
             <img
-              className="price-container-comp-arrowNarrowRightIcon"
+              className={styles.arrowNarrowRightIcon}
               alt=""
-              src="images/arrownarrowright.svg"
+              src="/arrownarrowright.svg"
             />
           </div>
         </div>
-        <div className="price-container-comp-frameParent3">
-          <div className="price-container-comp-frameWrapper">
-            <div className="price-container-comp-frameParent4">
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-topUpFee">Top-up fee</div>
-                <div className="price-container-comp-yes">9%</div>
+        <div className={styles.frameParent3}>
+          <div className={styles.frameWrapper}>
+            <div className={styles.frameParent4}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.topUpFee}>Top-up fee</div>
+                <div className={styles.yes}>9%</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   <p
-                    className="price-container-comp-maximumAdAccounts"
+                    className={styles.maximumAdAccounts}
                   >{`Maximum ad accounts `}</p>
-                  <p className="price-container-comp-maximumAdAccounts">per month</p>
+                  <p className={styles.maximumAdAccounts}>per month</p>
                 </div>
-                <div className="price-container-comp-yes">3</div>
+                <div className={styles.yes}>3</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Restricted ad account review service
                 </div>
-                <div className="price-container-comp-yes">Yes</div>
+                <div className={styles.yes}>Yes</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Priority in request processing (Top-up, ad account, balance
                   transfer ...)
                 </div>
-                <div className="price-container-comp-yes">Low</div>
+                <div className={styles.yes}>Low</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Management of all advertising platforms (Meta, Google, TikTok,
                   Bing, Snapchat, Twitter…)
                 </div>
-                <div className="price-container-comp-yes">Yes</div>
+                <div className={styles.yes}>Yes</div>
               </div>
             </div>
           </div>
-          <div className="price-container-comp-seeCompareParent">
-            <div className="price-container-comp-saveUpTo">See Compare</div>
+          <div className={styles.seeCompareParent}>
+            <div className={styles.saveUpTo}>See Compare</div>
             <img
-              className="price-container-comp-arrowNarrowRightIcon"
+              className={styles.arrowNarrowRightIcon}
               alt=""
-              src="images/arrowcircleright.svg"
+              src="/arrowcircleright.svg"
             />
           </div>
         </div>
       </div>
-      <div className="price-container-comp-frameGroup">
-        <div className="price-container-comp-frameContainer">
-          <div className="price-container-comp-frameDiv">
-            <div className="price-container-comp-frameParent1">
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-starterPlan">Standart Plan</div>
-                <div className="price-container-comp-frameChild" />
+      <div className={styles.frameGroup}>
+        <div className={styles.frameContainer}>
+          <div className={styles.frameDiv}>
+            <div className={styles.frameParent1}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.starterPlan}>Standart Plan</div>
+                <div className={styles.frameChild} />
               </div>
               <div
-                className="price-container-comp-sedDoEiusmod"
+                className={styles.sedDoEiusmod}
               >{`Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut `}</div>
             </div>
-            <div className="price-container-comp-frameParent2">
-              <div className="price-container-comp-saveUpTo15Wrapper">
-                <div className="price-container-comp-saveUpTo">Save up to 15%</div>
+            <div className={styles.frameParent2}>
+              <div className={styles.saveUpTo15Wrapper}>
+                <div className={styles.saveUpTo}>Save up to 15%</div>
               </div>
-              <div className="price-container-comp-parent">
-                <div className="price-container-comp-starterPlan">{priceText}</div>
-                <div className="price-container-comp-month">/Month</div>
+              <div className={styles.parent}>
+                <div className={styles.starterPlan}>{priceText}</div>
+                <div className={styles.month}>/Month</div>
               </div>
             </div>
           </div>
-          <div className="price-container-comp-getStartedParent">
-            <div className="price-container-comp-saveUpTo">Get Started</div>
+          <div className={styles.getStartedParent}>
+            <div className={styles.saveUpTo}>Get Started</div>
             <img
-              className="price-container-comp-arrowNarrowRightIcon"
+              className={styles.arrowNarrowRightIcon}
               alt=""
-              src="images/arrownarrowright.svg"
+              src="/arrownarrowright.svg"
             />
           </div>
         </div>
-        <div className="price-container-comp-frameParent3">
-          <div className="price-container-comp-frameWrapper">
-            <div className="price-container-comp-frameParent4">
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-topUpFee">Top-up fee</div>
-                <div className="price-container-comp-yes">9%</div>
+        <div className={styles.frameParent3}>
+          <div className={styles.frameWrapper}>
+            <div className={styles.frameParent4}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.topUpFee}>Top-up fee</div>
+                <div className={styles.yes}>9%</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   <p
-                    className="price-container-comp-maximumAdAccounts"
+                    className={styles.maximumAdAccounts}
                   >{`Maximum ad accounts `}</p>
-                  <p className="price-container-comp-maximumAdAccounts">per month</p>
+                  <p className={styles.maximumAdAccounts}>per month</p>
                 </div>
-                <div className="price-container-comp-yes">3</div>
+                <div className={styles.yes}>3</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Restricted ad account review service
                 </div>
-                <div className="price-container-comp-yes">Yes</div>
+                <div className={styles.yes}>Yes</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Priority in request processing (Top-up, ad account, balance
                   transfer ...)
                 </div>
-                <div className="price-container-comp-yes">Low</div>
+                <div className={styles.yes}>Low</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Management of all advertising platforms (Meta, Google, TikTok,
                   Bing, Snapchat, Twitter…)
                 </div>
-                <div className="price-container-comp-yes">Yes</div>
+                <div className={styles.yes}>Yes</div>
               </div>
             </div>
           </div>
-          <div className="price-container-comp-seeCompareParent">
-            <div className="price-container-comp-saveUpTo">See Compare</div>
+          <div className={styles.seeCompareParent}>
+            <div className={styles.saveUpTo}>See Compare</div>
             <img
-              className="price-container-comp-arrowNarrowRightIcon"
+              className={styles.arrowNarrowRightIcon}
               alt=""
-              src="images/arrowcircleright.svg"
+              src="/arrowcircleright.svg"
             />
           </div>
         </div>
       </div>
-      <div className="price-container-comp-frameParent12" style={frameDiv2Style}>
-        <div className="price-container-comp-frameContainer">
-          <div className="price-container-comp-frameDiv">
-            <div className="price-container-comp-frameParent1">
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-starterPlan">Premium Plan</div>
-                <div className="price-container-comp-frameInner" style={ellipseDivStyle} />
+      <div className={styles.frameParent12} style={frameDiv2Style}>
+        <div className={styles.frameContainer}>
+          <div className={styles.frameDiv}>
+            <div className={styles.frameParent1}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.starterPlan}>Premium Plan</div>
+                <div className={styles.frameInner} style={ellipseDivStyle} />
               </div>
               <div
-                className="price-container-comp-sedDoEiusmod"
+                className={styles.sedDoEiusmod}
               >{`Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut `}</div>
             </div>
-            <div className="price-container-comp-frameParent2">
-              <div className="price-container-comp-saveUpTo15Wrapper">
-                <div className="price-container-comp-saveUpTo">Save up to 15%</div>
+            <div className={styles.frameParent2}>
+              <div className={styles.saveUpTo15Wrapper}>
+                <div className={styles.saveUpTo}>Save up to 15%</div>
               </div>
-              <div className="price-container-comp-parent">
-                <div className="price-container-comp-starterPlan">{itemPrice}</div>
-                <div className="price-container-comp-month">/Month</div>
+              <div className={styles.parent}>
+                <div className={styles.starterPlan}>{itemPrice}</div>
+                <div className={styles.month}>/Month</div>
               </div>
             </div>
           </div>
-          <div className="price-container-comp-getStartedParent">
-            <div className="price-container-comp-saveUpTo">Get Started</div>
+          <div className={styles.getStartedParent}>
+            <div className={styles.saveUpTo}>Get Started</div>
             <img
-              className="price-container-comp-arrowNarrowRightIcon"
+              className={styles.arrowNarrowRightIcon}
               alt=""
-              src="images/arrownarrowright.svg"
+              src="/arrownarrowright.svg"
             />
           </div>
         </div>
-        <div className="price-container-comp-frameParent3">
-          <div className="price-container-comp-frameWrapper">
-            <div className="price-container-comp-frameParent4">
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-topUpFee">Top-up fee</div>
-                <div className="price-container-comp-yes">9%</div>
+        <div className={styles.frameParent3}>
+          <div className={styles.frameWrapper}>
+            <div className={styles.frameParent4}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.topUpFee}>Top-up fee</div>
+                <div className={styles.yes}>9%</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   <p
-                    className="price-container-comp-maximumAdAccounts"
+                    className={styles.maximumAdAccounts}
                   >{`Maximum ad accounts `}</p>
-                  <p className="price-container-comp-maximumAdAccounts">per month</p>
+                  <p className={styles.maximumAdAccounts}>per month</p>
                 </div>
-                <div className="price-container-comp-yes">3</div>
+                <div className={styles.yes}>3</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Restricted ad account review service
                 </div>
-                <div className="price-container-comp-yes">Yes</div>
+                <div className={styles.yes}>Yes</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Priority in request processing (Top-up, ad account, balance
                   transfer ...)
                 </div>
-                <div className="price-container-comp-yes">Low</div>
+                <div className={styles.yes}>Low</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Management of all advertising platforms (Meta, Google, TikTok,
                   Bing, Snapchat, Twitter…)
                 </div>
-                <div className="price-container-comp-yes">Yes</div>
+                <div className={styles.yes}>Yes</div>
               </div>
             </div>
           </div>
-          <div className="price-container-comp-seeCompareParent">
-            <div className="price-container-comp-saveUpTo">See Compare</div>
+          <div className={styles.seeCompareParent}>
+            <div className={styles.saveUpTo}>See Compare</div>
             <img
-              className="price-container-comp-arrowNarrowRightIcon"
+              className={styles.arrowNarrowRightIcon}
               alt=""
-              src="images/arrowcircleright.svg"
+              src="/arrowcircleright.svg"
             />
           </div>
         </div>
       </div>
-      <div className="price-container-comp-frameGroup">
-        <div className="price-container-comp-frameContainer">
-          <div className="price-container-comp-frameDiv">
-            <div className="price-container-comp-frameParent1">
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-starterPlan">Enterprise-level Plan</div>
-                <div className="price-container-comp-frameChild" />
+      <div className={styles.frameGroup}>
+        <div className={styles.frameContainer}>
+          <div className={styles.frameDiv}>
+            <div className={styles.frameParent1}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.starterPlan}>Enterprise-level Plan</div>
+                <div className={styles.frameChild} />
               </div>
               <div
-                className="price-container-comp-sedDoEiusmod"
+                className={styles.sedDoEiusmod}
               >{`Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut `}</div>
             </div>
-            <div className="price-container-comp-frameParent2">
-              <div className="price-container-comp-saveUpTo15Wrapper">
-                <div className="price-container-comp-saveUpTo">Save up to 15%</div>
+            <div className={styles.frameParent2}>
+              <div className={styles.saveUpTo15Wrapper}>
+                <div className={styles.saveUpTo}>Save up to 15%</div>
               </div>
-              <div className="price-container-comp-parent">
-                <div className="price-container-comp-starterPlan">{itemPriceText}</div>
-                <div className="price-container-comp-month">/Month</div>
+              <div className={styles.parent}>
+                <div className={styles.starterPlan}>{itemPriceText}</div>
+                <div className={styles.month}>/Month</div>
               </div>
             </div>
           </div>
-          <div className="price-container-comp-getStartedParent">
-            <div className="price-container-comp-saveUpTo">Get Started</div>
+          <div className={styles.getStartedParent}>
+            <div className={styles.saveUpTo}>Get Started</div>
             <img
-              className="price-container-comp-arrowNarrowRightIcon"
+              className={styles.arrowNarrowRightIcon}
               alt=""
-              src="images/arrownarrowright.svg"
+              src="/arrownarrowright.svg"
             />
           </div>
         </div>
-        <div className="price-container-comp-frameParent3">
-          <div className="price-container-comp-frameWrapper">
-            <div className="price-container-comp-frameParent4">
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-topUpFee">Top-up fee</div>
-                <div className="price-container-comp-yes">9%</div>
+        <div className={styles.frameParent3}>
+          <div className={styles.frameWrapper}>
+            <div className={styles.frameParent4}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.topUpFee}>Top-up fee</div>
+                <div className={styles.yes}>9%</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   <p
-                    className="price-container-comp-maximumAdAccounts"
+                    className={styles.maximumAdAccounts}
                   >{`Maximum ad accounts `}</p>
-                  <p className="price-container-comp-maximumAdAccounts">per month</p>
+                  <p className={styles.maximumAdAccounts}>per month</p>
                 </div>
-                <div className="price-container-comp-yes">3</div>
+                <div className={styles.yes}>3</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Restricted ad account review service
                 </div>
-                <div className="price-container-comp-yes">Yes</div>
+                <div className={styles.yes}>Yes</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Priority in request processing (Top-up, ad account, balance
                   transfer ...)
                 </div>
-                <div className="price-container-comp-yes">Low</div>
+                <div className={styles.yes}>Low</div>
               </div>
-              <div className="price-container-comp-starterPlanParent">
-                <div className="price-container-comp-maximumAdAccountsContainer">
+              <div className={styles.starterPlanParent}>
+                <div className={styles.maximumAdAccountsContainer}>
                   Management of all advertising platforms (Meta, Google, TikTok,
                   Bing, Snapchat, Twitter…)
                 </div>
-                <div className="price-container-comp-yes">Yes</div>
+                <div className={styles.yes}>Yes</div>
               </div>
             </div>
           </div>
-          <div className="price-container-comp-seeCompareParent">
-            <div className="price-container-comp-saveUpTo">See Compare</div>
+          <div className={styles.seeCompareParent}>
+            <div className={styles.saveUpTo}>See Compare</div>
             <img
-              className="price-container-comp-arrowNarrowRightIcon"
+              className={styles.arrowNarrowRightIcon}
               alt=""
-              src="images/arrowcircleright.svg"
+              src="/arrowcircleright.svg"
             />
           </div>
         </div>

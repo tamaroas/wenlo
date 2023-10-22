@@ -1,5 +1,5 @@
 import { FunctionComponent, useMemo, type CSSProperties } from "react";
-import "./InvoiceContainer.css";
+import styles from "./InvoiceContainer.module.css";
 
 type InvoiceContainerType = {
   requestStatusMessage?: string;
@@ -21,25 +21,25 @@ const InvoiceContainer: FunctionComponent<InvoiceContainerType> = ({
   }, [buttonColor]);
 
   return (
-    <div className="invoice-container-comp-header">
-      <div className="invoice-container-comp-textAndSupportingText">
-        <div className="invoice-container-comp-title">
-          <b className="invoice-container-comp-text">{`Invoice `}</b>
-          <div className="invoice-container-comp-text1">#8FB28438-0001</div>
+    <div className={styles.header}>
+      <div className={styles.textAndSupportingText}>
+        <div className={styles.title}>
+          <b className={styles.text}>{`Invoice `}</b>
+          <div className={styles.text1}>#8FB28438-0001</div>
         </div>
-        <div className="invoice-container-comp-emergencyHomeParent">
+        <div className={styles.emergencyHomeParent}>
           <img
-            className="invoice-container-comp-emergencyHomeIcon"
+            className={styles.emergencyHomeIcon}
             alt=""
             src={requestStatusMessage}
           />
-          <div className="invoice-container-comp-supportingText" style={supportingTextStyle}>
+          <div className={styles.supportingText} style={supportingTextStyle}>
             {requestStatusIcon}
           </div>
         </div>
       </div>
-      <div className="invoice-container-comp-button">
-        <img className="invoice-container-comp-xCloseIcon" alt="" src="images/xclose.svg" />
+      <div className={styles.button}>
+        <img className={styles.xCloseIcon} alt="" src="/xclose.svg" />
       </div>
     </div>
   );

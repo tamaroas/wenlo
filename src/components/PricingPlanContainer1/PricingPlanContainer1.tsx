@@ -1,23 +1,23 @@
-import { FunctionComponent } from 'react';
-import './PricingPlanContainer1.css';
+import { FunctionComponent } from "react";
+import styles from "./PricingPlanContainer1.module.css";
 
 const PricingPlanContainer1: FunctionComponent = () => {
   return (
-    <div className="pricing-plan-container1-comp-frameParent">
-      <div className="pricing-plan-container1-comp-groupWrapper">
-        <div className="pricing-plan-container1-comp-moneyWithWingsWrapper">
-          <div className="pricing-plan-container1-comp-moneyWithWings">
+    <div className={styles.frameParent}>
+      <div className={styles.groupWrapper}>
+        <div className={styles.moneyWithWingsWrapper}>
+          <div className={styles.moneyWithWings}>
             <img
-              className="pricing-plan-container1-comp-f4b8MoneywithwingsMod0101Icon"
+              className={styles.f4b8MoneywithwingsMod0101Icon}
               alt=""
-              src="images/1f4b8-moneywithwings-mod-01-01-1@2x.png"
+              src="/1f4b8-moneywithwings-mod-01-01-1@2x.png"
             />
           </div>
         </div>
       </div>
-      <div className="pricing-plan-container1-comp-pricingPlanParent">
-        <b className="pricing-plan-container1-comp-pricingPlan">Pricing plan</b>
-        <div className="pricing-plan-container1-comp-sedDoEiusmod">
+      <div className={styles.pricingPlanParent}>
+        <b className={styles.pricingPlan}>Pricing plan</b>
+        <div className={styles.sedDoEiusmod}>
           Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
           ut aliquip.

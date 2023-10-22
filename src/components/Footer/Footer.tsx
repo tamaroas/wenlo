@@ -1,5 +1,5 @@
-import { FunctionComponent } from 'react';
-import './Footer.css';
+import { FunctionComponent } from "react";
+import styles from "./Footer.module.css";
 
 type FooterType = {
   paymentCardExpirationDate?: string;
@@ -11,10 +11,10 @@ const Footer: FunctionComponent<FooterType> = ({
   cardExpirationDate,
 }) => {
   return (
-    <div className="footer-comp-expirationDateParent">
-      <div className="footer-comp-expirationDate">{paymentCardExpirationDate}</div>
-      <div className="footer-comp-wrapper">
-        <div className="footer-comp-expirationDate">{cardExpirationDate}</div>
+    <div className={styles.expirationDateParent}>
+      <div className={styles.expirationDate}>{paymentCardExpirationDate}</div>
+      <div className={styles.wrapper}>
+        <div className={styles.expirationDate}>{cardExpirationDate}</div>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import "./PricingDefault.css";
-import PricingPlanContainer1 from "../../components/PricingPlanContainer1/PricingPlanContainer1";
 import ContainerForm from "../../components/ContainerForm/ContainerForm";
+import PricingPlanContainer1 from "../../components/PricingPlanContainer1/PricingPlanContainer1";
+import styles from "./PricingDefault.module.css";
 
 const PricingDefault: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -17,23 +17,23 @@ const PricingDefault: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="pricing-default-pricingDefault">
-      <img className="pricing-default-pricingDefaultChild" alt="" src="images/group-1.svg" />
-      <img className="pricing-default-pricingDefaultItem" alt="" src="images/group-1.svg" />
-      <img className="pricing-default-image1Icon" alt="" src="images/image-12@2x.png" />
+    <div className={styles.pricingDefault}>
+      <img className={styles.pricingDefaultChild} alt="" src="/group-1.svg" />
+      <img className={styles.pricingDefaultItem} alt="" src="/group-1.svg" />
+      <img className={styles.image1Icon} alt="" src="/image-12@2x.png" />
       <PricingPlanContainer1 />
-      <div className="pricing-default-frameParent">
-        <div className="pricing-default-frameGroup">
-          <div className="pricing-default-frameContainer">
-            <div className="pricing-default-monthlyParent">
-              <div className="pricing-default-monthly">Monthly</div>
+      <div className={styles.frameParent}>
+        <div className={styles.frameGroup}>
+          <div className={styles.frameContainer}>
+            <div className={styles.monthlyParent}>
+              <div className={styles.monthly}>Monthly</div>
               <input
-                className="pricing-default-frameChild"
+                className={styles.frameChild}
                 disabled={true}
                 type="checkbox"
                 onClick={onFrameCheckboxClick}
               />
-              <div className="pricing-default-annually">Annually</div>
+              <div className={styles.annually}>Annually</div>
             </div>
             <ContainerForm
               pricingText="$199/Mo"
@@ -46,29 +46,29 @@ const PricingDefault: FunctionComponent = () => {
               yesFlex="1"
             />
           </div>
-          <a className="pricing-default-cantFindYourContainer" href="#">
+          <a className={styles.cantFindYourContainer} href="#">
             <span
-              className="pricing-default-cantFindYour"
+              className={styles.cantFindYour}
             >{`Can’t find your best plan? 😵‍💫 `}</span>
-            <span className="pricing-default-customYourPlan">
+            <span className={styles.customYourPlan}>
               Custom your plan instead
             </span>
           </a>
         </div>
-        <div className="pricing-default-frameDiv">
-          <button className="pricing-default-backParent" onClick={onFrameButton4Click}>
-            <div className="pricing-default-back">Back</div>
-            <div className="pricing-default-rectangleParent">
-              <div className="pricing-default-groupChild" />
-              <div className="pricing-default-groupItem" />
+        <div className={styles.frameDiv}>
+          <button className={styles.backParent} onClick={onFrameButton4Click}>
+            <div className={styles.back}>Back</div>
+            <div className={styles.rectangleParent}>
+              <div className={styles.groupChild} />
+              <div className={styles.groupItem} />
             </div>
-            <div className="pricing-default-rectangleGroup">
-              <div className="pricing-default-groupChild" />
-              <div className="pricing-default-groupItem" />
+            <div className={styles.rectangleGroup}>
+              <div className={styles.groupChild} />
+              <div className={styles.groupItem} />
             </div>
           </button>
-          <div className="pricing-default-nextWrapper">
-            <div className="pricing-default-next">Next</div>
+          <div className={styles.nextWrapper}>
+            <div className={styles.next}>Next</div>
           </div>
         </div>
       </div>
