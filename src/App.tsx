@@ -142,9 +142,9 @@ function App() {
       />
       <Route path="/pricing-selected1" element={<PricingSelected1 />} />
       <Route path="/pricing-default" element={<PricingDefault />} />
-      <Route path="/login2" element={<Login />} />
-      <Route path="/login" element={<LoginRegister />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<LoginRegister />} />
+      <Route path="/register1" element={<Register />} />
       <Route path="/forget-password" element={<ForgetPassword />} />
       <Route path="/set-password" element={<SetPassword />} />
       <Route path="/activate-account" element={<ActivateAccount />} />
