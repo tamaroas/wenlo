@@ -153,7 +153,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Question />} />
+      <Route path="/" element={<Login />} />
       <Route path="/frame-1000005585" element={<Frame />} />
       <Route path="/frame-1000005584" element={<Frame1 />} />
       <Route

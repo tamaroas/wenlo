@@ -1,3 +1,12 @@
+@media (max-width: 768px) {
+  .login-login {
+    flex-direction: column; /* Pour les afficher en colonne */
+    /* Ajoutez d'autres styles pour une meilleure expérience mobile */
+  }
+  .login-frameParent {
+    gap: 20px; /* Ajustez l'espacement pour les écrans plus petits */
+  }
+}
 .login-loginChild {
   position: absolute;
   top: 596px;
@@ -88,11 +97,6 @@
   color: inherit;
 }
 .login-frameContainer,
-.login-frameParent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .login-frameContainer {
   width: 214px;
   height: 87px;
@@ -105,7 +109,7 @@
 .login-frameParent {
   position: absolute;
   top: 194px;
-  left: 768px;
+  left: 900px;
   height: 532px;
   justify-content: center;
   gap: 40px;
@@ -165,6 +169,9 @@
   font-size: 32px;
 }
 .login-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   background-color: #fff;
   width: 100%;
