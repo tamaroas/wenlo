@@ -1,42 +1,30 @@
-import { FunctionComponent } from 'react';
-import PricingPlanContainer1 from '../../components/PricingPlanContainer1/PricingPlanContainer1';
-import StarterPlanContainer from '../../components/StarterPlanContainer/StarterPlanContainer';
-import './PricingDefaultV2.css';
-import PremiumPlanContainer from '../../components/PremiumPlanContainer/PremiumPlanContainer';
+import { FunctionComponent } from "react";
+import PricingPlanContainer1 from "../../components/PricingPlanContainer1/PricingPlanContainer1"; 
+import StarterPlanContainer from "../../components/StarterPlanContainer/StarterPlanContainer";
+import PremiumPlanContainer from "../../components/PremiumPlanContainer/PremiumPlanContainer";
+import styles from "./PricingDefaultV2.module.css";
 
 const PricingDefaultV2: FunctionComponent = () => {
   return (
-    <div className="pricing-default-v2-pricingDefaultV2">
-      <img
-        className="pricing-default-v2-pricingDefaultV2Child"
-        alt=""
-        src="images/group-1.svg"
-      />
-      <img
-        className="pricing-default-v2-pricingDefaultV2Item"
-        alt=""
-        src="images/group-1.svg"
-      />
-      <img
-        className="pricing-default-v2-image1Icon"
-        alt=""
-        src="images/image-12@2x.png"
-      />
+    <div className={styles.pricingDefaultV2}>
+      <img className={styles.pricingDefaultV2Child} alt="" src="/group-1.svg" />
+      <img className={styles.pricingDefaultV2Item} alt="" src="/group-1.svg" />
+      <img className={styles.image1Icon} alt="" src="/image-12@2x.png" />
       <PricingPlanContainer1 />
-      <div className="pricing-default-v2-frameParent">
-        <div className="pricing-default-v2-monthlyParent">
-          <div className="pricing-default-v2-monthly">Monthly</div>
-          <div className="pricing-default-v2-ellipseParent">
-            <div className="pricing-default-v2-frameChild" />
-            <div className="pricing-default-v2-frameItem" />
+      <div className={styles.frameParent}>
+        <div className={styles.monthlyParent}>
+          <div className={styles.monthly}>Monthly</div>
+          <div className={styles.ellipseParent}>
+            <div className={styles.frameChild} />
+            <div className={styles.frameItem} />
           </div>
-          <div className="pricing-default-v2-annually">Annually</div>
-          <div className="pricing-default-v2-save15Wrapper">
-            <div className="pricing-default-v2-save15">Save 15%</div>
+          <div className={styles.annually}>Annually</div>
+          <div className={styles.save15Wrapper}>
+            <div className={styles.save15}>Save 15%</div>
           </div>
         </div>
-        <div className="pricing-default-v2-frameGroup">
-          <div className="pricing-default-v2-frameContainer">
+        <div className={styles.frameGroup}>
+          <div className={styles.frameContainer}>
             <StarterPlanContainer
               planName="Starter Plan"
               subscriptionInfo="Free"
@@ -48,7 +36,7 @@ const PricingDefaultV2: FunctionComponent = () => {
               planIconUrl="/1f929-starstruck-1024px-01-06-1@2x.png"
             />
           </div>
-          <div className="pricing-default-v2-frameContainer">
+          <div className={styles.frameContainer}>
             <PremiumPlanContainer
               planName="Premium Plan"
               planIconUrl="/image1@2x.png"
@@ -62,26 +50,26 @@ const PricingDefaultV2: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <div className="pricing-default-v2-cantFindYourContainer">
-        <span className="pricing-default-v2-cantFindYour">{`Can’t find your best plan? 😵‍💫 `}</span>
-        <span className="pricing-default-v2-customYourPlan">
-          Custom your plan instead
-        </span>
+      <div className={styles.cantFindYourContainer}>
+        <span
+          className={styles.cantFindYour}
+        >{`Can’t find your best plan? 😵‍💫 `}</span>
+        <span className={styles.customYourPlan}>Custom your plan instead</span>
       </div>
-      <div className="pricing-default-v2-frameParent1">
-        <div className="pricing-default-v2-backParent">
-          <div className="pricing-default-v2-back">Back</div>
-          <div className="pricing-default-v2-rectangleParent">
-            <div className="pricing-default-v2-groupChild" />
-            <div className="pricing-default-v2-groupItem" />
+      <div className={styles.frameParent1}>
+        <div className={styles.backParent}>
+          <div className={styles.back}>Back</div>
+          <div className={styles.rectangleParent}>
+            <div className={styles.groupChild} />
+            <div className={styles.groupItem} />
           </div>
-          <div className="pricing-default-v2-rectangleGroup">
-            <div className="pricing-default-v2-groupChild" />
-            <div className="pricing-default-v2-groupItem" />
+          <div className={styles.rectangleGroup}>
+            <div className={styles.groupChild} />
+            <div className={styles.groupItem} />
           </div>
         </div>
-        <div className="pricing-default-v2-nextWrapper">
-          <div className="pricing-default-v2-next">Next</div>
+        <div className={styles.nextWrapper}>
+          <div className={styles.next}>Next</div>
         </div>
       </div>
     </div>

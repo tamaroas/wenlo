@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import "./StarterPlanContainer.css";
+import styles from "./StarterPlanContainer.module.css";
 
 type StarterPlanContainerType = {
   planName?: string;
@@ -13,91 +13,91 @@ const StarterPlanContainer: FunctionComponent<StarterPlanContainerType> = ({
   planIconUrl,
 }) => {
   return (
-    <div className="starter-plan-container-comp-frameParent">
-      <div className="starter-plan-container-comp-ellipseParent">
-        <div className="starter-plan-container-comp-frameChild" />
-        <div className="starter-plan-container-comp-frameWrapper">
-          <div className="starter-plan-container-comp-starterPlanParent">
-            <div className="starter-plan-container-comp-starterPlan">{planName}</div>
-            <div className="starter-plan-container-comp-frameItem" />
+    <div className={styles.frameParent}>
+      <div className={styles.ellipseParent}>
+        <div className={styles.frameChild} />
+        <div className={styles.frameWrapper}>
+          <div className={styles.starterPlanParent}>
+            <div className={styles.starterPlan}>{planName}</div>
+            <div className={styles.frameItem} />
           </div>
         </div>
-        <div className="starter-plan-container-comp-frameGroup">
-          <div className="starter-plan-container-comp-topUpFeeParent">
-            <div className="starter-plan-container-comp-topUpFee">Top-up fee</div>
-            <div className="starter-plan-container-comp-div">9%</div>
+        <div className={styles.frameGroup}>
+          <div className={styles.topUpFeeParent}>
+            <div className={styles.topUpFee}>Top-up fee</div>
+            <div className={styles.div}>9%</div>
           </div>
-          <div className="starter-plan-container-comp-topUpFeeParent">
-            <div className="starter-plan-container-comp-topUpFee">Maximum ad accounts per month</div>
-            <div className="starter-plan-container-comp-div">3</div>
+          <div className={styles.topUpFeeParent}>
+            <div className={styles.topUpFee}>Maximum ad accounts per month</div>
+            <div className={styles.div}>3</div>
           </div>
-          <div className="starter-plan-container-comp-topUpFeeParent">
-            <div className="starter-plan-container-comp-topUpFee">
+          <div className={styles.topUpFeeParent}>
+            <div className={styles.topUpFee}>
               Restricted ad account review service
             </div>
             <img
-              className="starter-plan-container-comp-checkCircleIcon"
+              className={styles.checkCircleIcon}
               alt=""
-              src="images/check-circle.svg"
+              src="/check-circle.svg"
             />
           </div>
-          <div className="starter-plan-container-comp-topUpFeeParent">
-            <div className="starter-plan-container-comp-priorityInRequest">
+          <div className={styles.topUpFeeParent}>
+            <div className={styles.priorityInRequest}>
               Priority in request processing (Top-up, ad account, balance
               transfer ...)
             </div>
-            <div className="starter-plan-container-comp-div">Low</div>
+            <div className={styles.div}>Low</div>
           </div>
-          <div className="starter-plan-container-comp-topUpFeeParent">
-            <div className="starter-plan-container-comp-priorityInRequest">
+          <div className={styles.topUpFeeParent}>
+            <div className={styles.priorityInRequest}>
               Management of all advertising platforms (Meta, Google, TikTok,
               Bing, Snapchat, Twitter…)
             </div>
             <img
-              className="starter-plan-container-comp-checkCircleIcon"
+              className={styles.checkCircleIcon}
               alt=""
-              src="images/check-circle.svg"
+              src="/check-circle.svg"
             />
           </div>
-          <div className="starter-plan-container-comp-topUpFeeParent">
+          <div className={styles.topUpFeeParent}>
             <div
-              className="starter-plan-container-comp-topUpFee"
+              className={styles.topUpFee}
             >{`Live chat & Customer service`}</div>
             <img
-              className="starter-plan-container-comp-checkCircleIcon"
+              className={styles.checkCircleIcon}
               alt=""
-              src="images/check-circle.svg"
+              src="/check-circle.svg"
             />
           </div>
-          <div className="starter-plan-container-comp-topUpFeeParent">
-            <div className="starter-plan-container-comp-topUpFee">
+          <div className={styles.topUpFeeParent}>
+            <div className={styles.topUpFee}>
               Personalized assistance and ongoing management
             </div>
-            <img className="starter-plan-container-comp-checkCircleIcon" alt="" src="images/cancel.svg" />
+            <img className={styles.checkCircleIcon} alt="" src="/cancel.svg" />
           </div>
-          <div className="starter-plan-container-comp-topUpFeeParent">
-            <div className="starter-plan-container-comp-topUpFee">
+          <div className={styles.topUpFeeParent}>
+            <div className={styles.topUpFee}>
               Full customization of the ad account name (no "wenlo" suffix)
             </div>
-            <img className="starter-plan-container-comp-checkCircleIcon" alt="" src="images/cancel.svg" />
+            <img className={styles.checkCircleIcon} alt="" src="/cancel.svg" />
           </div>
-          <div className="starter-plan-container-comp-topUpFeeParent">
-            <div className="starter-plan-container-comp-topUpFee">
+          <div className={styles.topUpFeeParent}>
+            <div className={styles.topUpFee}>
               Multi-user (Add your team members)
             </div>
-            <img className="starter-plan-container-comp-checkCircleIcon" alt="" src="images/cancel.svg" />
+            <img className={styles.checkCircleIcon} alt="" src="/cancel.svg" />
           </div>
-          <div className="starter-plan-container-comp-topUpFeeParent">
-            <div className="starter-plan-container-comp-topUpFee">Total monthly top-up limit</div>
-            <div className="starter-plan-container-comp-k">$10k</div>
+          <div className={styles.topUpFeeParent}>
+            <div className={styles.topUpFee}>Total monthly top-up limit</div>
+            <div className={styles.k}>$10k</div>
           </div>
         </div>
       </div>
-      <div className="starter-plan-container-comp-freeWrapper">
-        <div className="starter-plan-container-comp-free">{subscriptionInfo}</div>
+      <div className={styles.freeWrapper}>
+        <div className={styles.free}>{subscriptionInfo}</div>
       </div>
-      <div className="starter-plan-container-comp-partyingFace">
-        <img className="starter-plan-container-comp-imageIcon" alt="" src={planIconUrl} />
+      <div className={styles.partyingFace}>
+        <img className={styles.imageIcon} alt="" src={planIconUrl} />
       </div>
     </div>
   );

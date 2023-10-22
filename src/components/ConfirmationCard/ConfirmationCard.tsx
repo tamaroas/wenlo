@@ -1,5 +1,5 @@
-import { FunctionComponent } from 'react';
-import './ConfirmationCard.css';
+import { FunctionComponent } from "react";
+import styles from "./ConfirmationCard.module.css";
 
 type ConfirmationCardType = {
   activationCodeInput?: string;
@@ -11,15 +11,15 @@ const ConfirmationCard: FunctionComponent<ConfirmationCardType> = ({
   confirmationCodeInput,
 }) => {
   return (
-    <div className="confirmation-card-comp-frameWrapper">
-      <div className="confirmation-card-comp-frameContainer">
-        <div className="confirmation-card-comp-confirmationCodeParent">
-          <div className="confirmation-card-comp-confirmationCode">
+    <div className={styles.frameWrapper}>
+      <div className={styles.frameContainer}>
+        <div className={styles.confirmationCodeParent}>
+          <div className={styles.confirmationCode}>
             <span>{activationCodeInput}</span>
-            <span className="confirmation-card-comp-span">*</span>
+            <span className={styles.span}>*</span>
           </div>
           <input
-            className="confirmation-card-comp-frameChild"
+            className={styles.frameChild}
             placeholder={confirmationCodeInput}
             type="number"
           />

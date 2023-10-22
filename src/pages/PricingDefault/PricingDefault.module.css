@@ -1,0 +1,190 @@
+.pricingDefaultChild {
+  position: absolute;
+  top: 1692px;
+  left: 779px;
+  width: 661px;
+  height: 388px;
+  opacity: 0.6;
+}
+.pricingDefaultItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 565px;
+  height: 428px;
+  opacity: 0.7;
+}
+.image1Icon {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 107.8px;
+  height: 32px;
+  object-fit: cover;
+}
+.monthly {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 600;
+}
+.frameChild {
+  border-radius: 24px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2px;
+  cursor: pointer;
+}
+.annually {
+  position: relative;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  font-weight: 500;
+  color: #939393;
+}
+.frameContainer,
+.monthlyParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.frameContainer {
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+.cantFindYour {
+  font-weight: 500;
+}
+.customYourPlan {
+  text-decoration: underline;
+  font-weight: 600;
+  color: #26283f;
+}
+.cantFindYourContainer {
+  text-decoration: none;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: -0.41px;
+  line-height: 100%;
+  text-align: center;
+  color: #828282;
+}
+.frameGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+}
+.back {
+  position: relative;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: Inter;
+  color: #26283f;
+  text-align: left;
+  z-index: 0;
+}
+.groupChild,
+.groupItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 32px;
+  background-color: #3949a1;
+  filter: blur(24px);
+  width: 26.4px;
+  height: 28px;
+}
+.groupItem {
+  left: 1.6px;
+  background-color: #39a191;
+}
+.rectangleGroup,
+.rectangleParent {
+  position: absolute;
+  margin: 0 !important;
+  top: -6px;
+  left: 8px;
+  width: 28px;
+  height: 28px;
+  opacity: 0.07;
+  z-index: 1;
+}
+.rectangleGroup {
+  top: 29px;
+  left: 107px;
+  z-index: 2;
+}
+.backParent {
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  padding: 17px 48px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 8px;
+}
+.next {
+  position: relative;
+  line-height: 100%;
+  font-weight: 500;
+}
+.nextWrapper {
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  border: 1px solid #cfcfcf;
+  box-sizing: border-box;
+  width: 129px;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: row;
+  justify-content: center;
+  padding: 17px 40px;
+}
+.frameDiv,
+.frameParent,
+.nextWrapper {
+  display: flex;
+  align-items: center;
+}
+.frameDiv {
+  width: 1376px;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #828282;
+}
+.frameParent {
+  position: absolute;
+  top: 416px;
+  left: 32px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 80px;
+}
+.pricingDefault {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 2080px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 20px;
+  color: #424242;
+  font-family: Inter;
+}

@@ -1,8 +1,8 @@
 import { FunctionComponent, useCallback } from "react";
+import Container from "../../components/Container/Container";
 import SpendingIssuesFormContainer from "../../components/SpendingIssuesFormContainer/SpendingIssuesFormContainer";
 import { useNavigate } from "react-router-dom";
-import "./Question2.css";
-import Container from "../../components/Container/Container";
+import styles from "./Question2.module.css";
 
 const Question2: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -16,47 +16,47 @@ const Question2: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="question2-question2">
-      <img className="question2-question2Child" alt="" src="images/group-1.svg" />
-      <div className="question2-question2Item" />
-      <div className="question2-ellipseParent">
-        <div className="question2-frameChild" />
-        <div className="question2-frameItem" />
-        <div className="question2-frameItem" />
-        <div className="question2-frameItem" />
+    <div className={styles.question2}>
+      <img className={styles.question2Child} alt="" src="/group-1.svg" />
+      <div className={styles.question2Item} />
+      <div className={styles.ellipseParent}>
+        <div className={styles.frameChild} />
+        <div className={styles.frameItem} />
+        <div className={styles.frameItem} />
+        <div className={styles.frameItem} />
       </div>
       <Container />
-      <div className="question2-image1Parent">
-        <img className="question2-image1Icon" alt="" src="images/image-1@2x.png" />
-        <div className="question2-welcomeToWenlo">Welcome to Wenlo 👋</div>
+      <div className={styles.image1Parent}>
+        <img className={styles.image1Icon} alt="" src="/image-1@2x.png" />
+        <div className={styles.welcomeToWenlo}>Welcome to Wenlo 👋</div>
       </div>
-      <div className="question2-vectorParent">
-        <img className="question2-vectorIcon" alt="" src="images/vector-4141.svg" />
-        <img className="question2-frameChild1" alt="" src="images/vector-4141.svg" />
-        <div className="question2-ellipseGroup">
-          <div className="question2-frameChild2" />
-          <div className="question2-welcomeToWenlo">Wenlo</div>
+      <div className={styles.vectorParent}>
+        <img className={styles.vectorIcon} alt="" src="/vector-4141.svg" />
+        <img className={styles.frameChild1} alt="" src="/vector-4141.svg" />
+        <div className={styles.ellipseGroup}>
+          <div className={styles.frameChild2} />
+          <div className={styles.welcomeToWenlo}>Wenlo</div>
         </div>
-        <div className="question2-ellipseContainer">
-          <div className="question2-frameChild2" />
-          <div className="question2-welcomeToWenlo">Business</div>
+        <div className={styles.ellipseContainer}>
+          <div className={styles.frameChild2} />
+          <div className={styles.welcomeToWenlo}>Business</div>
         </div>
-        <div className="question2-frameDiv">
-          <div className="question2-frameChild4" />
-          <div className="question2-welcomeToWenlo">Advertising</div>
+        <div className={styles.frameDiv}>
+          <div className={styles.frameChild4} />
+          <div className={styles.welcomeToWenlo}>Advertising</div>
         </div>
       </div>
-      <div className="question2-frameParent">
+      <div className={styles.frameParent}>
         <SpendingIssuesFormContainer />
-        <div className="question2-frameGroup">
+        <div className={styles.frameGroup}>
           <div
-            className="question2-previousWrapper"
+            className={styles.previousWrapper}
             onClick={onFrameContainer53Click}
           >
-            <div className="question2-previous">Previous</div>
+            <div className={styles.previous}>Previous</div>
           </div>
-          <button className="question2-nextWrapper" onClick={onFrameButton1Click}>
-            <div className="question2-next">Next</div>
+          <button className={styles.nextWrapper} onClick={onFrameButton1Click}>
+            <div className={styles.next}>Next</div>
           </button>
         </div>
       </div>

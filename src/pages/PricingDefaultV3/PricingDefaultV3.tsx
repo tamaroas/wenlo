@@ -1,16 +1,12 @@
-import { FunctionComponent } from 'react';
-import './PricingDefaultV3.css';
-import PricingPlanContainer from '../../components/PricingPlanContainer/PricingPlanContainer';
-import PriceContainer from '../../components/PriceContainer/PriceContainer';
+import { FunctionComponent } from "react";
+import PricingPlanContainer from "../../components/PricingPlanContainer/PricingPlanContainer";
+import PriceContainer from "../../components/PriceContainer/PriceContainer";
+import styles from "./PricingDefaultV3.module.css";
 
 const PricingDefaultV3: FunctionComponent = () => {
   return (
-    <div className="pricing-default-v3-pricingDefaultV3">
-      <img
-        className="pricing-default-v3-pricingDefaultV3Child"
-        alt=""
-        src="images/group-1.svg"
-      />
+    <div className={styles.pricingDefaultV3}>
+      <img className={styles.pricingDefaultV3Child} alt="" src="/group-1.svg" />
       <PricingPlanContainer />
       <PriceContainer
         price="$8.99"
@@ -20,20 +16,20 @@ const PricingDefaultV3: FunctionComponent = () => {
         frameDivBorder="1px solid #f2f2f2"
         frameDivBorder1="1px solid #b8b8b8"
       />
-      <div className="pricing-default-v3-frameParent">
-        <div className="pricing-default-v3-backParent">
-          <div className="pricing-default-v3-back">Back</div>
-          <div className="pricing-default-v3-rectangleParent">
-            <div className="pricing-default-v3-groupChild" />
-            <div className="pricing-default-v3-groupItem" />
+      <div className={styles.frameParent}>
+        <div className={styles.backParent}>
+          <div className={styles.back}>Back</div>
+          <div className={styles.rectangleParent}>
+            <div className={styles.groupChild} />
+            <div className={styles.groupItem} />
           </div>
-          <div className="pricing-default-v3-rectangleGroup">
-            <div className="pricing-default-v3-groupChild" />
-            <div className="pricing-default-v3-groupItem" />
+          <div className={styles.rectangleGroup}>
+            <div className={styles.groupChild} />
+            <div className={styles.groupItem} />
           </div>
         </div>
-        <div className="pricing-default-v3-nextWrapper">
-          <div className="pricing-default-v3-next">Next</div>
+        <div className={styles.nextWrapper}>
+          <div className={styles.next}>Next</div>
         </div>
       </div>
     </div>

@@ -1,16 +1,12 @@
-import { FunctionComponent } from 'react';
-import PricingPlanContainer from '../../components/PricingPlanContainer/PricingPlanContainer';
-import PriceContainer from '../../components/PriceContainer/PriceContainer';
-import './PricingSelected.css';
+import { FunctionComponent } from "react";
+import PricingPlanContainer from "../../components/PricingPlanContainer/PricingPlanContainer";
+import PriceContainer from "../../components/PriceContainer/PriceContainer";
+import styles from "./PricingSelected.module.css";
 
 const PricingSelected: FunctionComponent = () => {
   return (
-    <div className="pricing-selected-pricingSelected">
-      <img
-        className="pricing-selected-pricingSelectedChild"
-        alt=""
-        src="images/group-1.svg"
-      />
+    <div className={styles.pricingSelected}>
+      <img className={styles.pricingSelectedChild} alt="" src="/group-1.svg" />
       <PricingPlanContainer />
       <PriceContainer
         price="$6.99"
@@ -18,20 +14,20 @@ const PricingSelected: FunctionComponent = () => {
         itemPrice="$14.99"
         itemPriceText="$20.99"
       />
-      <div className="pricing-selected-frameParent">
-        <div className="pricing-selected-backParent">
-          <div className="pricing-selected-back">Back</div>
-          <div className="pricing-selected-rectangleParent">
-            <div className="pricing-selected-groupChild" />
-            <div className="pricing-selected-groupItem" />
+      <div className={styles.frameParent}>
+        <div className={styles.backParent}>
+          <div className={styles.back}>Back</div>
+          <div className={styles.rectangleParent}>
+            <div className={styles.groupChild} />
+            <div className={styles.groupItem} />
           </div>
-          <div className="pricing-selected-rectangleGroup">
-            <div className="pricing-selected-groupChild" />
-            <div className="pricing-selected-groupItem" />
+          <div className={styles.rectangleGroup}>
+            <div className={styles.groupChild} />
+            <div className={styles.groupItem} />
           </div>
         </div>
-        <div className="pricing-selected-nextWrapper">
-          <div className="pricing-selected-next">Next</div>
+        <div className={styles.nextWrapper}>
+          <div className={styles.next}>Next</div>
         </div>
       </div>
     </div>

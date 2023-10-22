@@ -1,5 +1,5 @@
 import { FunctionComponent, useMemo, type CSSProperties } from "react";
-import "./ContainerForm.css";
+import styles from "./ContainerForm.module.css";
 
 type ContainerFormType = {
   pricingText?: string;
@@ -50,315 +50,315 @@ const ContainerForm: FunctionComponent<ContainerFormType> = ({
   }, [yesWidth, yesFlex]);
 
   return (
-    <div className="container-form-comp-frameParent">
-      <div className="container-form-comp-frameGroup">
-        <div className="container-form-comp-frameContainer">
-          <div className="container-form-comp-frameDiv">
-            <div className="container-form-comp-frameWrapper">
-              <div className="container-form-comp-starterPlanParent">
-                <div className="container-form-comp-starterPlan">Starter Plan</div>
-                <input className="container-form-comp-frameChild" type="radio" />
+    <div className={styles.frameParent}>
+      <div className={styles.frameGroup}>
+        <div className={styles.frameContainer}>
+          <div className={styles.frameDiv}>
+            <div className={styles.frameWrapper}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.starterPlan}>Starter Plan</div>
+                <input className={styles.frameChild} type="radio" />
               </div>
             </div>
-            <div className="container-form-comp-frameParent1">
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">Top-up fee</div>
-                <div className="container-form-comp-div">9%</div>
+            <div className={styles.frameParent1}>
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>Top-up fee</div>
+                <div className={styles.div}>9%</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Maximum ad accounts per month
                 </div>
-                <div className="container-form-comp-div">3</div>
+                <div className={styles.div}>3</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Restricted ad account review service
                 </div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-priorityInRequest">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.priorityInRequest}>
                   Priority in request processing (Top-up, ad account, balance
                   transfer ...)
                 </div>
-                <div className="container-form-comp-div">Low</div>
+                <div className={styles.div}>Low</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-priorityInRequest">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.priorityInRequest}>
                   Management of all advertising platforms (Meta, Google, TikTok,
                   Bing, Snapchat, Twitter…)
                 </div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
+              <div className={styles.topUpFeeParent}>
                 <div
-                  className="container-form-comp-topUpFee"
+                  className={styles.topUpFee}
                 >{`Live chat & Customer service`}</div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Personalized assistance and ongoing management
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Full customization of the ad account name (no "wenlo" suffix)
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Multi-user (Add your team members)
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Total monthly top-up limit
                 </div>
-                <div className="container-form-comp-k">$10k</div>
+                <div className={styles.k}>$10k</div>
               </div>
             </div>
           </div>
-          <button className="container-form-comp-freeWrapper">
-            <div className="container-form-comp-free">Free</div>
+          <button className={styles.freeWrapper}>
+            <div className={styles.free}>Free</div>
           </button>
         </div>
-        <div className="container-form-comp-frameContainer">
-          <div className="container-form-comp-frameParent3">
-            <div className="container-form-comp-frameWrapper1">
-              <div className="container-form-comp-starterPlanParent">
-                <div className="container-form-comp-starterPlan">Standart Plan</div>
-                <input className="container-form-comp-frameChild" type="radio" />
+        <div className={styles.frameContainer}>
+          <div className={styles.frameParent3}>
+            <div className={styles.frameWrapper1}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.starterPlan}>Standart Plan</div>
+                <input className={styles.frameChild} type="radio" />
               </div>
             </div>
-            <div className="container-form-comp-frameParent4">
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">Top-up fee</div>
-                <div className="container-form-comp-div">9%</div>
+            <div className={styles.frameParent4}>
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>Top-up fee</div>
+                <div className={styles.div}>9%</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Maximum ad accounts per month
                 </div>
-                <div className="container-form-comp-div">3</div>
+                <div className={styles.div}>3</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Restricted ad account review service
                 </div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-priorityInRequest">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.priorityInRequest}>
                   Priority in request processing (Top-up, ad account, balance
                   transfer ...)
                 </div>
-                <div className="container-form-comp-div">Low</div>
+                <div className={styles.div}>Low</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-priorityInRequest">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.priorityInRequest}>
                   Management of all advertising platforms (Meta, Google, TikTok,
                   Bing, Snapchat, Twitter…)
                 </div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
+              <div className={styles.topUpFeeParent}>
                 <div
-                  className="container-form-comp-topUpFee"
+                  className={styles.topUpFee}
                 >{`Live chat & Customer service`}</div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Personalized assistance and ongoing management
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Full customization of the ad account name (no "wenlo" suffix)
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Multi-user (Add your team members)
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Total monthly top-up limit
                 </div>
-                <div className="container-form-comp-k">$10k</div>
+                <div className={styles.k}>$10k</div>
               </div>
             </div>
           </div>
-          <button className="container-form-comp-freeWrapper">
-            <div className="container-form-comp-free">{pricingText}</div>
+          <button className={styles.freeWrapper}>
+            <div className={styles.free}>{pricingText}</div>
           </button>
         </div>
       </div>
-      <div className="container-form-comp-frameGroup">
-        <div className="container-form-comp-frameParent6" style={frameDiv3Style}>
-          <div className="container-form-comp-frameDiv">
-            <div className="container-form-comp-frameWrapper">
-              <div className="container-form-comp-starterPlanParent">
-                <div className="container-form-comp-starterPlan">Premium Plan</div>
+      <div className={styles.frameGroup}>
+        <div className={styles.frameParent6} style={frameDiv3Style}>
+          <div className={styles.frameDiv}>
+            <div className={styles.frameWrapper}>
+              <div className={styles.starterPlanParent}>
+                <div className={styles.starterPlan}>Premium Plan</div>
                 <input
-                  className="container-form-comp-frameInner"
+                  className={styles.frameInner}
                   type="radio"
                   style={ellipseInputStyle}
                 />
               </div>
             </div>
-            <div className="container-form-comp-frameParent1">
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">Top-up fee</div>
-                <div className="container-form-comp-div">9%</div>
+            <div className={styles.frameParent1}>
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>Top-up fee</div>
+                <div className={styles.div}>9%</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Maximum ad accounts per month
                 </div>
-                <div className="container-form-comp-div">3</div>
+                <div className={styles.div}>3</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Restricted ad account review service
                 </div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-priorityInRequest">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.priorityInRequest}>
                   Priority in request processing (Top-up, ad account, balance
                   transfer ...)
                 </div>
-                <div className="container-form-comp-div">Low</div>
+                <div className={styles.div}>Low</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-priorityInRequest">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.priorityInRequest}>
                   Management of all advertising platforms (Meta, Google, TikTok,
                   Bing, Snapchat, Twitter…)
                 </div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
+              <div className={styles.topUpFeeParent}>
                 <div
-                  className="container-form-comp-topUpFee"
+                  className={styles.topUpFee}
                 >{`Live chat & Customer service`}</div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Personalized assistance and ongoing management
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Full customization of the ad account name (no "wenlo" suffix)
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Multi-user (Add your team members)
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Total monthly top-up limit
                 </div>
-                <div className="container-form-comp-k">$10k</div>
+                <div className={styles.k}>$10k</div>
               </div>
             </div>
           </div>
-          <button className="container-form-comp-freeWrapper">
-            <div className="container-form-comp-free">{pricingDescription}</div>
+          <button className={styles.freeWrapper}>
+            <div className={styles.free}>{pricingDescription}</div>
           </button>
         </div>
-        <div className="container-form-comp-frameContainer">
-          <div className="container-form-comp-frameParent3">
-            <div className="container-form-comp-frameWrapper3" style={frameDiv4Style}>
+        <div className={styles.frameContainer}>
+          <div className={styles.frameParent3}>
+            <div className={styles.frameWrapper3} style={frameDiv4Style}>
               <div
-                className="container-form-comp-enterpriseLevelPlanParent"
+                className={styles.enterpriseLevelPlanParent}
                 style={frameDiv5Style}
               >
-                <div className="container-form-comp-starterPlan">Enterprise-level Plan</div>
-                <input className="container-form-comp-frameChild" type="radio" />
+                <div className={styles.starterPlan}>Enterprise-level Plan</div>
+                <input className={styles.frameChild} type="radio" />
               </div>
             </div>
-            <div className="container-form-comp-frameParent4">
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">Top-up fee</div>
-                <div className="container-form-comp-div">9%</div>
+            <div className={styles.frameParent4}>
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>Top-up fee</div>
+                <div className={styles.div}>9%</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Maximum ad accounts per month
                 </div>
-                <div className="container-form-comp-div">3</div>
+                <div className={styles.div}>3</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Restricted ad account review service
                 </div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-priorityInRequest">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.priorityInRequest}>
                   Priority in request processing (Top-up, ad account, balance
                   transfer ...)
                 </div>
-                <div className="container-form-comp-div">Low</div>
+                <div className={styles.div}>Low</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-priorityInRequest">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.priorityInRequest}>
                   Management of all advertising platforms (Meta, Google, TikTok,
                   Bing, Snapchat, Twitter…)
                 </div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
+              <div className={styles.topUpFeeParent}>
                 <div
-                  className="container-form-comp-topUpFee"
+                  className={styles.topUpFee}
                 >{`Live chat & Customer service`}</div>
-                <div className="container-form-comp-div">Yes</div>
+                <div className={styles.div}>Yes</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Personalized assistance and ongoing management
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Full customization of the ad account name (no "wenlo" suffix)
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Multi-user (Add your team members)
                 </div>
-                <div className="container-form-comp-div">No</div>
+                <div className={styles.div}>No</div>
               </div>
-              <div className="container-form-comp-topUpFeeParent">
-                <div className="container-form-comp-topUpFee">
+              <div className={styles.topUpFeeParent}>
+                <div className={styles.topUpFee}>
                   Total monthly top-up limit
                 </div>
-                <div className="container-form-comp-k">$10k</div>
+                <div className={styles.k}>$10k</div>
               </div>
             </div>
           </div>
-          <button className="container-form-comp-freeWrapper">
-            <div className="container-form-comp-free">{pricingValue}</div>
+          <button className={styles.freeWrapper}>
+            <div className={styles.free}>{pricingValue}</div>
           </button>
         </div>
       </div>

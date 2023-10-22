@@ -1,5 +1,5 @@
 import { FunctionComponent, useMemo, type CSSProperties } from "react";
-import "./FormContainer1.css";
+import styles from "./FormContainer1.module.css";
 
 type FormContainer1Type = {
   questionText?: string;
@@ -34,18 +34,18 @@ const FormContainer1: FunctionComponent<FormContainer1Type> = ({
   }, [propWidth1, propFlex]);
 
   return (
-    <div className="form-container-1-comp-frameWrapper" style={frameDivStyle}>
-      <div className="form-container-1-comp-frameContainer">
+    <div className={styles.frameWrapper} style={frameDivStyle}>
+      <div className={styles.frameContainer}>
         <div
-          className="form-container-1-comp-howDidYouHearAboutWenloParent"
+          className={styles.howDidYouHearAboutWenloParent}
           style={frameDiv1Style}
         >
-          <div className="form-container-1-comp-howDidYouContainer">
+          <div className={styles.howDidYouContainer}>
             <span>{questionText}</span>
-            <span className="form-container-1-comp-span">*</span>
+            <span className={styles.span}>*</span>
           </div>
           <select
-            className="form-container-1-comp-frameChild"
+            className={styles.frameChild}
             required={isAnswered}
             form="comment2"
           />

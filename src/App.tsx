@@ -1,55 +1,28 @@
-// import React from 'react';
-// import './App.css';
-// import {
-//   createBrowserRouter,
-//   RouterProvider,
-// } from "react-router-dom";
-// import LoginRegister from './pages/Login-Register/LoginRegister';
-// const router = createBrowserRouter([
-//   {
-//     path: "/register",
-//     element: <LoginRegister />,
-//   },
-
-//   {
-//     path: "/login",
-//     element: <LoginRegister />,
-//   },
-// ]);
-
-
-// const App = () => {
-//   return (
-//     <RouterProvider router={router} />
-//   );
-// }
-
-// export default App;
-
-import { useEffect } from "react";
+import { useEffect } from 'react';
 import {
   Routes,
   Route,
   useNavigationType,
   useLocation,
-} from "react-router-dom";
-import Question from "./pages/Question/Question";
-import PricingDefaultV2 from "./pages/PricingDefaultV2/PricingDefaultV2";
-import PricingSwitchToAnnually from "./pages/PricingSwitchToAnnually/PricingSwitchToAnnually";
-import PricingSelected1 from "./pages/PricingSelected1/PricingSelected1";
-import Register from "./pages/Register/Register";
-import SetPassword from "./pages/SetPassword/SetPassword";
-import Question2 from "./pages/Question2/Question2";
-import Question1 from "./pages/Question1/Question1";
-import Frame from "./pages/Frame/Frame";
-import Frame1 from "./pages/Frame1/Frame1";
-import PricingPaymentMethod from "./pages/PricingPaymentMethod/PricingPaymentMethod";
-import PricingSelected from "./pages/PricingSelected/PricingSelected";
-import PricingDefaultV3 from "./pages/PricingDefaultV3/PricingDefaultV3";
-import PricingDefault from "./pages/PricingDefault/PricingDefault";
-import Login from "./pages/Login/Login";
-import ForgetPassword from "./pages/ForgetPassword/ForgetPassword";
-import ActivateAccount from "./pages/ActivateAccount/ActivateAccount";
+} from 'react-router-dom';
+import Question from './pages/Question/Question';
+import Frame from './pages/Frame/Frame';
+import Frame1 from './pages/Frame1/Frame1'; 
+import PricingPaymentMethod from './pages/PricingPaymentMethod/PricingPaymentMethod'; 
+import PricingSelected from './pages/PricingSelected/PricingSelected';
+import PricingDefaultV3 from './pages/PricingDefaultV3/PricingDefaultV3'; 
+import PricingDefaultV2 from './pages/PricingDefaultV2/PricingDefaultV2'; 
+import PricingSwitchToAnnually from './pages/PricingSwitchToAnnually/PricingSwitchToAnnually'; 
+import PricingSelected1 from './pages/PricingSelected1/PricingSelected1';
+import PricingDefault from './pages/PricingDefault/PricingDefault';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register'; 
+import ForgetPassword from './pages/ForgetPassword/ForgetPassword'; 
+import SetPassword from './pages/SetPassword/SetPassword';
+import ActivateAccount from './pages/ActivateAccount/ActivateAccount'; 
+import Question2 from './pages/Question2/Question2';
+import Question1 from './pages/Question1/Question1'; 
+import LoginRegister from './pages/LoginRegister';
 
 function App() {
   const action = useNavigationType();
@@ -57,83 +30,83 @@ function App() {
   const pathname = location.pathname;
 
   useEffect(() => {
-    if (action !== "POP") {
+    if (action !== 'POP') {
       window.scrollTo(0, 0);
     }
   }, [action, pathname]);
 
   useEffect(() => {
-    let title = "";
-    let metaDescription = "";
+    let title = '';
+    let metaDescription = '';
 
     switch (pathname) {
-      case "/":
-        title = "";
-        metaDescription = "";
+      case '/':
+        title = '';
+        metaDescription = '';
         break;
-      case "/frame-1000005585":
-        title = "";
-        metaDescription = "";
+      case '/frame-1000005585':
+        title = '';
+        metaDescription = '';
         break;
-      case "/frame-1000005584":
-        title = "";
-        metaDescription = "";
+      case '/frame-1000005584':
+        title = '';
+        metaDescription = '';
         break;
-      case "/pricing-payment-method":
-        title = "";
-        metaDescription = "";
+      case '/pricing-payment-method':
+        title = '';
+        metaDescription = '';
         break;
-      case "/pricing-selected":
-        title = "";
-        metaDescription = "";
+      case '/pricing-selected':
+        title = '';
+        metaDescription = '';
         break;
-      case "/pricing-default-v3":
-        title = "";
-        metaDescription = "";
+      case '/pricing-default-v3':
+        title = '';
+        metaDescription = '';
         break;
-      case "/pricing-default-v2":
-        title = "";
-        metaDescription = "";
+      case '/pricing-default-v2':
+        title = '';
+        metaDescription = '';
         break;
-      case "/pricing-switch-to-annually":
-        title = "";
-        metaDescription = "";
+      case '/pricing-switch-to-annually':
+        title = '';
+        metaDescription = '';
         break;
-      case "/pricing-selected1":
-        title = "";
-        metaDescription = "";
+      case '/pricing-selected1':
+        title = '';
+        metaDescription = '';
         break;
-      case "/pricing-default":
-        title = "";
-        metaDescription = "";
+      case '/pricing-default':
+        title = '';
+        metaDescription = '';
         break;
-      case "/login":
-        title = "";
-        metaDescription = "";
+      case '/login':
+        title = '';
+        metaDescription = '';
         break;
-      case "/register":
-        title = "";
-        metaDescription = "";
+      case '/register':
+        title = '';
+        metaDescription = '';
         break;
-      case "/forget-password":
-        title = "";
-        metaDescription = "";
+      case '/forget-password':
+        title = '';
+        metaDescription = '';
         break;
-      case "/set-password":
-        title = "";
-        metaDescription = "";
+      case '/set-password':
+        title = '';
+        metaDescription = '';
         break;
-      case "/activate-account":
-        title = "";
-        metaDescription = "";
+      case '/activate-account':
+        title = '';
+        metaDescription = '';
         break;
-      case "/question2":
-        title = "";
-        metaDescription = "";
+      case '/question2':
+        title = '';
+        metaDescription = '';
         break;
-      case "/question1":
-        title = "";
-        metaDescription = "";
+      case '/question1':
+        title = '';
+        metaDescription = '';
         break;
     }
 
@@ -169,7 +142,8 @@ function App() {
       />
       <Route path="/pricing-selected1" element={<PricingSelected1 />} />
       <Route path="/pricing-default" element={<PricingDefault />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/login2" element={<Login />} />
+      <Route path="/login" element={<LoginRegister />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forget-password" element={<ForgetPassword />} />
       <Route path="/set-password" element={<SetPassword />} />

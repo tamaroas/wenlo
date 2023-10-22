@@ -1,23 +1,23 @@
 import { FunctionComponent } from "react";
-import "./WenloContainer.css";
+import styles from "./WenloContainer.module.css";
 
 const WenloContainer: FunctionComponent = () => {
   return (
-    <div className="wenlo-container-comp-frameParent">
-      <div className="wenlo-container-comp-ellipseParent">
-        <div className="wenlo-container-comp-frameChild" />
-        <div className="wenlo-container-comp-wenlo">Wenlo</div>
+    <div className={styles.frameParent}>
+      <div className={styles.ellipseParent}>
+        <div className={styles.frameChild} />
+        <div className={styles.wenlo}>Wenlo</div>
       </div>
-      <div className="wenlo-container-comp-ellipseGroup">
-        <div className="wenlo-container-comp-frameItem" />
-        <div className="wenlo-container-comp-wenlo">Business</div>
+      <div className={styles.ellipseGroup}>
+        <div className={styles.frameItem} />
+        <div className={styles.wenlo}>Business</div>
       </div>
-      <div className="wenlo-container-comp-ellipseContainer">
-        <div className="wenlo-container-comp-frameItem" />
-        <div className="wenlo-container-comp-wenlo">Advertising</div>
+      <div className={styles.ellipseContainer}>
+        <div className={styles.frameItem} />
+        <div className={styles.wenlo}>Advertising</div>
       </div>
-      <img className="wenlo-container-comp-vectorIcon" alt="" src="images/vector-414.svg" />
-      <img className="wenlo-container-comp-frameChild1" alt="" src="images/vector-414.svg" />
+      <img className={styles.vectorIcon} alt="" src="/vector-414.svg" />
+      <img className={styles.frameChild1} alt="" src="/vector-414.svg" />
     </div>
   );
 };

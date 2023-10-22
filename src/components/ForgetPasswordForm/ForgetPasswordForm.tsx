@@ -1,12 +1,12 @@
-import { FunctionComponent } from 'react';
-import { Link } from 'react-router-dom';
-import './ForgetPasswordForm.css';
+import { FunctionComponent } from "react";
+import { Link } from "react-router-dom";
+import styles from "./ForgetPasswordForm.module.css";
 
 const ForgetPasswordForm: FunctionComponent = () => {
   return (
-    <div className="forget-password-form-comp-frameParent">
+    <div className={styles.frameParent}>
       <input
-        className="forget-password-form-comp-frameChild"
+        className={styles.frameChild}
         name="email"
         id="email"
         value="Enter your email"
@@ -15,7 +15,7 @@ const ForgetPasswordForm: FunctionComponent = () => {
         defaultValue="Enter your email"
       />
       <input
-        className="forget-password-form-comp-frameChild"
+        className={styles.frameChild}
         name="password"
         id="pasword"
         value="Enter your Password"
@@ -23,10 +23,7 @@ const ForgetPasswordForm: FunctionComponent = () => {
         type="password"
         defaultValue="Enter your Password"
       />
-      <Link
-        className="forget-password-form-comp-forgetPassword"
-        to="/forget-password"
-      >
+      <Link className={styles.forgetPassword} to="/forget-password">
         Forget Password
       </Link>
     </div>
