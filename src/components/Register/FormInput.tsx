@@ -10,6 +10,7 @@ export type FormInputProps = {
   label: string;
   size: 'medium' | 'large';
   advise?: string;
+  required?: boolean;
   onChange: (e: ChangeEvent) => void;
   value: string;
   name: string;
@@ -22,6 +23,7 @@ const FormInput = ({
   value,
   advise,
   placeholder,
+  required,
   size,
   name,
 }: FormInputProps) => {
@@ -38,7 +40,10 @@ const FormInput = ({
         (size === 'medium' ? styles.medium : styles.large)
       }
     >
-      <p className={styles.paragraphs + ' font-14 color-gray'}>{label}</p>
+      <p className={styles.paragraphs + ' font-14 color-gray'}>
+        {label}
+        {required && <span className="color-red">*</span>}
+      </p>
       <input
         className={styles.input}
         name={name}

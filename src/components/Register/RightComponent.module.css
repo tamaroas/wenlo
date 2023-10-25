@@ -3,6 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin: 96px 10px 35px;
+  min-width: 500px;
 }
 
 .container {
@@ -17,6 +18,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  .left {
+    position: relative;
+    align-self: flex-end;
+    top: -25px;
+    right: 10px;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -27,6 +34,7 @@
 
 @media only screen and (max-width: 550px) {
   .formContainer {
+    min-width: 65vw;
     grid-template-columns: repeat(1, 1fr);
   }
 }

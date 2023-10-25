@@ -6,10 +6,10 @@ import styles from './LoginRegister.module.css';
 const LoginRegister = () => {
   return (
     <div className={styles.container}>
-      <img className={styles.image1} src="/Group11.svg" />
+      <img className={styles.image1} src="images/Group11.svg" />
       <LeftComponent />
       <RightComponent />
-      <img className={styles.image2} src="/Group12.svg" />
+      <img className={styles.image2} src="images/Group12.svg" />
     </div>
   );
 };

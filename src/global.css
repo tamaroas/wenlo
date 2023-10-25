@@ -71,6 +71,10 @@ body {
   color: #3949a1;
 }
 
+.color-red {
+  color: red;
+}
+
 /* buttons */
 .btn-variant-1 {
   display: flex;
@@ -121,7 +125,6 @@ body {
 .text-justify {
   text-align: justify;
 }
-
 
 /* cursor */
 .pointer {
