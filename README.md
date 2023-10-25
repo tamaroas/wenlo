@@ -9,11 +9,18 @@
 - code [code](./src/pages/Login/Login.tsx)
 
 # How to use ImageService
-#### Before adding a photo
+### Before adding a photo
 
 Ensure that before adding any photo you run this command inside your terminal:
 
     $ npm run sync-assets
 
-#### After adding a photo
+### After adding a photo
 Stop firstly the running react server. Run the previous command and restart the react server
+
+
+# Reminder
+### To-do
+
+- Implement style of the question last form, that form whit lot of radios button.
+    - [goto file](./src/components/Register/RightComponent.module.css)

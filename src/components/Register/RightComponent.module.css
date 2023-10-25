@@ -1,3 +1,5 @@
+/* TODO: Implement style of the question last form, that form whit lot of radios button */
+
 .formContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
