@@ -6,7 +6,15 @@ import {
   useNavigationType,
 } from 'react-router-dom';
 import LoginRegister from './pages/LoginRegister';
-import x from './utils/ImageService';
+
+const LoginRegisterContainer = [
+  '/',
+  '/login',
+  '/register',
+  '/forget-password',
+  '/activate-account',
+  '/question',
+].map((el, i) => <Route path={el} key={i} element={<LoginRegister />} />);
 
 function App() {
   const action = useNavigationType();
@@ -36,13 +44,11 @@ function App() {
       }
     }
   }, [pathname]);
-console.log('x', x)
+
   return (
     <Routes>
-      <Route path="/" element={<LoginRegister />} />
-      <Route path="/login" element={<LoginRegister />} />
-      <Route path="/register" element={<LoginRegister />} />
-      <Route path="/forget-password" element={<LoginRegister />} />
+      {LoginRegisterContainer}
+      {/* Add your routes below, as easy as you had done before! */}
     </Routes>
   );
 }

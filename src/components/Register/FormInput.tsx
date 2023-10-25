@@ -4,17 +4,31 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 /**
  * @param type is the type of the input
  */
-export type FormInputProps = {
-  type: 'text' | 'password' | 'email';
-  placeholder: string;
-  label: string;
-  size: 'medium' | 'large';
-  advise?: string;
-  required?: boolean;
-  onChange: (e: ChangeEvent) => void;
-  value: string;
-  name: string;
-};
+export type FormInputProps =
+  | {
+      type: 'text' | 'password' | 'email';
+      placeholder?: string;
+      label: string;
+      size: 'medium' | 'large';
+      advise?: string;
+      required?: boolean;
+      onChange: (e: ChangeEvent) => void;
+      value: string;
+      name: string;
+      options?: string[];
+    }
+  | {
+      type: 'select';
+      placeholder?: string;
+      label: string;
+      size: 'medium' | 'large';
+      advise?: string;
+      required?: boolean;
+      onChange: (e: ChangeEvent) => void;
+      value: string;
+      name: string;
+      options: string[];
+    };
 
 const FormInput = ({
   type,
@@ -26,6 +40,7 @@ const FormInput = ({
   required,
   size,
   name,
+  options,
 }: FormInputProps) => {
   const [isShown, setIsShown] = useState(false);
 
@@ -44,14 +59,22 @@ const FormInput = ({
         {label}
         {required && <span className="color-red">*</span>}
       </p>
-      <input
-        className={styles.input}
-        name={name}
-        type={type === 'password' && isShown ? 'text' : type}
-        placeholder={placeholder}
-        onChange={onChange}
-        value={value}
-      />
+      {type === 'select' ? (
+        <select className='select'>
+          {options.map((el, i) => {
+            return <option key={i}>el</option>;
+          })}
+        </select>
+      ) : (
+        <input
+          className={styles.input}
+          name={name}
+          type={type === 'password' && isShown ? 'text' : type}
+          placeholder={placeholder}
+          onChange={onChange}
+          value={value}
+        />
+      )}
       {advise && (
         <p className={styles.paragraphs + ' font-12 color-gray'}>{advise}</p>
       )}
