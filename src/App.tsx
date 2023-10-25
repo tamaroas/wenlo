@@ -6,7 +6,7 @@ import {
   useNavigationType,
 } from 'react-router-dom';
 import LoginRegister from './pages/LoginRegister';
-import imageService from './utils/ImageService';
+import x from './utils/ImageService';
 
 function App() {
   const action = useNavigationType();
@@ -36,8 +36,7 @@ function App() {
       }
     }
   }, [pathname]);
-
-  console.log('imageService', imageService);
+console.log('x', x)
   return (
     <Routes>
       <Route path="/" element={<LoginRegister />} />

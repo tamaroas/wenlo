@@ -1,11 +1,17 @@
-const fs = require('fs');
+import imageList from './imagesList.json';
+
 class ImageService {
-  images: string[] = [];
+  images: {
+    [key: string]: string;
+  } = {};
   constructor() {
-    const files = fs.readdirSync('../../public/images');
-    console.log(files);
+    imageList.forEach(el => {
+      this.images[el.substring(0,el.indexOf('.'))] = el;
+    });
   }
 }
 
-const imageService = new ImageService();
+const imageService = new ImageService()
+console.log('one', imageService)
+
 export default imageService;
