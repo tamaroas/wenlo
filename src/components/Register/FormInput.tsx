@@ -60,9 +60,9 @@ const FormInput = ({
         {required && <span className="color-red">*</span>}
       </p>
       {type === 'select' ? (
-        <select className='select'>
+        <select className={styles.select}>
           {options.map((el, i) => {
-            return <option key={i}>el</option>;
+            return <option key={i}>{el}</option>;
           })}
         </select>
       ) : (

@@ -11,13 +11,8 @@ import {
   Stepper,
   stepConnectorClasses,
 } from '@mui/material';
-import { FaCheck } from 'react-icons/fa';
 
-const steps = [
-  'Select campaign settings',
-  'Create an ad group',
-  'Create an ad',
-];
+const steps = ['Wenlo', 'Business', 'Advertising'];
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -53,15 +48,31 @@ const QontoStepIconRoot = styled('div')<{ ownerState: { active?: boolean } }>(
       color: '#784af4',
     }),
     '& .QontoStepIcon-completedIcon': {
-      color: '#784af4',
-      zIndex: 1,
-      fontSize: 18,
+      width: 24,
+      height: 24,
+      borderRadius: '50%',
+      borderWidth: 5,
+      borderColor: '#3949a1',
+      borderStyle: 'solid',
+      backgroundColor: '#3949a1',
+    },
+    '& .QontoStepIcon-active': {
+      width: 24,
+      height: 24,
+      borderRadius: '50%',
+      borderWidth: 5,
+      borderColor: '#3949a1',
+      borderStyle: 'solid',
+      backgroundColor: 'white',
     },
     '& .QontoStepIcon-circle': {
-      width: 8,
-      height: 8,
+      width: 24,
+      height: 24,
       borderRadius: '50%',
-      backgroundColor: 'currentColor',
+      borderWidth: 2,
+      borderColor: '#E0E0E0',
+      borderStyle: 'solid',
+      backgroundColor: 'white',
     },
   })
 );
@@ -72,7 +83,10 @@ function QontoStepIcon(props: StepIconProps) {
   return (
     <QontoStepIconRoot ownerState={{ active }} className={className}>
       {completed ? (
-        <FaCheck className="QontoStepIcon-completedIcon" />
+        // <FaCheck className="QontoStepIcon-completedIcon" />
+        <div className="QontoStepIcon-completedIcon" />
+      ) : active ? (
+        <div className="QontoStepIcon-active" />
       ) : (
         <div className="QontoStepIcon-circle" />
       )}
@@ -112,6 +126,25 @@ const RightComponent = () => {
 
   const [stepperIndex, setStepperIndex] = useState(0);
 
+  const stepper3Radios: {
+    name: string;
+    radios: string[];
+  }[] = [
+    {
+      name: 'average',
+      radios: [
+        '$0 – $1k per month',
+        '$0 – $1k per month',
+        '$0 – $1k per month',
+        '$0 – $1k per month',
+        '$0 – $1k per month',
+      ],
+    },
+    {
+      name: 'expreience',
+      radios: ['Yes', 'No'],
+    },
+  ];
   const inputsQuestion: FormInputProps[][] = [
     [
       {
@@ -119,33 +152,32 @@ const RightComponent = () => {
         onChange: handleChangeByTagName,
         name: 'code',
         size: 'large',
-        type: 'email',
+        type: 'select',
         value: form.code,
+        options: ['Forum Comments'],
         required: true,
       },
     ],
     [
       {
-        label: 'New password',
-        placeholder: 'Enter your new pasword',
+        label: 'What is the size of your business?',
         onChange: handleChangeByTagName,
-        name: 'password',
+        name: 'code',
         size: 'large',
-        type: 'password',
+        type: 'select',
+        value: form.code,
+        options: ['Micro-sized business: less than 10 employees'],
         required: true,
-        value: form.password,
-        advise:
-          'One capital letter required, one special character required, one number required*',
       },
       {
-        label: 'Confirm Password',
-        placeholder: 'Confirm your new password',
+        label: 'What type of business are you doing?',
         onChange: handleChangeByTagName,
-        name: 'password',
+        name: 'code',
         size: 'large',
-        type: 'password',
+        type: 'select',
+        value: form.code,
+        options: ['Freelancing'],
         required: true,
-        value: form.repassword,
       },
     ],
   ];
@@ -385,24 +417,67 @@ const RightComponent = () => {
           </>
         ) : (
           <>
-            <Stepper
-              alternativeLabel
-              activeStep={stepperIndex}
-              connector={<QontoConnector />}
-            >
-              {steps.map(label => (
-                <Step key={label}>
-                  <StepLabel StepIconComponent={QontoStepIcon}>
-                    {label}
-                  </StepLabel>
-                </Step>
-              ))}
-            </Stepper>
-            <form className={styles.formContainer}>
-              {inputsQuestion[stepperIndex]?.map((el, i) => {
-                return <FormInput key={i} {...el} />;
-              })}
-            </form>
+            <div className={styles.stepperContainer}>
+              <Stepper
+                alternativeLabel
+                activeStep={stepperIndex}
+                connector={<QontoConnector />}
+              >
+                {steps.map(label => (
+                  <Step key={label}>
+                    <StepLabel StepIconComponent={QontoStepIcon}>
+                      {label}
+                    </StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
+            </div>
+            {stepperIndex < 2 ? (
+              <form className={styles.formContainer}>
+                {inputsQuestion[stepperIndex]?.map((el, i) => {
+                  return <FormInput key={i} {...el} />;
+                })}
+              </form>
+            ) : (
+              <form>
+                <label>
+                  What is your average monthly advertising budget for social
+                  media? (Facebook Ads, Google Adwords, TikTok Ads ….)
+                  <span className={'color-red'}>*</span>
+                </label>
+                <div>
+                  {stepper3Radios[0].radios.map((el, i) => {
+                    return (
+                      <div className={styles.stepperRadioButton}>
+                        <input type="radio" name={stepper3Radios[0].name} />
+                        <label>{el}</label>
+                      </div>
+                    );
+                  })}
+                </div>
+                <label>
+                  Do you have experience with agency ads accounts?
+                  <span className={'color-red'}>*</span>
+                </label>
+                <div>
+                  {stepper3Radios[1].radios.map((el, i) => {
+                    return (
+                      <div className={styles.stepperRadioButton}>
+                        <input type="radio" name={stepper3Radios[1].name} />
+                        <label>{el}</label>
+                      </div>
+                    );
+                  })}
+                </div>
+                <label>
+                  What kind of issues do you have with online adverstising?
+                  <span className={'color-red'}>*</span>
+                </label>
+                <select>
+                  <option>Spending Issues</option>
+                </select>
+              </form>
+            )}
             <div className={styles.buttonsContainer}>
               {stepperIndex !== 0 && (
                 <button
@@ -417,7 +492,7 @@ const RightComponent = () => {
               <button
                 className="btn-variant-2"
                 onClick={() =>
-                  setStepperIndex(prev => (prev === 1 ? 0 : prev + 1))
+                  setStepperIndex(prev => (prev === 2 ? 0 : prev + 1))
                 }
               >
                 Submit
