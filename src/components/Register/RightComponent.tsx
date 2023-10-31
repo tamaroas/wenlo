@@ -439,7 +439,7 @@ const RightComponent = () => {
                 })}
               </form>
             ) : (
-              <form>
+              <form >
                 <label>
                   What is your average monthly advertising budget for social
                   media? (Facebook Ads, Google Adwords, TikTok Ads ….)
@@ -495,6 +495,7 @@ const RightComponent = () => {
                   setStepperIndex(prev => (prev === 2 ? 0 : prev + 1))
                 }
               >
+
                 Submit
               </button>
             </div>
