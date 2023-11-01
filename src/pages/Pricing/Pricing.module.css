@@ -1,14 +1,27 @@
 .image1 {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -30%;
+  left: -15%;
   max-width: 100vw;
+  width: 600px;
+  height: 600px;
+}
+
+.image3{
+  width: 107.755px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
 .image2 {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: -1;
+  width: 397.026px;
+  height: 196px;
+  flex-shrink: 0;
+  bottom: -30%;
+  right: -15%;
+  z-index: -3;
   /* display: none; */
 }
