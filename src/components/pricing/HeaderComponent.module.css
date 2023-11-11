@@ -2,8 +2,8 @@
   width: 100%;
   flex-grow: 0;
   flex-shrink: 0;
+  top: 0;
   display: flex;
-  position: relative;
   align-items: center;
   justify-content: center;
 }
@@ -24,3 +24,58 @@
     justify-content: center;
     align-items: center;
   }
+
+  .toggleContainer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 1cqmax;
+  }
+  
+  .label {
+    color: #939393;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.41px;
+    padding: 0 5px;
+  }
+  
+  .active {
+    color: #424242;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -0.41px;
+  }
+  
+  .toggle {
+    background-color: #FFF;
+    border-radius: 24px;
+    border: 1px solid #E6E6E6;
+    position: relative;
+    width: 42px; 
+    height: 25px; 
+    margin: 0 10px;
+  }
+  
+  .toggleSwitch {
+    background-color: #3949A1;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .annually .toggleSwitch {
+    left: auto;
+    right: 2px;
+  }
+  
