@@ -1,3 +1,4 @@
+import Line from '../../Line';
 import styles from './Content1-Main.module.scss';
 const Section1DateRowList = [
   {
@@ -28,7 +29,9 @@ const Main = () => {
           </span>
           <span>Monthly top-up limit</span>
         </div>
-        <div>{/* graph */}</div>
+        <div>
+          <Line />
+        </div>
         <span>April, 2023</span>
         <select>
           <option>April</option>

@@ -5,7 +5,7 @@ import ResizableBox from './ResizableBox';
 
 export default function Line() {
   const { data, randomizeData } = useDemoConfig({
-    series: 10,
+    series: 1,
     dataType: 'time',
   });
 
