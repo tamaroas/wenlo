@@ -6,7 +6,8 @@ import {
   useNavigationType,
 } from 'react-router-dom';
 import LoginRegister from './pages/LoginRegister';
-import Pricing from './pages/Pricing';
+import Pricing from './pages/Pricing/Index';
+import Dashboard from './pages/Dashboard';
 
 const LoginRegisterContainer = [
   '/',
@@ -17,10 +18,9 @@ const LoginRegisterContainer = [
   '/question',
 ].map((el, i) => <Route path={el} key={i} element={<LoginRegister />} />);
 
-const PricingContainer = [
-  "/pricing",
-  "pricing-annuel",
-].map((el,i) => <Route path={el} key={i} element={<Pricing />} />)
+const PricingContainer = ['/pricing', 'pricing-annuel'].map((el, i) => (
+  <Route path={el} key={i} element={<Pricing />} />
+));
 
 function App() {
   const action = useNavigationType();
@@ -55,7 +55,9 @@ function App() {
     <Routes>
       {LoginRegisterContainer}
       {PricingContainer}
+
       {/* Add your routes below, as easy as you had done before! */}
+      <Route path="/Dashboard/*" element={<Dashboard />} />
     </Routes>
   );
 }

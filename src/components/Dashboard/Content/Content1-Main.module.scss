@@ -1,0 +1,89 @@
+.container {
+  background: #f2f5f9;
+  padding: 20px 28px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  h2 {
+    margin: 0;
+    grid-column: span 12;
+    color: #132239;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 24px */
+    letter-spacing: -0.41px;
+  }
+}
+
+.section1 {
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  background: #fff;
+  grid-column: span 6;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 24px;
+  select {
+    display: flex;
+    padding: 5px 8px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
+    width: fit-content;
+    justify-self: flex-end;
+    color: #828282;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 12px */
+    letter-spacing: -0.41px;
+  }
+  button {
+    display: flex;
+    padding: 14px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-radius: 4px;
+    background: #3a4ca1;
+    color: #fff;
+    border: none;
+  }
+  span {
+    color: #828282;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 14px */
+  }
+}
+
+@for $i from 1 through 12 {
+  .section1 > :nth-child(#{$i}) {
+    @if $i == 1 or $i == 2 or $i == 4 or $i == 5 {
+    } @else {
+      grid-column: span 2;
+    }
+  }
+}
+
+.section1DateRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding: 11px 8px;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+  border: 1px solid #e8ebed;
+  background: #fafafa;
+}

@@ -8,6 +8,10 @@ body {
   color: #262626;
 }
 
+button{
+  cursor: pointer;
+}
+
 .bold-title {
   text-align: center;
   font-style: normal;
@@ -73,6 +77,10 @@ body {
 
 .color-red {
   color: red;
+}
+
+.color-gray-2 {
+  color: #7f8283;
 }
 
 /* buttons */

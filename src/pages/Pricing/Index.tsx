@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, {useState} from 'react';
 import HeaderCompoent from '../../components/pricing/HeaderComponent';
 import styles from './Pricing.module.css';
@@ -5,7 +6,7 @@ import PricingMonthlyComponent from '../../components/pricing/PricingMonthlyComp
 import PricingAnnuallyCompoenet from '../../components/pricing/PricingAnnuallyComponent';
 
 
-const Index = () => {
+const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
 
   const handleToggle = () => {
@@ -24,4 +25,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Pricing;
