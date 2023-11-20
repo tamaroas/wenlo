@@ -28,6 +28,7 @@ export type ImageListObj = {
   "money-fly": string;
   "more-vert": string;
   "new-releases": string;
+  "profile": string;
   "stripe": string;
   "themecolor-identitydefault-skin-tonedefault": string;
   "vector-414": string;

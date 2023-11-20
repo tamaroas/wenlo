@@ -57,7 +57,7 @@ function App() {
       {PricingContainer}
 
       {/* Add your routes below, as easy as you had done before! */}
-      <Route path="Dashboard" element={<Dashboard />} />
+      <Route path="/Dashboard/*" element={<Dashboard />} />
     </Routes>
   );
 }

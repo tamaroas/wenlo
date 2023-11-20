@@ -8,6 +8,10 @@ body {
   color: #262626;
 }
 
+button{
+  cursor: pointer;
+}
+
 .bold-title {
   text-align: center;
   font-style: normal;

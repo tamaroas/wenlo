@@ -12,6 +12,7 @@ import imageService from '../../../utils/ImageService';
 import styles from './Menu.module.scss';
 import { BsClock, BsCurrencyDollar, BsMoon } from 'react-icons/bs';
 import { Switch } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 const images = imageService.getImages();
 
 const DashboardMenuEmitter = new Emitter();
@@ -29,43 +30,43 @@ const MenuItemList: {
   {
     title: 'Dashboard',
     icon: <MdOutlineSpaceDashboard />,
-    route: '/',
+    route: '',
   },
   {
     title: 'Main balance',
     icon: <MdOutlineAccountBalanceWallet />,
-    route: '/balance',
+    route: 'balance',
   },
   {
     title: 'My Ad Accounts',
     icon: <TbUserPlus />,
-    route: '/ad-accounts',
+    route: 'ad-accounts',
     type: 'subMenu',
   },
   {
     title: 'Top-Up & Billings',
     icon: <FaRegCreditCard />,
-    route: '/top-up-billings',
+    route: 'top-up-billings',
   },
   {
     title: 'Balance Transfer',
     icon: <BiTransfer />,
-    route: '/balance-transfer',
+    route: 'balance-transfer',
   },
   {
     title: 'Manage ad account access',
     icon: <TbUserUp />,
-    route: '/manage-ad-account-access',
+    route: 'manage-ad-account-access',
   },
   {
     title: 'People & Business records',
     icon: <TbUsers />,
-    route: '/people-business-records',
+    route: 'people-business-records',
   },
   {
     title: 'Profile',
     icon: <TbUser />,
-    route: '/profile',
+    route: 'profile',
   },
 ];
 
@@ -145,10 +146,10 @@ type MenuItemProps = {
   idx: number;
 };
 const MenuItem = ({ title, icon, active, route, type, idx }: MenuItemProps) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleClick = () => {
     DashboardMenuEmitter.emit(DashboardMenuEventsList.SET_ITEM_SELECTED, idx);
-    // navigate(route);
+    navigate(route);
   };
   return (
     <div
