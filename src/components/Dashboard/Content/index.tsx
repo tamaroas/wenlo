@@ -18,7 +18,7 @@ const DashboardContent = () => {
       <Breadcrumbs />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/balance" element={<Balance />} />
+        <Route path="/main-balance" element={<Balance />} />
         <Route path="/ad-accounts" element={<AdAccounts />} />
         <Route path="/top-up-billings" element={<Billings />} />
         <Route path="/balance-transfer" element={<Transfert />} />

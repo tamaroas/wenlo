@@ -1,7 +1,6 @@
 import { FaBell, FaChevronDown, FaSearch } from 'react-icons/fa';
-import styles from './Header.module.scss';
 import imageService from '../../../utils/ImageService';
-import { FaArrowDown } from 'react-icons/fa6';
+import styles from './Header.module.scss';
 const images = imageService.getImages();
 const Header = () => {
   return (

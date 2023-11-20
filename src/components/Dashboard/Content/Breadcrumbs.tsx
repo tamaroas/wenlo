@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import MuiBreadcrumbs from '@mui/material/Breadcrumbs';
+import { FaChevronRight } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
 
 const Breadcrumbs = () => {
-  return <div>Breadcrumbs</div>;
+  const location = useLocation();
+  const [actual, setActual] = useState('');
+  useEffect(() => {
+    if (location.pathname === '/dashboard') setActual('Dashboard');
+    else {
+      const path = location.pathname.split('/');
+      const actual = path[2];
+      setActual(actual);
+    }
+  }, [location.pathname]);
+  const breadcrumbs = [
+    <Link to="/">
+      Wenlo
+    </Link>,
+    <p>{actual}</p>,
+  ];
+  return (
+    <div>
+      <MuiBreadcrumbs separator={<FaChevronRight />} aria-label="breadcrumb">
+        {breadcrumbs}
+      </MuiBreadcrumbs>
+    </div>
+  );
 };
 
 export default Breadcrumbs;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BiTransfer } from 'react-icons/bi';
 import { FaPlus } from 'react-icons/fa';
 import { FaRegCreditCard } from 'react-icons/fa6';
@@ -12,7 +12,7 @@ import imageService from '../../../utils/ImageService';
 import styles from './Menu.module.scss';
 import { BsClock, BsCurrencyDollar, BsMoon } from 'react-icons/bs';
 import { Switch } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const images = imageService.getImages();
 
 const DashboardMenuEmitter = new Emitter();
@@ -35,7 +35,7 @@ const MenuItemList: {
   {
     title: 'Main balance',
     icon: <MdOutlineAccountBalanceWallet />,
-    route: 'balance',
+    route: 'main-balance',
   },
   {
     title: 'My Ad Accounts',
@@ -80,9 +80,14 @@ const DashboardMenu = () => {
   );
   return (
     <div className={styles.container}>
-      <img src={images['wenlo-logo']} height={24*0.75} width={82*0.75} alt="wenlo-logo" />
+      <img
+        src={images['wenlo-logo']}
+        height={24 * 0.75}
+        width={82 * 0.75}
+        alt="wenlo-logo"
+      />
       <div className={styles.section1}>
-        <span >Main Balances</span>
+        <span>Main Balances</span>
         <span>
           <FaPlus />
         </span>
@@ -98,7 +103,7 @@ const DashboardMenu = () => {
               icon={item.icon}
               type={item.type}
               route={item.route}
-              active={index === itemSelected}
+              // active={index === itemSelected}
               idx={index}
             />
           ))}
@@ -140,17 +145,28 @@ export default DashboardMenu;
 type MenuItemProps = {
   title: string;
   icon: JSX.Element;
-  active: boolean;
   type?: string;
   route: string;
   idx: number;
 };
-const MenuItem = ({ title, icon, active, route, type, idx }: MenuItemProps) => {
+const MenuItem = ({ title, icon, route, type, idx }: MenuItemProps) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    DashboardMenuEmitter.emit(DashboardMenuEventsList.SET_ITEM_SELECTED, idx);
+    // DashboardMenuEmitter.emit(DashboardMenuEventsList.SET_ITEM_SELECTED, idx);
     navigate(route);
   };
+  const [active, setActive] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    if (route === '') {
+      location.pathname === '/dashboard' ? setActive(true) : setActive(false);
+    } else {
+      location.pathname.includes(`/dashboard/${route}`)
+        ? setActive(true)
+        : setActive(false);
+    }
+  }, [location.pathname, route]);
+
   return (
     <div
       className={styles.menuItem + ' ' + (active ? styles.menuItemActive : '')}
