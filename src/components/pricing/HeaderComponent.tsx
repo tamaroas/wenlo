@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import style from "./HeaderComponent.module.css"
+import React from "react";
+import style from "./HeaderComponent.module.css";
 
 
 type ToggleSwitchProps = {

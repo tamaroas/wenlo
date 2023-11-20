@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import style from './pricingComponent.module.css';
 
 type PricingMonthlyComponentProps = {
@@ -6,7 +6,7 @@ type PricingMonthlyComponentProps = {
 }
 
 const PricingMonthlyComponent: React.FC<PricingMonthlyComponentProps> = ({isMonthly}) => {
-    const [form, setForm] = useState({plan: ''});
+    // const [form, setForm] = useState({plan: ''});
 
     const planRadios: {
        name : string;
@@ -46,11 +46,11 @@ const PricingMonthlyComponent: React.FC<PricingMonthlyComponentProps> = ({isMont
                                             <li>Multi-user (Add your team members) <span className={style.leftfeatures}>No</span></li>
                                             <li>Total monthly top-up limit <span className={style.leftfeatures}>$10k</span></li>
                                         </ul>
-                                        {el == 'Starter Plan' ? (
+                                        {el === 'Starter Plan' ? (
                                             <button className={style.button}>Free</button>
-                                        ): el == 'Standart Plan' ? (
+                                        ): el === 'Standart Plan' ? (
                                             <button className={style.button}>$ 199/Mo</button>
-                                        ): el == 'Premium Plan' ? (
+                                        ): el === 'Premium Plan' ? (
                                             <button className={style.button}>$ 499/Mo</button>
                                         ):(
                                             <button className={style.button}>$ 799/Mo</button>

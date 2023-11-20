@@ -75,6 +75,10 @@ body {
   color: red;
 }
 
+.color-gray-2 {
+  color: #7f8283;
+}
+
 /* buttons */
 .btn-variant-1 {
   display: flex;
