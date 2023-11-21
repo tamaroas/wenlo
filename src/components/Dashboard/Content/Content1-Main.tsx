@@ -1,8 +1,9 @@
-import { MdOutlineRecentActors } from 'react-icons/md';
+import { MdOutlineAutoAwesome, MdOutlineRecentActors } from 'react-icons/md';
 import Line from '../../Line';
 import styles from './Content1-Main.module.scss';
 import { IoMdOpen } from 'react-icons/io';
 import { FaTiktok } from 'react-icons/fa';
+import { LiaMoneyBillWaveSolid } from 'react-icons/lia';
 
 const Section1DateRowList = [
   {
@@ -123,6 +124,26 @@ const Main = () => {
           ))}
         </div>
         <button>See all</button>
+      </section>
+      <section className={styles.section4}>
+        <button>
+          <LiaMoneyBillWaveSolid color={'#3B51A1'} size={24} />
+        </button>
+        <div>
+          <span>Main Balance</span>
+          <button>
+            <IoMdOpen color="#26283F" size={12} />
+          </button>
+        </div>
+        <span>
+          0 <small>Request</small>
+        </span>
+        <div>
+          <span>
+            <MdOutlineAutoAwesome />
+          </span>
+          <span>2</span>
+        </div>
       </section>
     </div>
   );
