@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useCallback, useState } from 'react';
+import React, { ChangeEvent, useCallback, useRef, useState } from 'react';
 import FormInput, { FormInputProps } from './FormInput';
 import { styled } from '@mui/material/styles';
 import styles from './RightComponent.module.css';
@@ -439,35 +439,33 @@ const RightComponent = () => {
                 })}
               </form>
             ) : (
-              <form >
+              <form className={styles.formContainer2}>
                 <label>
                   What is your average monthly advertising budget for social
                   media? (Facebook Ads, Google Adwords, TikTok Ads ….)
                   <span className={'color-red'}>*</span>
                 </label>
                 <div>
-                  {stepper3Radios[0].radios.map((el, i) => {
-                    return (
-                      <div className={styles.stepperRadioButton}>
-                        <input type="radio" name={stepper3Radios[0].name} />
-                        <label>{el}</label>
-                      </div>
-                    );
-                  })}
+                  {stepper3Radios[0].radios.map((el, i) => (
+                    <StepperRadioButton
+                      key={i}
+                      label={el}
+                      name={stepper3Radios[0].name}
+                    />
+                  ))}
                 </div>
                 <label>
                   Do you have experience with agency ads accounts?
                   <span className={'color-red'}>*</span>
                 </label>
                 <div>
-                  {stepper3Radios[1].radios.map((el, i) => {
-                    return (
-                      <div className={styles.stepperRadioButton}>
-                        <input type="radio" name={stepper3Radios[1].name} />
-                        <label>{el}</label>
-                      </div>
-                    );
-                  })}
+                  {stepper3Radios[1].radios.map((el, i) => (
+                    <StepperRadioButton
+                      key={i}
+                      label={el}
+                      name={stepper3Radios[1].name}
+                    />
+                  ))}
                 </div>
                 <label>
                   What kind of issues do you have with online adverstising?
@@ -495,13 +493,31 @@ const RightComponent = () => {
                   setStepperIndex(prev => (prev === 2 ? 0 : prev + 1))
                 }
               >
-
                 Submit
               </button>
             </div>
           </>
         )}
       </div>
+    </div>
+  );
+};
+
+const StepperRadioButton = ({
+  name,
+  label,
+}: {
+  name: string;
+  label: string;
+}) => {
+  const radioRef = useRef<HTMLInputElement>(null);
+  const handleClick = () => {
+    radioRef.current?.click();
+  };
+  return (
+    <div className={styles.stepperRadioButton} onClick={handleClick}>
+      <input ref={radioRef} type="radio" name={name} />
+      <label>{label}</label>
     </div>
   );
 };
