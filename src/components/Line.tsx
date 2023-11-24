@@ -31,10 +31,7 @@ export default function Line() {
 
   return (
     <>
-      <button onClick={randomizeData}>Randomize Data</button>
-      <br />
-      <br />
-      <ResizableBox>
+      {/* <ResizableBox> */}
         <Chart
           options={{
             data,
@@ -42,7 +39,7 @@ export default function Line() {
             secondaryAxes,
           }}
         />
-      </ResizableBox>
+      {/* </ResizableBox> */}
     </>
   );
 }

@@ -10,10 +10,11 @@ import BusinessRecords from './Content7-BusinessRecords';
 import Profile from './Content8-Profile';
 import Header from './Header';
 import Breadcrumbs from './Breadcrumbs';
+import styles from './Index.module.scss'
 
 const DashboardContent = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Header />
       <Breadcrumbs />
       <Routes>
