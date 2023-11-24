@@ -447,7 +447,38 @@ const Main = () => {
 export default Main;
 
 const Section8 = () => {
-  return <div></div>;
+  return (
+    <div>
+      <span>Ad Account Recharge Requests </span>
+      <div>
+        <Search />
+      </div>
+    </div>
+  );
+};
+
+const Search = () => {
+  return (
+    <div className={styles.search}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
+        fill="none"
+      >
+        <path
+          d="M12.25 12.25L10.2084 10.2083M11.6667 6.70833C11.6667 9.44675 9.44675 11.6667 6.70833 11.6667C3.96992 11.6667 1.75 9.44675 1.75 6.70833C1.75 3.96992 3.96992 1.75 6.70833 1.75C9.44675 1.75 11.6667 3.96992 11.6667 6.70833Z"
+          stroke="#939393"
+          stroke-width="1.16667"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      <input type="text" placeholder="Search" />
+    </div>
+  );
 };
 
 const Section7 = () => {
