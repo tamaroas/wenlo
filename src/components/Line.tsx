@@ -1,9 +1,8 @@
 import React from 'react';
 import { AxisOptions, Chart } from 'react-charts';
 import useDemoConfig from '../hooks/useDemoConfig';
-import ResizableBox from './ResizableBox';
 
-export default function Line() {
+export default function Line({ noAxis }: { noAxis?: [boolean, boolean] }) {
   const { data, randomizeData } = useDemoConfig({
     series: 1,
     dataType: 'time',
@@ -11,12 +10,11 @@ export default function Line() {
 
   const primaryAxis = React.useMemo<
     AxisOptions<(typeof data)[number]['data'][number]>
-  >(
-    () => ({
+  >(() => {
+    return {
       getValue: datum => datum.primary as unknown as Date,
-    }),
-    []
-  );
+    };
+  }, []);
 
   const secondaryAxes = React.useMemo<
     AxisOptions<(typeof data)[number]['data'][number]>[]
@@ -32,13 +30,14 @@ export default function Line() {
   return (
     <>
       {/* <ResizableBox> */}
-        <Chart
-          options={{
-            data,
-            primaryAxis,
-            secondaryAxes,
-          }}
-        />
+      <Chart
+        options={{
+          data,
+          primaryAxis,
+          secondaryAxes,
+          
+        }}
+      />
       {/* </ResizableBox> */}
     </>
   );
