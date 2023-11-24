@@ -436,11 +436,19 @@ const Main = () => {
 
       <h3 className={styles.h3}>Main Balance and Ad Account Recharges</h3>
       <Section7 />
+
+      <h3 className={styles.h3}>Last transaction request</h3>
+
+      <Section8 />
     </div>
   );
 };
 
 export default Main;
+
+const Section8 = () => {
+  return <div></div>;
+};
 
 const Section7 = () => {
   const [period, setPeriod] = useState(0);
@@ -560,7 +568,7 @@ const Section7 = () => {
             <span>View</span>
           </div>
           <div className={styles.Section7lineChart1Container2}>
-            <Line noAxis={[false ,true]}/>
+            <Line noAxis={[false, true]} />
           </div>
         </div>
         <div className={styles.Section7lineChart1SuperContainer2}>
@@ -572,7 +580,7 @@ const Section7 = () => {
             <span>View</span>
           </div>
           <div className={styles.Section7lineChart1Container2}>
-            <Line noAxis={[false ,true]}/>
+            <Line noAxis={[false, true]} />
           </div>
         </div>
       </div>
