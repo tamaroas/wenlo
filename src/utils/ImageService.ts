@@ -29,8 +29,10 @@ export type ImageListObj = {
   "more-vert": string;
   "new-releases": string;
   "profile": string;
+  "RectanglePayoneer": string;
   "stripe": string;
   "themecolor-identitydefault-skin-tonedefault": string;
+  "tt": string;
   "vector-414": string;
   "vector-4141": string;
   "visa-1-1": string;

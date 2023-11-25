@@ -1,15 +1,175 @@
-import {
-  MdOutlineAutoAwesome,
-  MdOutlineRecentActors,
-  MdSwipeLeft,
-  MdVisibility,
-} from 'react-icons/md';
+import { useState } from 'react';
+import { FaTiktok } from 'react-icons/fa';
+import { IoMdOpen } from 'react-icons/io';
+import { MdOutlineRecentActors } from 'react-icons/md';
 import Line from '../../Line';
 import styles from './Content1-Main.module.scss';
-import { IoMdOpen } from 'react-icons/io';
-import { FaTiktok } from 'react-icons/fa';
-import { LiaMoneyBillWaveSolid } from 'react-icons/lia';
-import { useState } from 'react';
+import imageService from '../../../utils/ImageService';
+
+const section8Rows = [
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'USDT',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Payoneer',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Bank Wine',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'USDT',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Bank Wine',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Bank Wine',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'USDT',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Payoneer',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Bank Wine',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'USDT',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Payoneer',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'USDT',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Payoneer',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Bank Wine',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'USDT',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Bank Wine',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'Payoneer',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+  {
+    requestedAt: '3424121248AR',
+    addAccountRecharged: 'Gabriela Hudges',
+    amount: '$73.60',
+    paymentMethod: 'USDT',
+    amountRecharged: '$73.60',
+    status: 'On Review',
+    actions: 'On Review',
+  },
+];
 
 const Section1DateRowList = [
   {
@@ -448,13 +608,133 @@ export default Main;
 
 const Section8 = () => {
   return (
-    <div>
+    <div className={styles.section8}>
       <span>Ad Account Recharge Requests </span>
       <div>
         <Search />
+        <div>
+          <span>01 Mar 2023 - 31 Mar 2023</span>
+          <input type="date" hidden />
+
+          <button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+            >
+              <path
+                d="M12.25 5.83366H1.75M9.33333 1.16699V3.50033M4.66667 1.16699V3.50033M4.55 12.8337H9.45C10.4301 12.8337 10.9201 12.8337 11.2945 12.6429C11.6238 12.4751 11.8915 12.2074 12.0593 11.8781C12.25 11.5038 12.25 11.0138 12.25 10.0337V5.13366C12.25 4.15357 12.25 3.66352 12.0593 3.28918C11.8915 2.95989 11.6238 2.69218 11.2945 2.5244C10.9201 2.33366 10.4301 2.33366 9.45 2.33366H4.55C3.56991 2.33366 3.07986 2.33366 2.70552 2.5244C2.37623 2.69218 2.10852 2.95989 1.94074 3.28918C1.75 3.66352 1.75 4.15357 1.75 5.13366V10.0337C1.75 11.0138 1.75 11.5038 1.94074 11.8781C2.10852 12.2074 2.37623 12.4751 2.70552 12.6429C3.07986 12.8337 3.56991 12.8337 4.55 12.8337Z"
+                stroke="#26283F"
+                stroke-width="1.16667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <select>
+          <option>All Status</option>
+        </select>
+        <select>
+          <option>Select Payment Method</option>
+        </select>
+        <button>Apply</button>
       </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Request At</th>
+            <th>Ad Account Recharged</th>
+            <th>Amount</th>
+            <th>Payment method</th>
+            <th>Amount Recharged</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        {section8Rows.map((row, idx) => {
+          return (
+            <tr key={idx}>
+              <td>{row.requestedAt}</td>
+              <td>{row.addAccountRecharged}</td>
+              <td>{row.amount}</td>
+              <td>
+                {getSection8PayementIcon(row.paymentMethod)}
+                {row.paymentMethod}
+              </td>
+              <td>{row.amountRecharged}</td>
+              <td>
+                <button>{row.status}</button>
+              </td>
+              <td>
+                <button>{row.actions}</button>
+              </td>
+            </tr>
+          );
+        })}
+      </table>
     </div>
   );
+};
+
+const getSection8PayementIcon = (state: string) => {
+  switch (state) {
+    case 'USDT':
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_1_17401)">
+            <path
+              d="M7 0C10.8656 0 14 3.13444 14 7C14 10.8656 10.8656 14 7 14C3.13444 14 0 10.8675 0 7C0 3.1325 3.13444 0 7 0Z"
+              fill="#26A17B"
+            />
+            <path
+              d="M7.98694 6.21873V5.17651H10.3689V3.58984H3.88417V5.17651H6.26611V6.21873C4.33139 6.30818 2.875 6.69123 2.875 7.15012C2.875 7.60901 4.33139 7.99207 6.26611 8.08151V11.4162H7.98889V8.08151C9.92167 7.99207 11.3742 7.60901 11.3742 7.15012C11.3722 6.69123 9.91972 6.30818 7.98694 6.21873ZM7.98889 7.79957C7.94028 7.80151 7.69139 7.81707 7.13528 7.81707C6.69 7.81707 6.37889 7.8054 6.26806 7.79957V7.80151C4.55889 7.72568 3.28139 7.42818 3.28139 7.07234C3.28139 6.71651 4.55694 6.41901 6.26806 6.34318V7.50207C6.38083 7.50984 6.69972 7.52929 7.14306 7.52929C7.67389 7.52929 7.94028 7.5079 7.99083 7.50207V6.33929C9.69806 6.41512 10.9717 6.71262 10.9717 7.06846C10.9678 7.42429 9.69417 7.72179 7.98889 7.79957Z"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_1_17401">
+              <rect width="14" height="14" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      );
+    case 'Bank Wine':
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+        >
+          <path
+            d="M2.91667 5.25042V9.91709M5.54167 5.25042V9.91709M8.45833 5.25042V9.91709M11.0833 5.25042V9.91709M1.75 10.8504L1.75 11.3171C1.75 11.6438 1.75 11.8071 1.81358 11.9319C1.86951 12.0417 1.95874 12.1309 2.06851 12.1868C2.19329 12.2504 2.35664 12.2504 2.68333 12.2504H11.3167C11.6434 12.2504 11.8067 12.2504 11.9315 12.1868C12.0413 12.1309 12.1305 12.0417 12.1864 11.9319C12.25 11.8071 12.25 11.6438 12.25 11.3171V10.8504C12.25 10.5237 12.25 10.3604 12.1864 10.2356C12.1305 10.1258 12.0413 10.0366 11.9315 9.98067C11.8067 9.91709 11.6434 9.91709 11.3167 9.91709H2.68333C2.35664 9.91709 2.19329 9.91709 2.06851 9.98067C1.95874 10.0366 1.86951 10.1258 1.81358 10.2356C1.75 10.3604 1.75 10.5237 1.75 10.8504ZM6.79753 1.79541L2.48087 2.75467C2.22008 2.81262 2.08969 2.8416 1.99235 2.91172C1.9065 2.97357 1.83909 3.05761 1.79734 3.15483C1.75 3.26506 1.75 3.39863 1.75 3.66578L1.75 4.31708C1.75 4.64378 1.75 4.80713 1.81358 4.93191C1.86951 5.04167 1.95874 5.13091 2.06851 5.18684C2.19329 5.25042 2.35664 5.25042 2.68333 5.25042H11.3167C11.6434 5.25042 11.8067 5.25042 11.9315 5.18684C12.0413 5.13091 12.1305 5.04167 12.1864 4.93191C12.25 4.80713 12.25 4.64378 12.25 4.31709V3.66578C12.25 3.39863 12.25 3.26506 12.2027 3.15483C12.1609 3.05761 12.0935 2.97357 12.0076 2.91172C11.9103 2.8416 11.7799 2.81262 11.5191 2.75467L7.20247 1.79541C7.12691 1.77862 7.08913 1.77023 7.05096 1.76688C7.01705 1.76391 6.98295 1.76391 6.94904 1.76688C6.91087 1.77023 6.87309 1.77862 6.79753 1.79541Z"
+            stroke="#3A4CA1"
+            stroke-width="1.16667"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      );
+    default:
+      return (
+        <img
+          height={14}
+          width={14}
+          src={imageService.getImages().RectanglePayoneer}
+          alt=""
+        />
+      );
+  }
 };
 
 const Search = () => {
