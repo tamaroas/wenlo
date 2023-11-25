@@ -653,6 +653,7 @@
 
 // section 8
 .section8,
+.section10,
 .section9 {
   grid-column: 1/-1;
   border-radius: 10px;
@@ -663,6 +664,7 @@
 }
 
 .section8 > :first-child,
+.section10 > :first-child,
 .section9 > :first-child {
   color: #132239;
   font-family: Inter;
@@ -676,6 +678,7 @@
 }
 
 .section8 > :nth-child(2),
+.section10 > :nth-child(2),
 .section9 > :nth-child(2) {
   display: grid;
   align-items: center;
@@ -689,10 +692,15 @@
 .section9 > :nth-child(2) {
   grid-template-columns: 1fr repeat(5, auto);
 }
+.section10 > :nth-child(2) {
+  grid-template-columns: 1fr repeat(3, auto);
+}
 
 .section8 > :nth-child(2) > :nth-child(2),
 .section8 > :nth-child(2) > :nth-child(3),
 .section8 > :nth-child(2) > :nth-child(4),
+.section10 > :nth-child(2) > :nth-child(2),
+.section10 > :nth-child(2) > :nth-child(3),
 .section9 > :nth-child(2) > :nth-child(2),
 .section9 > :nth-child(2) > :nth-child(3),
 .section9 > :nth-child(2) > :nth-child(4),
@@ -717,6 +725,7 @@
 }
 
 .section8 > :nth-child(2) > button,
+.section10 > :nth-child(2) > button,
 .section9 > :nth-child(2) > button {
   display: flex;
   padding: 7px 8px;
@@ -735,6 +744,7 @@
 }
 
 .section8 > :nth-child(2) > :nth-child(2),
+.section10 > :nth-child(2) > :nth-child(2),
 .section9 > :nth-child(2) > :nth-child(2) {
   button {
     border: none;
@@ -745,6 +755,7 @@
 }
 
 .section8 > table,
+.section10 > table,
 .section9 > table {
   margin: 16px 0 0;
   border-collapse: collapse;
@@ -828,4 +839,46 @@
     line-height: 100%; /* 12px */
     letter-spacing: -0.41px;
   }
+}
+
+.section10 {
+  tr > td:nth-child(6) {
+    word-wrap: break-word;
+    max-width: 140px;
+  }
+  tr > td:last-child {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    justify-content: flex-end;
+  }
+}
+
+.transfert,
+.add,
+.download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  width: 28px;
+  * {
+    flex-shrink: 0;
+    margin: 0 !important;
+  }
+}
+.transfert {
+  border-radius: 5px !important;
+  border: 0.5px solid #3a4ca1 !important;
+  background: #ebedf6 !important;
+}
+.add {
+  border-radius: 5px !important;
+  border: 0.5px solid #147a3d !important;
+  background: #ecf4ef !important;
+}
+.download {
+  border-radius: 5px !important;
+  border: 0.5px solid #d23d28 !important;
+  background: #fdebed !important;
 }
