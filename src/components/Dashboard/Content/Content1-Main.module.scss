@@ -652,15 +652,18 @@
 }
 
 // section 8
-.section8 {
+.section8,
+.section9 {
   grid-column: 1/-1;
   border-radius: 10px;
   border: 1px solid #ebebeb;
   background: #fff;
   padding: 16px 16px 0;
+  margin-bottom: 32px;
 }
 
-.section8 > :first-child {
+.section8 > :first-child,
+.section9 > :first-child {
   color: #132239;
   font-family: Inter;
   font-size: 20px;
@@ -672,16 +675,28 @@
   margin: 8px 0px 20px;
 }
 
-.section8 > :nth-child(2) {
+.section8 > :nth-child(2),
+.section9 > :nth-child(2) {
   display: grid;
-  grid-template-columns: 1fr repeat(4, auto);
   align-items: center;
   gap: 8px;
 }
 
+.section8 > :nth-child(2) {
+  grid-template-columns: 1fr repeat(4, auto);
+}
+
+.section9 > :nth-child(2) {
+  grid-template-columns: 1fr repeat(5, auto);
+}
+
 .section8 > :nth-child(2) > :nth-child(2),
 .section8 > :nth-child(2) > :nth-child(3),
-.section8 > :nth-child(2) > :nth-child(4) {
+.section8 > :nth-child(2) > :nth-child(4),
+.section9 > :nth-child(2) > :nth-child(2),
+.section9 > :nth-child(2) > :nth-child(3),
+.section9 > :nth-child(2) > :nth-child(4),
+.section9 > :nth-child(2) > :nth-child(5) {
   display: flex;
   padding: 4px 8px;
   align-items: center;
@@ -701,7 +716,8 @@
   }
 }
 
-.section8 > :nth-child(2) > button {
+.section8 > :nth-child(2) > button,
+.section9 > :nth-child(2) > button {
   display: flex;
   padding: 7px 8px;
   justify-content: center;
@@ -718,7 +734,8 @@
   border: none;
 }
 
-.section8 > :nth-child(2) > :nth-child(2) {
+.section8 > :nth-child(2) > :nth-child(2),
+.section9 > :nth-child(2) > :nth-child(2) {
   button {
     border: none;
     background-color: transparent;
@@ -727,7 +744,8 @@
   }
 }
 
-.section8 > table {
+.section8 > table,
+.section9 > table {
   margin: 16px 0 0;
   border-collapse: collapse;
   width: 100%;
@@ -759,6 +777,14 @@
     line-height: 100%; /* 12px */
     * {
       margin-right: 8px;
+    }
+    small {
+      color: #828282;
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%; /* 12px */
     }
     button {
       color: #a78736;
