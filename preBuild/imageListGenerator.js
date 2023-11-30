@@ -10,7 +10,7 @@ files.forEach((file, index) => {
     .replace('.jpg', '')
     .replace('.jpeg', '')
     .replace('.svg', '');
-  res[v] = "images/"+t;
+  res[v] = "/images/"+t;
   types[v] = 'string';
 });
 fs.writeFileSync('./src/utils/imagesList.json', JSON.stringify(res));
