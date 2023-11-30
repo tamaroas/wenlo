@@ -1,0 +1,20 @@
+.container {
+  background: #f2f5f9;
+  padding: 20px 28px;
+  max-height: calc(100vh - 96px);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  overflow-y: scroll;
+  h2 {
+    margin: 0;
+    grid-column: span 12;
+    color: #132239;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 24px */
+    letter-spacing: -0.41px;
+  }
+}
