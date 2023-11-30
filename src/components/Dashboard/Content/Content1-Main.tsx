@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { FaTiktok } from 'react-icons/fa';
 import { IoMdOpen } from 'react-icons/io';
-import { MdOutlineRecentActors } from 'react-icons/md';
+import { MdOutlineInfo, MdOutlineRecentActors } from 'react-icons/md';
 import Line from '../../Line';
 import styles from './Content1-Main.module.scss';
 import imageService from '../../../utils/ImageService';
@@ -97,7 +97,18 @@ const section10Rows = [
   },
 ];
 
-const section9Rows = [
+const section9Rows: {
+  requestId: string;
+  requestDate: string;
+  requestTime: string;
+  type: string;
+  amount: string;
+  paymentMethod: string;
+  status: string;
+  sender?: string;
+  receiver?: string;
+  reason?: string;
+}[] = [
   {
     requestId: '#712921RT',
     requestDate: '26 April 2023',
@@ -141,7 +152,11 @@ const section9Rows = [
     type: 'Deposit',
     amount: '$73.60',
     paymentMethod: 'Bank Wine',
-    status: 'In Progress',
+    status: 'Rejected',
+    sender: 'Stripe',
+    receiver: '$182231.32',
+    reason:
+      `Your deposit request has been <span class="${styles.textRed}">Rejected</span> due to insufficient balance`,
   },
   {
     requestId: '#712921RT',
@@ -783,7 +798,7 @@ const Main = () => {
 
 export default Main;
 
-const Section10 = () => {
+export const Section10 = () => {
   return (
     <div className={styles.section10}>
       <span>Advertising Account Requests </span>
@@ -1070,7 +1085,7 @@ const getSection10LogoIcon = (state: string) => {
   }
 };
 
-const Section9 = () => {
+export const Section9 = () => {
   return (
     <div className={styles.section9}>
       <span>Ad Account Recharge Requests </span>
@@ -1121,30 +1136,97 @@ const Section9 = () => {
           </tr>
         </thead>
         {section9Rows.map((row, idx) => {
-          return (
-            <tr key={idx}>
-              <td>{row.requestId}</td>
-              <td>
-                {row.requestDate}, <small>{row.requestTime}</small>
-              </td>
-              <td>{row.type}</td>
-              <td>{row.amount}</td>
-              <td>
-                {getSection8PayementIcon(row.paymentMethod)}
-                {row.paymentMethod}
-              </td>
-              <td>
-                <button>{row.status}</button>
-              </td>
-            </tr>
-          );
+          return <Section9StatusCell key={idx} row={row} />;
         })}
       </table>
     </div>
   );
 };
 
-const Section8 = () => {
+type Section9StatusCellProps = {
+  row: {
+    requestId: string;
+    requestDate: string;
+    requestTime: string;
+    type: string;
+    amount: string;
+    paymentMethod: string;
+    status: string;
+    sender?: string;
+    receiver?: string;
+    reason?: string;
+  };
+};
+
+const Section9StatusCell = ({ row }: Section9StatusCellProps) => {
+  const popupRef = useRef<HTMLDivElement>(null);
+  return (
+    <tr className={styles.Section9StatusRow}>
+      <td>{row.requestId}</td>
+      <td>
+        {row.requestDate}, <small>{row.requestTime}</small>
+      </td>
+      <td>{row.type}</td>
+      <td>{row.amount}</td>
+      <td>
+        {getSection8PayementIcon(row.paymentMethod)}
+        {row.paymentMethod}
+      </td>
+      <td>
+        <button className={styles.Section9StatusCell}>
+          {row.status === 'Rejected' && (
+            <div
+              ref={popupRef}
+              className={styles.Section9StatusCellPopUp + ' ' + styles.hide}
+            >
+              <p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                >
+                  <path
+                    d="M11.0832 12.2503V8.75033M9.33317 10.5003H12.8332M12.8332 5.83366H1.1665M12.8332 7.00033V4.78366C12.8332 4.13027 12.8332 3.80357 12.706 3.554C12.5942 3.33448 12.4157 3.156 12.1962 3.04415C11.9466 2.91699 11.6199 2.91699 10.9665 2.91699H3.03317C2.37978 2.91699 2.05308 2.91699 1.80352 3.04415C1.58399 3.156 1.40552 3.33448 1.29366 3.554C1.1665 3.80357 1.1665 4.13026 1.1665 4.78366V9.21699C1.1665 9.87039 1.1665 10.1971 1.29366 10.4466C1.40552 10.6662 1.58399 10.8446 1.80351 10.9565C2.05308 11.0837 2.37978 11.0837 3.03317 11.0837H6.99984"
+                    stroke="#3A4CA1"
+                    stroke-width="1.16667"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>{' '}
+                Deposit
+              </p>
+              <span>Sender:</span>
+              <span>
+                {getSection8PayementIcon(row.sender)} {row.sender}
+              </span>
+              <span>Receiver:</span>
+              <span>{row.receiver}</span>
+              <p dangerouslySetInnerHTML={{ __html: row.reason as string }} />
+            </div>
+          )}
+          {row.status}{' '}
+          {row.status === 'Rejected' && (
+            <MdOutlineInfo
+              onMouseEnter={e => {
+                popupRef.current?.classList.remove(styles.hide);
+                popupRef.current?.classList.add(styles.show);
+              }}
+              onMouseLeave={e => {
+                popupRef.current?.classList.add(styles.hide);
+                popupRef.current?.classList.remove(styles.show);
+              }}
+              size={12}
+            />
+          )}
+        </button>
+      </td>
+    </tr>
+  );
+};
+
+export const Section8 = () => {
   return (
     <div className={styles.section8}>
       <span>Ad Account Recharge Requests </span>
@@ -1219,6 +1301,100 @@ const Section8 = () => {
 
 const getSection8PayementIcon = (state?: string) => {
   switch (state) {
+    case 'Stripe':
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+        >
+          <path
+            d="M1.07698 2.38803C0.75 3.02976 0.75 3.86984 0.75 5.55V6.45C0.75 8.13016 0.75 8.97024 1.07698 9.61197C1.3646 10.1765 1.82354 10.6354 2.38803 10.923C3.02976 11.25 3.86984 11.25 5.55 11.25H6.45C8.13016 11.25 8.97024 11.25 9.61197 10.923C10.1765 10.6354 10.6354 10.1765 10.923 9.61197C11.25 8.97024 11.25 8.13016 11.25 6.45V5.55C11.25 3.86984 11.25 3.02976 10.923 2.38803C10.6354 1.82354 10.1765 1.3646 9.61197 1.07698C8.97024 0.75 8.13016 0.75 6.45 0.75H5.55C3.86984 0.75 3.02976 0.75 2.38803 1.07698C1.82354 1.3646 1.3646 1.82354 1.07698 2.38803Z"
+            fill="url(#paint0_linear_1_18181)"
+          />
+          <path
+            d="M0.849458 3.10464C0.75 3.66987 0.75 4.41986 0.75 5.5498V6.4498C0.75 8.12996 0.75 8.97004 1.07698 9.61177C1.3646 10.1763 1.82354 10.6352 2.38803 10.9228C3.02976 11.2498 3.86984 11.2498 5.55 11.2498H6.45C8.13016 11.2498 8.97024 11.2498 9.61197 10.9228C10.1765 10.6352 10.6354 10.1763 10.923 9.61177C11.25 8.97004 11.25 8.12996 11.25 6.4498V5.5498C11.25 3.86964 11.25 3.02956 10.923 2.38783C10.6454 1.84298 10.2082 1.39646 9.67051 1.10742L0.849458 3.10464Z"
+            fill="url(#paint1_linear_1_18181)"
+          />
+          <path
+            d="M11.1414 8.94531C11.0932 9.19872 11.0235 9.41474 10.923 9.61201C10.6354 10.1765 10.1765 10.6354 9.61198 10.9231C8.98945 11.2403 8.18026 11.2497 6.5986 11.25H6.02197V10.0638L11.1414 8.94531Z"
+            fill="url(#paint2_linear_1_18181)"
+          />
+          <path
+            d="M6.45011 0.75H5.55011C5.22324 0.75 4.92816 0.75 4.66016 0.752408V2.23894L9.66964 1.10709C9.65058 1.09686 9.63139 1.08682 9.61209 1.07698C9.25582 0.895456 8.83843 0.814705 8.25011 0.778784C7.77869 0.75 7.19752 0.75 6.45011 0.75Z"
+            fill="url(#paint3_linear_1_18181)"
+          />
+          <path
+            d="M11.25 6.51461C11.2499 7.6417 11.2479 8.38464 11.1413 8.94486L9.36084 9.33388V6.68054L11.25 6.24121V6.51461Z"
+            fill="url(#paint4_linear_1_18181)"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M5.60278 5.01647C5.60278 4.77546 5.79982 4.68277 6.12617 4.68277C6.59415 4.68277 7.18527 4.8249 7.65324 5.07826V3.62606C7.14217 3.42213 6.63725 3.3418 6.12617 3.3418C4.87619 3.3418 4.04492 3.99683 4.04492 5.09062C4.04492 6.79619 6.38479 6.52429 6.38479 7.25966C6.38479 7.54392 6.13849 7.63662 5.79367 7.63662C5.28259 7.63662 4.62989 7.42651 4.11265 7.14225V8.61299C4.68531 8.86017 5.26412 8.96523 5.79367 8.96523C7.07443 8.96523 7.95496 8.32873 7.95496 7.22258C7.94881 5.38106 5.60278 5.70858 5.60278 5.01647Z"
+            fill="white"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_1_18181"
+              x1="0.75"
+              y1="0.75"
+              x2="4.19874"
+              y2="3.18828"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#392993" />
+              <stop offset="1" stop-color="#4B47B9" />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_1_18181"
+              x1="1.1454"
+              y1="3.21523"
+              x2="8.75873"
+              y2="9.49516"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#594BB9" />
+              <stop offset="1" stop-color="#60A8F2" />
+            </linearGradient>
+            <linearGradient
+              id="paint2_linear_1_18181"
+              x1="6.02197"
+              y1="10.1078"
+              x2="11.25"
+              y2="11.2501"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#61A2EF" />
+              <stop offset="1" stop-color="#58E6FD" />
+            </linearGradient>
+            <linearGradient
+              id="paint3_linear_1_18181"
+              x1="4.66016"
+              y1="1.49686"
+              x2="11.2501"
+              y2="0.75"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#534EBE" />
+              <stop offset="1" stop-color="#6875E2" />
+            </linearGradient>
+            <linearGradient
+              id="paint4_linear_1_18181"
+              x1="9.36084"
+              y1="6.70251"
+              x2="11.25"
+              y2="8.96506"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#71A5F3" />
+              <stop offset="1" stop-color="#6CC3FA" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
     case 'USDT':
       return (
         <svg
@@ -1299,7 +1475,7 @@ const Search = () => {
   );
 };
 
-const Section7 = () => {
+export const Section7 = () => {
   const [period, setPeriod] = useState(0);
   return (
     <section className={styles.section7}>

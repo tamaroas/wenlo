@@ -1,7 +1,7 @@
 .container {
   background: #f2f5f9;
   padding: 20px 28px;
-  max-height: calc(100vh - 122px);
+  max-height: calc(100vh - 96px);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 18px;
@@ -786,7 +786,8 @@
     font-style: normal;
     font-weight: 500;
     line-height: 100%; /* 12px */
-    * {
+    img,
+    svg {
       margin-right: 8px;
     }
     small {
@@ -881,4 +882,85 @@
   border-radius: 5px !important;
   border: 0.5px solid #d23d28 !important;
   background: #fdebed !important;
+}
+
+.Section9StatusCell {
+  position: relative;
+}
+
+.Section9StatusCellPopUp {
+  position: absolute;
+  border-radius: 4px;
+  border: 1px solid #f2f2f2;
+  background: #fff;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.2);
+  padding: 14px;
+  z-index: 10;
+  right: 0;
+  bottom: 120%;
+  display: grid;
+  margin: 0;
+  grid-template-columns: auto 1fr;
+  width: fit-content;
+  justify-items: flex-start;
+  column-gap: 10px;
+  min-width: 250px;
+  row-gap: 8px;
+}
+
+.Section9StatusCellPopUp > :first-child {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.Section9StatusCellPopUp > :last-child {
+  grid-column: 1/-1;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 4px;
+  background: rgba(167, 135, 54, 0.1);
+  padding: 8px;
+  color: #828282;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 15.6px */
+  letter-spacing: -0.41px;
+}
+
+.Section9StatusCellPopUp > :nth-child(2),
+.Section9StatusCellPopUp > :nth-child(4) {
+  color: #939393;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 12px */
+  width: 72px;
+  text-align: left;
+}
+
+.textRed {
+  color: #a78736;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.41px;
+  margin: auto;
+}
+
+.show {
+  display: grid;
+}
+
+.hide {
+  display: none;
 }
