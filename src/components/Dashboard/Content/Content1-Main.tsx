@@ -798,7 +798,7 @@ const Main = () => {
 
 export default Main;
 
-const Section10 = () => {
+export const Section10 = () => {
   return (
     <div className={styles.section10}>
       <span>Advertising Account Requests </span>
@@ -1085,7 +1085,7 @@ const getSection10LogoIcon = (state: string) => {
   }
 };
 
-const Section9 = () => {
+export const Section9 = () => {
   return (
     <div className={styles.section9}>
       <span>Ad Account Recharge Requests </span>
@@ -1226,7 +1226,7 @@ const Section9StatusCell = ({ row }: Section9StatusCellProps) => {
   );
 };
 
-const Section8 = () => {
+export const Section8 = () => {
   return (
     <div className={styles.section8}>
       <span>Ad Account Recharge Requests </span>
@@ -1475,7 +1475,7 @@ const Search = () => {
   );
 };
 
-const Section7 = () => {
+export const Section7 = () => {
   const [period, setPeriod] = useState(0);
   return (
     <section className={styles.section7}>
