@@ -124,6 +124,27 @@ $child3: '.subContainer > :nth-child(3)';
 #{$child3} > table {
   width: 100%;
   border-collapse: collapse;
+  & > tr:first-of-type {
+    & > th {
+      color: #939393;
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%; /* 14px */
+      letter-spacing: -0.41px;
+    }
+  }
+  & > tr {
+    & > td {
+      color: #26283f;
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%; /* 12px */
+    }
+  }
 }
 
 #{$child3} tr {
@@ -144,13 +165,12 @@ $child3: '.subContainer > :nth-child(3)';
     align-items: center;
     justify-content: center;
     gap: 8px;
-    height: 50px;
     margin: auto 0;
     span {
       color: #3a4ca1;
       font-family: Inter;
       font-style: normal;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 500;
       line-height: 100%; /* 12px */
       text-decoration-line: underline;
