@@ -5,6 +5,8 @@ const Balance = () => {
   return (
     <div className={styles.container}>
       <h2>Main Balance Management</h2>
+      <button>Withdrawal</button>
+      <button>Deposit</button>
       <Section7 />
       <Section9 />
     </div>
