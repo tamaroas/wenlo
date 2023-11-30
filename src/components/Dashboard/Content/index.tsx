@@ -11,6 +11,7 @@ import Profile from './Content8-Profile';
 import Header from './Header';
 import Breadcrumbs from './Breadcrumbs';
 import styles from './Index.module.scss'
+import SubscriptionPlan from './SubscriptionPlan';
 
 const DashboardContent = () => {
   return (
@@ -26,6 +27,7 @@ const DashboardContent = () => {
         <Route path="/manage-ad-account-access" element={<AccountAccess />} />
         <Route path="/people-business-records" element={<BusinessRecords />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/subscription-plan" element={<SubscriptionPlan />} />
       </Routes>
     </div>
   );
