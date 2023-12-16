@@ -8,6 +8,7 @@ export type ImageListObj = {
   "cancel": string;
   "check-circle": string;
   "copy01": string;
+  "credit-card-plus": string;
   "download01": string;
   "ellipse-3@2x": string;
   "emergency-home": string;
@@ -30,6 +31,7 @@ export type ImageListObj = {
   "new-releases": string;
   "profile": string;
   "RectanglePayoneer": string;
+  "schedule": string;
   "stripe": string;
   "themecolor-identitydefault-skin-tonedefault": string;
   "tt": string;
