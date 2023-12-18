@@ -8,6 +8,7 @@ export type ImageListObj = {
   "cancel": string;
   "check-circle": string;
   "copy01": string;
+  "credit-card-download": string;
   "credit-card-plus": string;
   "download01": string;
   "ellipse-3@2x": string;
@@ -35,10 +36,12 @@ export type ImageListObj = {
   "stripe": string;
   "themecolor-identitydefault-skin-tonedefault": string;
   "tt": string;
+  "Untitled.zip": string;
   "vector-414": string;
   "vector-4141": string;
   "visa-1-1": string;
   "wenlo-logo": string;
+  "Withdrawal": string;
   "xclose": string;
 }
 
