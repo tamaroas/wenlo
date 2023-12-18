@@ -13,7 +13,7 @@
 .subContainer {
   display: grid;
   height: max-content;
-  input {
+  & > input {
     display: flex;
     padding: 13px 14px;
     justify-content: space-between;
@@ -54,6 +54,7 @@
   border: 1px solid #ebebeb;
   background: #fff;
   margin: 14px 0;
+  padding: 25px;
 }
 
 .warranty {
@@ -179,6 +180,24 @@
   border-radius: 10px;
   border: 1px solid #ebebeb;
   margin: 12px 0;
+
+  & > label {
+    display: block;
+  }
+  & > label + input {
+    display: flex;
+    padding: 13px 14px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ebebeb;
+    background: #fff;
+    outline: none;
+    margin: 14px 0;
+  }
+  
 }
 
 .logoContainer {

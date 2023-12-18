@@ -22,15 +22,31 @@ type FormData = {
   reference: string;
   image: any;
 };
+const RenderBankNeededDetails = (bankvalue: string) => {
+  switch (bankvalue) {
+    case 'USDTTRC20':
+      return <USDTTRC20Inputs />;
+    case 'BankWire':
+      return <BankWire />;
+    case 'Payoneer':
+      return <Payoneer />;
+    case 'Wise':
+      return <Wise />;
+    case 'CreditCard':
+      return <CreditCard />;
+    default:
+      return 'Yo';
+  }
+};
 
 const banks = [
   {
     text: 'USDT TRC20',
-    value: 'USDT TRC20',
+    value: 'USDTTRC20',
   },
   {
     text: 'Bank Wire (USD)',
-    value: 'Bank Wire (USD)',
+    value: 'BankWire',
   },
   {
     text: 'Payoneer',
@@ -42,13 +58,83 @@ const banks = [
   },
   {
     text: 'Credit Card',
-    value: 'Credit Card',
+    value: 'CreditCard',
   },
 ];
+
+const USDTTRC20Inputs = () => {
+  return (
+    <>
+      <span>USDT TRC20 Address</span>
+      <div className={styles.bankAddressInputContainer}>
+        <input type="text" />
+        <FiCopy />
+      </div>
+    </>
+  );
+};
+
+const BankWire = () => {
+  return (
+    <>
+      <label>Beneficiery Name</label>
+      <input type="text" placeholder="Enter your Beneficiery Name" />
+      <label>Account Number</label>
+      <input type="text" placeholder="Enter your Account Number" />
+      <label>SWIFT Code</label>
+      <input type="text" placeholder="Enter your SWIFT Code" />
+      <label>Account Address</label>
+      <input type="text" placeholder="Enter your Account Address" />
+    </>
+  );
+};
+
+const Payoneer = () => {
+  return (
+    <>
+      <label>Payoneer Email address</label>
+      <input type="email" placeholder="Enter your Email" />
+    </>
+  );
+};
+
+const Wise = () => {
+  return (
+    <>
+      <label>Email</label>
+      <input type="text" placeholder="Enter your Email" />
+      <label>Bank Name</label>
+      <input type="text" placeholder="Enter your Bank Name" />
+      <label>Bank Address</label>
+      <input type="text" placeholder="Enter your Bank Address" />
+      <label>Routing (ABA)</label>
+      <input type="text" placeholder="Enter your Routing (ABA)" />
+      <label>Account Number</label>
+      <input type="text" placeholder="Enter your Account Number" />
+      <label>Account Type</label>
+      <input type="text" placeholder="Enter your Account Type" />
+      <label>Beneficiary Name</label>
+      <input type="text" placeholder="Enter your Beneficiary Name" />
+    </>
+  );
+};
+
+const CreditCard = () => {
+  return (
+    <>
+      <span>USDT TRC20 Address</span>
+      <div className={styles.bankAddressInputContainer}>
+        <input type="text" />
+        <FiCopy />
+      </div>
+    </>
+  );
+};
+
 const MainBalanceDeposit = () => {
   const [isAlertVisible, setIsAlertVisible] = useState(true);
   const [formData, setFormData] = useState<FormData>({
-    bank: '',
+    bank: 'USDTTRC20',
     address: '',
     amount: '',
     reference: '',
@@ -109,11 +195,7 @@ const MainBalanceDeposit = () => {
                 );
               })}
             </div>
-            <span>USDT TRC20 Address</span>
-            <div className={styles.bankAddressInputContainer}>
-              <input type="text" />
-              <FiCopy />
-            </div>
+            {RenderBankNeededDetails(formData.bank)}
           </div>
           <span>
             Amount of the deposit in $<span style={{ color: 'red' }}>*</span>
