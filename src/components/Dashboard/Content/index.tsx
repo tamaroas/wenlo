@@ -13,6 +13,7 @@ import Breadcrumbs from './Breadcrumbs';
 import styles from './Index.module.scss'
 import SubscriptionPlan from './SubscriptionPlan';
 import MainBalanceDeposit from './MainBalanceDeposit';
+import MainBalanceWithdrawal from './MainBalanceWithdrawal';
 
 const DashboardContent = () => {
   return (
@@ -23,6 +24,7 @@ const DashboardContent = () => {
         <Route path="/" element={<Main />} />
         <Route path="/main-balance" element={<Balance />} />
         <Route path="/main-balance/deposit" element={<MainBalanceDeposit />} />
+        <Route path="/main-balance/withdrawal" element={<MainBalanceWithdrawal />} />
         <Route path="/ad-accounts" element={<AdAccounts />} />
         <Route path="/top-up-billings" element={<Billings />} />
         <Route path="/balance-transfer" element={<Transfert />} />
