@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BiTransfer } from 'react-icons/bi';
-import { FaPlus } from 'react-icons/fa';
+import { FaChevronDown, FaPlus } from 'react-icons/fa';
 import { FaRegCreditCard } from 'react-icons/fa6';
 import {
   MdOutlineAccountBalanceWallet,
@@ -13,6 +13,7 @@ import styles from './Menu.module.scss';
 import { BsClock, BsCurrencyDollar, BsMoon } from 'react-icons/bs';
 import { Switch } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
+import MenuAddAccount from '../Content/content3-menuAdAccount';
 const images = imageService.getImages();
 
 const DashboardMenuEmitter = new Emitter();
@@ -22,8 +23,10 @@ const DashboardMenuEventsList = {
 };
 
 const MenuItemList: {
-  title: string;
-  icon: JSX.Element;
+  title?: string;
+  icon?: JSX.Element;
+  iconRight?: JSX.Element;
+  component?: JSX.Element;
   route: string;
   type?: string;
 }[] = [
@@ -40,9 +43,11 @@ const MenuItemList: {
   {
     title: 'My Ad Accounts',
     icon: <TbUserPlus />,
+    iconRight: <FaChevronDown size={14} />,
     route: 'ad-accounts',
     type: 'subMenu',
   },
+  
   {
     title: 'Top-Up & Billings',
     icon: <FaRegCreditCard />,
@@ -96,17 +101,21 @@ const DashboardMenu = () => {
       <div className={styles.menu}>
         <span className={styles.menuTitle}>menu</span>
         <div className={styles.menuItemsList}>
-          {MenuItemList.map((item, index) => (
-            <MenuItem
-              key={index}
-              title={item.title}
-              icon={item.icon}
-              type={item.type}
-              route={item.route}
-              // active={index === itemSelected}
-              idx={index}
-            />
-          ))}
+          {MenuItemList.map((item, index) => {
+            return (
+              <MenuItem
+                key={index}
+                title={item.title}
+                icon={item.icon}
+                // iconRight={item.iconRight}
+                type={item.type}
+                // component={item.component}
+                route={item.route}
+                // active={index === itemSelected}
+                idx={index}
+              />
+            );
+          })}
         </div>
         <div></div>
         <div className={styles.section2}>
@@ -143,13 +152,23 @@ const DashboardMenu = () => {
 export default DashboardMenu;
 
 type MenuItemProps = {
-  title: string;
-  icon: JSX.Element;
+  title?: string;
+  component?: JSX.Element;
+  icon?: JSX.Element;
+  iconRight?: JSX.Element;
   type?: string;
   route: string;
-  idx: number;
+  idx?: number;
 };
-const MenuItem = ({ title, icon, route, type, idx }: MenuItemProps) => {
+export const MenuItem = ({
+  title,
+  icon,
+  route,
+  iconRight,
+  // component,
+  type,
+  idx,
+}: MenuItemProps) => {
   const navigate = useNavigate();
   const handleClick = () => {
     // DashboardMenuEmitter.emit(DashboardMenuEventsList.SET_ITEM_SELECTED, idx);
@@ -174,6 +193,8 @@ const MenuItem = ({ title, icon, route, type, idx }: MenuItemProps) => {
     >
       {icon}
       <span className={'font-400'}>{title}</span>
+      {/* <span className={styles.iconright}>{iconRight}</span> */}
+      {/* {component} */}
     </div>
   );
 };
