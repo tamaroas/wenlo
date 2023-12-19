@@ -1451,7 +1451,7 @@ const getSection8PayementIcon = (state?: string) => {
   }
 };
 
-const Search = () => {
+export const Search = () => {
   return (
     <div className={styles.search}>
       <svg

@@ -1,19 +1,24 @@
+import { Switch } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { BiTransfer } from 'react-icons/bi';
-import { FaChevronDown, FaPlus } from 'react-icons/fa';
-import { FaRegCreditCard } from 'react-icons/fa6';
+import { BiLogoBing, BiTransfer } from 'react-icons/bi';
+import { BsClock, BsCurrencyDollar, BsMoon } from 'react-icons/bs';
+import { FaChevronUp, FaFacebookF, FaPlus, FaTiktok } from 'react-icons/fa';
+import {
+  FaChevronDown,
+  FaFacebook,
+  FaRegCreditCard,
+  FaSnapchat,
+} from 'react-icons/fa6';
+import { FcGoogle } from 'react-icons/fc';
 import {
   MdOutlineAccountBalanceWallet,
   MdOutlineSpaceDashboard,
 } from 'react-icons/md';
 import { TbUser, TbUserPlus, TbUserUp, TbUsers } from 'react-icons/tb';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Emitter from '../../../utils/EventEmitter/EventEmitter';
 import imageService from '../../../utils/ImageService';
 import styles from './Menu.module.scss';
-import { BsClock, BsCurrencyDollar, BsMoon } from 'react-icons/bs';
-import { Switch } from '@mui/material';
-import { useLocation, useNavigate } from 'react-router-dom';
-import MenuAddAccount from '../Content/content3-menuAdAccount';
 const images = imageService.getImages();
 
 const DashboardMenuEmitter = new Emitter();
@@ -22,55 +27,101 @@ const DashboardMenuEventsList = {
   SET_ITEM_SELECTED: 'SET_ITEM_SELECTED',
 };
 
-const MenuItemList: {
-  title?: string;
-  icon?: JSX.Element;
-  iconRight?: JSX.Element;
-  component?: JSX.Element;
-  route: string;
-  type?: string;
-}[] = [
+const MenuItemList: (
+  | {
+      title: string;
+      icon: JSX.Element;
+      route: string;
+      type: 'simplemenu';
+    }
+  | {
+      title: string;
+      icon: JSX.Element;
+      route: string;
+      type: 'submenu';
+      canNavigate: boolean;
+      items: {
+        icon: JSX.Element;
+        title: string;
+        route: string;
+      }[];
+    }
+)[] = [
   {
     title: 'Dashboard',
     icon: <MdOutlineSpaceDashboard />,
-    route: '',
+    route: '/dashboard',
+    type: 'simplemenu',
   },
   {
     title: 'Main balance',
     icon: <MdOutlineAccountBalanceWallet />,
+    type: 'simplemenu',
     route: 'main-balance',
   },
   {
     title: 'My Ad Accounts',
     icon: <TbUserPlus />,
-    iconRight: <FaChevronDown size={14} />,
-    route: 'ad-accounts',
-    type: 'subMenu',
+    route: 'ad-account',
+    canNavigate: false,
+    type: 'submenu',
+    items: [
+      {
+        title: 'Facebook',
+        icon: <FaFacebookF />,
+        route: 'ad-account/facebook',
+      },
+      {
+        title: 'Google',
+        route: 'ad-account/google',
+        icon: <FcGoogle />,
+      },
+      {
+        title: 'Tik Tok',
+        route: 'ad-account/tiktok',
+        icon: <FaTiktok />,
+      },
+      {
+        title: 'Bing',
+        route: 'ad-account/bing',
+        icon: <BiLogoBing />,
+      },
+      {
+        title: 'Snapchat',
+        route: 'ad-account/snapchat',
+        icon: <FaSnapchat />,
+      },
+    ],
   },
-  
+
   {
     title: 'Top-Up & Billings',
+    type: 'simplemenu',
     icon: <FaRegCreditCard />,
     route: 'top-up-billings',
   },
   {
     title: 'Balance Transfer',
     icon: <BiTransfer />,
+    type: 'simplemenu',
     route: 'balance-transfer',
   },
   {
     title: 'Manage ad account access',
     icon: <TbUserUp />,
+    type: 'simplemenu',
     route: 'manage-ad-account-access',
   },
   {
     title: 'People & Business records',
     icon: <TbUsers />,
+    type: 'simplemenu',
     route: 'people-business-records',
   },
   {
     title: 'Profile',
     icon: <TbUser />,
+    type: 'simplemenu',
     route: 'profile',
   },
 ];
@@ -102,19 +153,31 @@ const DashboardMenu = () => {
         <span className={styles.menuTitle}>menu</span>
         <div className={styles.menuItemsList}>
           {MenuItemList.map((item, index) => {
-            return (
-              <MenuItem
-                key={index}
-                title={item.title}
-                icon={item.icon}
-                // iconRight={item.iconRight}
-                type={item.type}
-                // component={item.component}
-                route={item.route}
-                // active={index === itemSelected}
-                idx={index}
-              />
-            );
+            if (item.type === 'simplemenu')
+              return (
+                <MenuItem
+                  key={index}
+                  title={item.title}
+                  icon={item.icon}
+                  type={item?.type}
+                  route={item.route}
+                  idx={index}
+                  canNavigate={true}
+                />
+              );
+            else
+              return (
+                <MenuItem
+                  key={index}
+                  title={item.title}
+                  icon={item.icon}
+                  type={item?.type}
+                  route={item.route}
+                  idx={index}
+                  subItems={item.items}
+                  canNavigate={item.canNavigate}
+                />
+              );
           })}
         </div>
         <div></div>
@@ -152,49 +215,115 @@ const DashboardMenu = () => {
 export default DashboardMenu;
 
 type MenuItemProps = {
-  title?: string;
-  component?: JSX.Element;
-  icon?: JSX.Element;
-  iconRight?: JSX.Element;
-  type?: string;
-  route: string;
+  title: string;
+  icon: JSX.Element;
+  type: string;
+  route?: string;
   idx?: number;
+  canNavigate?: boolean;
+  subItems?: {
+    icon: JSX.Element;
+    title: string;
+    route: string;
+  }[];
 };
 export const MenuItem = ({
   title,
   icon,
   route,
-  iconRight,
-  // component,
   type,
   idx,
+  subItems,
+  canNavigate = true,
 }: MenuItemProps) => {
   const navigate = useNavigate();
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
     // DashboardMenuEmitter.emit(DashboardMenuEventsList.SET_ITEM_SELECTED, idx);
-    navigate(route);
+    if (route && canNavigate) navigate(route);
+
+    if (type === 'submenu') {
+      if (e.target === e.currentTarget) setIsSubMenuVisible(prev => !prev);
+    }
   };
+
+  const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
   const [active, setActive] = useState(false);
   const location = useLocation();
   useEffect(() => {
-    if (route === '') {
+    if (route === '/dashboard') {
       location.pathname === '/dashboard' ? setActive(true) : setActive(false);
     } else {
       location.pathname.includes(`/dashboard/${route}`)
         ? setActive(true)
-        : setActive(false);
+        : (() => {
+            setActive(false);
+            setIsSubMenuVisible(false);
+          })();
     }
   }, [location.pathname, route]);
 
+  const handleShowSubItems = () => {
+    setIsSubMenuVisible(prev => !prev);
+  };
+
+  return (
+    <>
+      <div
+        className={
+          styles.menuItem + ' ' + (active ? styles.menuItemActive : '')
+        }
+        onClick={handleClick}
+      >
+        {icon}
+        <span className={'font-400'}>{title}</span>
+        {type === 'submenu' && (
+          <button className={styles.chevronDown} onClick={handleShowSubItems}>
+            {isSubMenuVisible ? <FaChevronUp /> : <FaChevronDown />}
+          </button>
+        )}
+      </div>
+      {isSubMenuVisible && (
+        <div className={styles.subItemsContainer}>
+          {subItems &&
+            Array.isArray(subItems) &&
+            subItems.map((el, idx) => {
+              return <SubItemComp {...el} key={title + idx} />;
+            })}
+        </div>
+      )}
+    </>
+  );
+};
+
+type SubItemProps = {
+  icon: JSX.Element;
+  title: string;
+  route: string;
+};
+
+const SubItemComp = ({ icon, route, title }: SubItemProps) => {
+  const [isSelected, setIsSelected] = useState(false);
+  const navigate = useNavigate();
+  const actualRoute = useLocation();
+  const handleClick = () => {
+    navigate(route);
+  };
+  useEffect(() => {
+    const actual = actualRoute.pathname.split('/')[3];
+    const mine = route.split('/')[1];
+    setIsSelected(prev => actual === mine);
+  }, [actualRoute, route]);
   return (
     <div
-      className={styles.menuItem + ' ' + (active ? styles.menuItemActive : '')}
       onClick={handleClick}
+      className={
+        styles.subItemContainer +
+        ' ' +
+        (isSelected ? styles.subItemContainerSelected : '')
+      }
     >
       {icon}
-      <span className={'font-400'}>{title}</span>
-      {/* <span className={styles.iconright}>{iconRight}</span> */}
-      {/* {component} */}
+      <span>{title}</span>
     </div>
   );
 };
