@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
 import Emitter from '../../../../../utils/EventEmitter/EventEmitter';
 import AdAccountsNav from '../nav';
 import style from './style.module.scss';
@@ -6,6 +6,114 @@ import TableView from '../tableView';
 import { capitalize } from '../../../../../functions/Strings';
 import { Search } from '../../Content1-Main';
 import { useNavigate } from 'react-router-dom';
+import {
+  FaFacebookF,
+  FaGoogle,
+  FaSnapchat,
+  FaTiktok,
+  FaXmark,
+} from 'react-icons/fa6';
+import { TbUserPlus } from 'react-icons/tb';
+import { FaClock, FaCopy, FaPlus } from 'react-icons/fa';
+import imageService from '../../../../../utils/ImageService';
+import { styled } from '@mui/material/styles';
+import {
+  Step,
+  StepConnector,
+  StepIconProps,
+  StepLabel,
+  Stepper,
+  stepConnectorClasses,
+} from '@mui/material';
+import { BiLogoBing } from 'react-icons/bi';
+import { CustomInput, CustomLabelWrapper, CustomSelect } from './Request';
+import CustomSelect1 from '../../../../CustomSelect1/CustomSelect1';
+import { FcGoogle } from 'react-icons/fc';
+
+const images = imageService.getImages();
+
+const steps = ['Ad account details', 'Ad account top-up'];
+const snapSteps = ['Ad account details', 'Profile Access', 'Ad account top-up'];
+
+const QontoConnector = styled(StepConnector)(({ theme }) => ({
+  [`&.${stepConnectorClasses.alternativeLabel}`]: {
+    top: 10,
+    left: 'calc(-50% + 16px)',
+    right: 'calc(50% + 16px)',
+  },
+  [`&.${stepConnectorClasses.active}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      borderColor: '#784af4',
+    },
+  },
+  [`&.${stepConnectorClasses.completed}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      borderColor: '#784af4',
+    },
+  },
+  [`& .${stepConnectorClasses.line}`]: {
+    borderColor:
+      theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
+    borderTopWidth: 3,
+    borderRadius: 1,
+  },
+}));
+
+const QontoStepIconRoot = styled('div')<{ ownerState: { active?: boolean } }>(
+  ({ theme, ownerState }) => ({
+    color: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#eaeaf0',
+    display: 'flex',
+    height: 22,
+    alignItems: 'center',
+    ...(ownerState.active && {
+      color: '#784af4',
+    }),
+    '& .QontoStepIcon-completedIcon': {
+      width: 24,
+      height: 24,
+      borderRadius: '50%',
+      borderWidth: 5,
+      borderColor: '#3949a1',
+      borderStyle: 'solid',
+      backgroundColor: '#3949a1',
+    },
+    '& .QontoStepIcon-active': {
+      width: 24,
+      height: 24,
+      borderRadius: '50%',
+      borderWidth: 5,
+      borderColor: '#3949a1',
+      borderStyle: 'solid',
+      backgroundColor: 'white',
+    },
+    '& .QontoStepIcon-circle': {
+      width: 24,
+      height: 24,
+      borderRadius: '50%',
+      borderWidth: 2,
+      borderColor: '#E0E0E0',
+      borderStyle: 'solid',
+      backgroundColor: 'white',
+    },
+  })
+);
+
+function QontoStepIcon(props: StepIconProps) {
+  const { active, completed, className } = props;
+
+  return (
+    <QontoStepIconRoot ownerState={{ active }} className={className}>
+      {completed ? (
+        // <FaCheck className="QontoStepIcon-completedIcon" />
+        <div className="QontoStepIcon-completedIcon" />
+      ) : active ? (
+        <div className="QontoStepIcon-active" />
+      ) : (
+        <div className="QontoStepIcon-circle" />
+      )}
+    </QontoStepIconRoot>
+  );
+}
 
 const section10Rows = [
   {
@@ -102,6 +210,7 @@ export const adAccountFacebookEmitter = new Emitter();
 
 export const adAccountFacebookEmitterEvents = {
   SET_ACTUAL: 'SET_ACTUAL',
+  SET_AMOUNT_RADIO_SELECTED: 'SET_AMOUNT_RADIO_SELECTED',
 };
 
 function AdAccountsFacebook() {
@@ -134,19 +243,894 @@ type MyRequestProps = {
   comp: string;
 };
 
+const ActionsEmiter = new Emitter();
+
+const ActionsEmiterEvent = {
+  SET_ACTION_SEE: 'SET_ACTION_SEE',
+  SET_ACTION_EDIT: 'SET_ACTION_EDIT',
+};
 export const MyRequest = ({ comp }: MyRequestProps) => {
-  const navigate = useNavigate()
-  const handleClick = ()=>{
-    navigate('request')
-  }
+  const [popUpsVisibility, setPopUpsVisibility] = useState({
+    logStatus: false,
+    requestSummary: false,
+    requestSummarySubmited: false,
+    adAccountApplicationPopup: true,
+  });
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('request');
+  };
+
   return (
-    <div className={style.myRequestContainer}>
-      <h2>Manage {capitalize(comp)} Ad Accounts Request</h2>
-      <button onClick={handleClick}>Request {comp} ad account</button>
-      <TableView />
+    <>
+      <div className={style.myRequestContainer}>
+        <h2>Manage {capitalize(comp)} Ad Accounts Request</h2>
+        <button onClick={handleClick}>Request {comp} ad account</button>
+        <TableView />
+      </div>
+      {popUpsVisibility.logStatus && <LogStatusPopUp comp={comp} />}
+      {popUpsVisibility.requestSummary && <RequestSummary comp={comp} />}
+      {popUpsVisibility.requestSummarySubmited && (
+        <RequestSummarySubmitted comp={comp.toLowerCase()} />
+      )}
+      {popUpsVisibility.adAccountApplicationPopup && (
+        <AdAccountApplicationPopup comp={comp.toLowerCase()} />
+      )}
+    </>
+  );
+};
+
+const AdAccountApplicationPopup = ({ comp }: { comp: string }) => {
+  const [Pages, setPages] = useState([{ id: '', link: '' }]);
+  const [stepperIndex, setStepperIndex] = useState(0);
+  const handleForwardClick = () => {
+    setStepperIndex(prev => {
+      if (comp === 'snapchat') {
+        return prev === snapSteps.length - 1 ? snapSteps.length - 1 : prev + 1;
+      }
+      return prev === steps.length - 1 ? steps.length - 1 : prev + 1;
+    });
+  };
+
+  const handleBackwardClick = () => {
+    setStepperIndex(prev => {
+      return prev === 0 ? 0 : prev - 1;
+    });
+  };
+  console.log('comp', comp);
+  return (
+    <div className={style.adAccountApplicationPopup}>
+      <div>
+        <div>
+          {comp === 'facebook' ? (
+            <FaFacebookF color="#3C5A9A" size={40} />
+          ) : comp === 'google' ? (
+            <FcGoogle size={40} />
+          ) : comp === 'tiktok' ? (
+            <FaTiktok color="#000" size={40} />
+          ) : comp === 'bing' ? (
+            <BiLogoBing color="#3C5A9A" size={40} />
+          ) : (
+            <FaSnapchat color="#3C5A9A" size={40} />
+          )}
+        </div>
+        <p>{comp} Ad account application</p>
+        <div className={style.stepperContainer}>
+          <Stepper
+            alternativeLabel
+            activeStep={stepperIndex}
+            connector={<QontoConnector />}
+          >
+            {comp === 'snapchat'
+              ? snapSteps.map(label => (
+                  <Step key={label}>
+                    <StepLabel StepIconComponent={QontoStepIcon}>
+                      {label}
+                    </StepLabel>
+                  </Step>
+                ))
+              : steps.map(label => (
+                  <Step key={label}>
+                    <StepLabel StepIconComponent={QontoStepIcon}>
+                      {label}
+                    </StepLabel>
+                  </Step>
+                ))}
+          </Stepper>
+        </div>
+        {stepperIndex === 0 ? <AdAccountApplicationPopup0 comp={comp} /> : null}
+        {stepperIndex === 1 ? (
+          comp === 'snapchat' ? (
+            <AdSnapAccountApplicationPopup1 comp={comp} />
+          ) : (
+            <AdAccountApplicationPopup1 comp={comp} />
+          )
+        ) : null}
+        {stepperIndex === 2 && comp === 'snapchat' ? (
+          <AdAccountApplicationPopup1 comp={comp} />
+        ) : null}
+        <div className={style.AdAccountApplicationPopupFooter}>
+          <button>Save as draft</button>
+          <button>Cancel</button>
+          <button onClick={handleForwardClick}>
+            {(comp === 'snapchat' && stepperIndex === snapSteps.length - 1) ||
+            (comp !== 'snapchat' && stepperIndex === steps.length - 1)
+              ? 'Submit'
+              : 'Next'}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
+
+const AdAccountApplicationPopup1 = ({ comp }: { comp: string }) => {
+  const [AmountRadioSelected, setAmountRadioSelected] = useState(0);
+
+  return (
+    <div className={style.AdAccountApplicationPopup0}>
+      <p className={style.heading}>Ad account details</p>
+      <span>Enter your advertising account details</span>
+      <div className={style.subContainer1}>
+        <span>Ad account name</span>
+        <p>Gabriela Hudges</p>
+        <span>Time zone</span>
+        <p>(GMT-5:00) Guadalajara, Mexico City, Monterrey (CDT)</p>
+        <span>Domain / Url</span>
+        <p>Gabriela Hudges.com</p>
+        <span>Target countries</span>
+        <p>Albania, Austria, Indonesia</p>
+      </div>
+      <div className={style.subContainer2}>
+        <span>Balance</span>
+        <p>$300</p>
+        <span>Amount to debit</span>
+        <p>-$100</p>
+      </div>
+      <span>
+        Top-up amount ($)<span style={{ color: '#DB242F' }}>*</span>
+      </span>
+      <input placeholder="$100" />
+      <div className={style.AmountRadiosContainer}>
+        {tabAmount.map((el, key) => (
+          <AmountRadio
+            key={key}
+            amount={el.amount}
+            idx={key}
+            selected={AmountRadioSelected}
+            setSelected={setAmountRadioSelected}
+          />
+        ))}
+      </div>
+      <div className={style.subContainer3}>
+        <span>Top-up Amount</span>
+        <p>$14.99</p>
+        <span>Top-up Fee</span>
+        <p>$4.99</p>
+        <span>VAT</span>
+        <p>$4.99</p>
+        <p>Amount Due</p>
+        <p>$20.48</p>
+      </div>
+    </div>
+  );
+};
+
+const countries = [
+  { text: 'Albania', value: 'albania' },
+  { text: 'Albania', value: 'albania1' },
+  { text: 'Balbania', value: 'balbania' },
+];
+
+const CustomOLLI = ({
+  idx,
+  children,
+}: {
+  idx: number;
+  children: ReactNode;
+}) => {
+  return (
+    <div className={style.customOLLI}>
+      <span>{idx}</span>
+      {children}
+    </div>
+  );
+};
+
+const CopySpan = ({ text, color }: { text: string; color?: string }) => {
+  return (
+    <span className={style.CopySpan} style={{ color }}>
+      {text}{' '}
+      <span>
+        <FaCopy color={color} />
+      </span>
+    </span>
+  );
+};
+
+const AdSnapAccountApplicationPopup1 = ({ comp }: { comp: string }) => {
+  return (
+    <div className={style.AdAccountApplicationPopup0}>
+      <p className={style.heading}>Ad account details</p>
+      <span>Enter your advertising account details</span>
+
+      <div className={style.subContainer4}>
+        <CustomOLLI idx={1}>
+          <span>
+            Log into the Ad Manager. Then click on the menu in the tospan left
+            corner and select Business Details.
+          </span>
+        </CustomOLLI>
+        <CustomOLLI idx={2}>
+          <span>In the menu on the left, select Shared.</span>
+        </CustomOLLI>
+        <CustomOLLI idx={3}>
+          <span>Click on Start Sharing in the top right-hand corner.</span>
+        </CustomOLLI>
+        <CustomOLLI idx={4}>
+          <span>
+            A pop-up window appears. Select the type of asset you wish to share:
+            "Profile". Then select the name of the profile you want to share.
+          </span>
+        </CustomOLLI>
+        <CustomOLLI idx={5}>
+          <span>
+            Finally, enter the following organisation ID ( Madhouse's org
+            Organisation ID:
+            <CopySpan
+              text="8f33295c-e904-401c-8772-d57c419be382"
+              color="#3949A1"
+            />
+          </span>
+        </CustomOLLI>
+      </div>
+
+      <CustomInput
+        label="Public profile name"
+        placeholder="Enter your public profile name"
+        infos="Please Enter your public profile name"
+      />
+    </div>
+  );
+};
+
+const AdAccountApplicationPopup0 = ({ comp }: { comp: string }) => {
+  const [domains, setDomains] = useState<String[]>([]);
+  const [selectedCountries, setSelectedCountries] = useState<
+    { text: string; value: string }[]
+  >([]);
+  const [selectedAccounts, setSelectedAccounts] = useState<
+    { text: string; value: string }[]
+  >([]);
+  const [tiktokBusinessCenters, setTiktokBusinessCenters] = useState<
+    { text: string; value: string }[]
+  >([]);
+  const [snapChatEmails, setSnapChatEmails] = useState<
+    { text: string; value: string }[]
+  >([]);
+
+  const [actualTiktokBusinessCenter, setActualTiktokBusinessCenter] = useState<{
+    text: string;
+    value: string;
+  }>({ text: 'Select your TikTok Business Center', value: '0' });
+  const [domainValue, setDomainValue] = useState('');
+  const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (domains.length < 3 && e.key === ' ') {
+      setDomains(prev => {
+        let temp = [...prev];
+        console.log('e.key ', { target: domainValue });
+        temp.push(domainValue.trim());
+
+        setDomainValue(() => '');
+        return temp;
+      });
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (domains.length >= 3) {
+      setDomainValue('max domain is 3');
+    } else {
+      setDomainValue(() => {
+        return e.target.value;
+      });
+    }
+  };
+
+  const handleRemoveDomain = (idx: number) => () => {
+    setDomains(prev => {
+      let temp = [...prev];
+      temp.splice(idx, 1);
+      return temp;
+    });
+    setDomainValue('');
+  };
+
+  const handleRemoveCountry = (idx: number) => () => {
+    setSelectedCountries(prev => {
+      let temp = [...prev];
+      temp.splice(idx, 1);
+      return temp;
+    });
+  };
+
+  const handleRemoveAccount = (idx: number) => () => {
+    setSelectedAccounts(prev => {
+      let temp = [...prev];
+      temp.splice(idx, 1);
+      return temp;
+    });
+  };
+
+  const handleRemoveBusinessCenterTiktok = (idx: number) => () => {
+    setTiktokBusinessCenters(prev => {
+      let temp = [...prev];
+      temp.splice(idx, 1);
+      return temp;
+    });
+  };
+
+  const handleRemoveSnapchatEmail = (idx: number) => () => {
+    setSnapChatEmails(prev => {
+      let temp = [...prev];
+      temp.splice(idx, 1);
+      return temp;
+    });
+  };
+
+  const handleSelectCountry = ({
+    text,
+    value,
+  }: {
+    text: string;
+    value: string;
+  }) => {
+    if (!selectedCountries.some(el => el.value === value)) {
+      setSelectedCountries(prev => {
+        let temp = [...prev];
+        temp.push({ text, value });
+        return temp;
+      });
+    }
+  };
+
+  const handleSelectAccount = ({
+    text,
+    value,
+  }: {
+    text: string;
+    value: string;
+  }) => {
+    if (!selectedCountries.some(el => el.value === value)) {
+      setSelectedAccounts(prev => {
+        let temp = [...prev];
+        temp.push({ text, value });
+        return temp;
+      });
+    }
+  };
+
+  const handleAddTiktokBusinessCenter = () => {
+    if (
+      actualTiktokBusinessCenter.value !== '0' &&
+      !tiktokBusinessCenters.some(
+        el => el.value === actualTiktokBusinessCenter.value
+      )
+    ) {
+      setTiktokBusinessCenters(prev => {
+        let temp = [...prev];
+        temp.push(actualTiktokBusinessCenter);
+        return temp;
+      });
+    }
+  };
+
+  const handleAddSnapchatEmails = ({
+    text,
+    value,
+  }: {
+    text: string;
+    value: string;
+  }) => {
+    if (!snapChatEmails.some(el => el.value === value)) {
+      setSnapChatEmails(prev => {
+        let temp = [...prev];
+        temp.push({ text, value });
+        return temp;
+      });
+    }
+  };
+
+  const handleSelectTiktokBusinessCenter = ({
+    text,
+    value,
+  }: {
+    text: string;
+    value: string;
+  }) => {
+    setActualTiktokBusinessCenter({ text, value });
+  };
+
+  return (
+    <div className={style.AdAccountApplicationPopup0}>
+      <p className={style.heading}>Ad account details</p>
+      <span>Enter your advertising account details</span>
+
+      <CustomLabelWrapper
+        label="Ad Account name"
+        infos="Fully customise your ad account name by removing the Wenlo suffix"
+      >
+        <div className={style.inputContainer}>
+          <input type="text" placeholder="Enter your ad account name" />
+          <small>Wenlo</small>
+        </div>
+      </CustomLabelWrapper>
+      <CustomSelect
+        label={'Time zone'}
+        options={[{ title: 'Set a time zone for your ad account', value: '0' }]}
+      />
+      <CustomInput
+        label="Domain / Url"
+        placeholder="Enter your domain or url"
+        handleKeyUp={handleKeyUp}
+        handleChange={handleChange}
+        value={domainValue}
+        infos="Please enter the link or website you will use for 
+        your campaigns. No other links will be allowed on the advertising account. You can enter max 3 domain or URL"
+      />
+      {domains.length ? (
+        <>
+          <p>
+            {domains.length}
+            <span>/3 Domain or URL has been entered</span>
+          </p>
+          {domains.map((el, idx) => {
+            return (
+              <div key={idx} className={style.singleDomainContainer}>
+                <p>{el}</p>
+                <button onClick={handleRemoveDomain(idx)}>
+                  <FaXmark size={14} />
+                </button>
+              </div>
+            );
+          })}
+        </>
+      ) : null}
+      <CustomLabelWrapper
+        label="Target Countries"
+        infos="Enter the countries you want to target for your campaigns"
+      >
+        <CustomSelect1
+          defaultOption={{ text: 'Enter your countries', value: '0' }}
+          options={countries}
+          handleSelect={handleSelectCountry}
+        />
+      </CustomLabelWrapper>
+      {selectedCountries.length
+        ? selectedCountries.map((el, idx) => {
+            return (
+              <div key={idx} className={style.singleDomainContainer}>
+                <p>{el.text}</p>
+                <button onClick={handleRemoveCountry(idx)}>
+                  <FaXmark size={14} />
+                </button>
+              </div>
+            );
+          })
+        : null}
+
+      {comp === 'google' || comp === 'bing' ? (
+        <>
+          <p className={style.heading}>People's section</p>
+          <span>
+            Add emails of {comp} accounts that will be assigned to the
+            advertising account.
+          </span>
+          <div className={style.accountsContainer}>
+            <CustomLabelWrapper label={capitalize(comp) + ' Account Email'}>
+              <CustomSelect1
+                defaultOption={{
+                  text: capitalize(comp) + "'s email",
+                  value: '0',
+                }}
+                options={countries}
+                handleSelect={handleSelectAccount}
+              />
+            </CustomLabelWrapper>
+            {selectedAccounts.length
+              ? selectedAccounts.map((el, idx) => {
+                  return (
+                    <div key={idx} className={style.singleDomainContainer}>
+                      <p>{el.text}</p>
+                      <button onClick={handleRemoveAccount(idx)}>
+                        <FaXmark size={14} />
+                      </button>
+                    </div>
+                  );
+                })
+              : null}
+          </div>
+        </>
+      ) : comp === 'tiktok' ? (
+        <>
+          <p className={style.heading}>Select your TikTok Business Center</p>
+          <span>
+            Add or select a record of your TikTok Business Center information.
+            Once the advertising account is approved and created we will link it
+            to the submitted Business Center.
+          </span>
+          <div className={style.subContainer4}>
+            <CustomLabelWrapper label="Business Center">
+              <CustomSelect1
+                defaultOption={{
+                  text: 'Select your TikTok Business Center',
+                  value: '0',
+                }}
+                options={countries}
+                handleSelect={handleSelectTiktokBusinessCenter}
+              />
+            </CustomLabelWrapper>
+            {tiktokBusinessCenters.length
+              ? tiktokBusinessCenters.map((el, idx) => {
+                  return (
+                    <div key={idx} className={style.singleDomainContainer}>
+                      <p>{el.text}</p>
+                      <button onClick={handleRemoveBusinessCenterTiktok(idx)}>
+                        <FaXmark size={14} />
+                      </button>
+                    </div>
+                  );
+                })
+              : null}
+            <button
+              className={style.button1}
+              onClick={handleAddTiktokBusinessCenter}
+            >
+              Add a new account manager
+            </button>
+          </div>
+        </>
+      ) : comp === 'snapchat' ? (
+        <>
+          <p className={style.heading}>Select your TikTok Business Center</p>
+          <span>Enter your advertising company details</span>
+          <CustomInput
+            label="Company Entity Name"
+            placeholder="Enter your company name"
+            infos="Please enter your company name"
+          />
+          <CustomInput
+            label="Registered address of the company"
+            placeholder="Enter your registered address"
+          />
+          <CustomInput
+            label="Business address of the company"
+            placeholder="Enter your business address"
+            infos="Please enter your business address"
+          />
+          <p className={style.heading}>Advertising campaign details</p>
+          <span>Enter your advertising company details</span>
+          <CustomInput
+            label="General budget ($)"
+            placeholder="Enter your general budget"
+            infos="What is your total advertising budget?"
+          />
+          <CustomLabelWrapper label="Age range of targeted people">
+            <div className={style.ageRangeContainer}>
+              <input placeholder="Enter age" type="number" /> <p>-</p>{' '}
+              <input placeholder="Enter age" type="number" />
+            </div>
+          </CustomLabelWrapper>
+          <CustomInput
+            label="Target KPI"
+            placeholder="Enter your target KPI"
+            infos="What is your Target KPI?"
+          />
+          <p className={style.heading}>People's section</p>
+          <span>
+            Add emails of Snapchat accounts that will be assigned to the
+            advertising account
+          </span>
+          <div className={style.subContainer4}>
+            <CustomLabelWrapper label="Snapchat Account Email">
+              <CustomSelect1
+                defaultOption={{
+                  text: "Google's email",
+                  value: '0',
+                }}
+                options={countries}
+                handleSelect={handleAddSnapchatEmails}
+              />
+            </CustomLabelWrapper>
+            {snapChatEmails.length
+              ? snapChatEmails.map((el, idx) => {
+                  return (
+                    <div key={idx} className={style.singleDomainContainer}>
+                      <p>{el.text}</p>
+                      <button onClick={handleRemoveSnapchatEmail(idx)}>
+                        <FaXmark size={14} />
+                      </button>
+                    </div>
+                  );
+                })
+              : null}
+          </div>
+        </>
+      ) : null}
+    </div>
+  );
+};
+
+const Logs: LogStatusRowProps[] = [
+  { date: '3 May 2023', requestId: '#712921', status: 'hold' },
+  { date: '3 May 2023', requestId: '#712921', status: 'hold' },
+  { date: '3 May 2023', requestId: '#712921', status: 'hold' },
+];
+
+const LogStatusPopUp = ({ comp }: { comp: string }) => {
+  return (
+    <div className={style.LogStatusPopUp}>
+      <div>
+        <div>
+          <p>Log Status</p> <FaXmark />
+        </div>
+        <div>
+          {Logs.map((el, idx) => {
+            return <LogStatusRow key={idx} {...el} />;
+          })}
+        </div>
+        <button>Resubmit</button>
+      </div>
+    </div>
+  );
+};
+
+type LogStatusRowProps = { status: string; date: string; requestId: string };
+const LogStatusRow = ({ status, date, requestId }: LogStatusRowProps) => {
+  return (
+    <div className={style.LogStatusRow}>
+      <div>
+        <TbUserPlus color="#3A4CA1" />
+      </div>
+      <span>Request ad accounnt</span>
+      <span>
+        Your request google ad account is{' '}
+        <span style={{ color: status === 'hold' ? '#A78736' : 'red' }}>
+          {status === 'hold' ? 'On Hold' : 'Rejected'}
+        </span>
+      </span>
+      <span>
+        <FaClock /> {date}
+      </span>
+      <span>{requestId}</span>
+      <p>
+        Your deposit request has been{' '}
+        <span style={{ color: '#A78736' }}>On hold</span> due to insufficient
+        balance
+      </p>
+    </div>
+  );
+};
+
+const RequestSummary = ({ comp }: { comp: string }) => {
+  const [domains, setDomains] = useState([
+    {
+      value: '',
+    },
+  ]);
+  const [googleAccounts, setGoogleAccounts] = useState([
+    {
+      value: '',
+    },
+  ]);
+
+  const handleAddDomain = () => {
+    setDomains(prev => {
+      const temp = [...prev];
+      temp.push({
+        value: '',
+      });
+      return temp;
+    });
+  };
+
+  const handleAddGoogleAccounts = () => {
+    setGoogleAccounts(prev => {
+      const temp = [...prev];
+      temp.push({
+        value: '',
+      });
+      return temp;
+    });
+  };
+
+  const handleClick = () => {};
+  return (
+    <div className={style.RequestSummary}>
+      <div>
+        <div>
+          <span>Request summary</span>
+          <FaXmark />
+          <span>#8FB28438-0001 </span>
+        </div>
+        <div>
+          <label>Ad account name</label>
+          <input type="text" placeholder="Amazon" />
+
+          <label>Domain</label>
+          <input
+            type="text"
+            placeholder="Gabrielahudges@gmail.com"
+            className={style.smallInput}
+          />
+          <button onClick={handleAddDomain}>
+            <FaPlus />
+          </button>
+
+          {domains.slice(1).map((el, i) => (
+            <input
+              type="text"
+              placeholder="Gabrielahudges@gmail.com"
+              key={i}
+              className={style.smallInput}
+            />
+          ))}
+
+          <label>Time zone</label>
+          <input
+            type="text"
+            placeholder="(GMT-5:00) Guadalajara, Mexico City, Monterrey (CDT)"
+          />
+
+          <label>Google account email</label>
+          <input
+            type="text"
+            className={style.smallInput}
+            placeholder="Gabrielahudges@gmail.com"
+          />
+          <button onClick={handleAddGoogleAccounts}>
+            <FaPlus />
+          </button>
+          {googleAccounts.slice(1).map((el, i) => (
+            <input
+              type="text"
+              placeholder="Gabrielahudges@gmail.com"
+              key={i}
+              className={style.smallInput}
+            />
+          ))}
+
+          <label>ID Request</label>
+          <input type="text" placeholder="#712921" />
+
+          <label>Request date</label>
+          <input type="text" placeholder="23 April, 2023" />
+        </div>
+        <button onClick={handleClick}>Resubmit</button>
+      </div>
+    </div>
+  );
+};
+
+const tabAmount = [
+  {
+    amount: '$30',
+  },
+  {
+    amount: '$100',
+  },
+  {
+    amount: '$200',
+  },
+  {
+    amount: '$500',
+  },
+];
+
+const RequestSummarySubmitted = ({ comp }: { comp: string }) => {
+  const [AmountRadioSelected, setAmountRadioSelected] = useState(0);
+  adAccountFacebookEmitter.on(
+    adAccountFacebookEmitterEvents.SET_AMOUNT_RADIO_SELECTED,
+    (idx: number) => {
+      setAmountRadioSelected(prev => idx);
+    }
+  );
+  return (
+    <div className={style.RequestSummarySubmitted}>
+      <div>
+        <div>
+          <span>Request summary</span>
+          <FaXmark />
+          <span>
+            #8FB28438-0001 <span>On review</span>
+          </span>
+        </div>
+        <div>
+          <p>Ad account summary</p>
+          <span>Enter your advertising account summary</span>
+          <div>
+            <span>Ad account name</span>
+            <p>Gabriela Hudges</p>
+            <span>Time zone</span>
+            <p>(GMT-5:00) Guadalajara, Mexico City, Monterrey (CDT)</p>
+            <span>Domain / Url</span>
+            <p>Gabriela Hudges.com</p>
+            <span>Target countries</span>
+            <p>Albania, Austria, Indonesia</p>
+          </div>
+          <div>
+            <span>Balance</span>
+            <p>$300</p>
+            <span>Amount to debit</span>
+            <p>-$100</p>
+          </div>
+          <span>
+            Top-up amount ($)<span style={{ color: '#DB242F' }}>*</span>
+          </span>
+          <input placeholder="$100" />
+          <div className={style.AmountRadiosContainer}>
+            {tabAmount.map((el, key) => (
+              <AmountRadio
+                key={key}
+                amount={el.amount}
+                idx={key}
+                selected={AmountRadioSelected}
+                setSelected={setAmountRadioSelected}
+              />
+            ))}
+          </div>
+          <div>
+            <span>Top-up Amount</span>
+            <p>$14.99</p>
+            <span>Top-up Fee</span>
+            <p>$4.99</p>
+            <span>VAT</span>
+            <p>$4.99</p>
+            <p>Amount Due</p>
+            <p>$20.48</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AmountRadio = ({
+  amount,
+  idx,
+  selected,
+  setSelected,
+}: {
+  amount: string;
+  idx: number;
+  selected: number;
+  setSelected: React.Dispatch<React.SetStateAction<number>>;
+}) => {
+  const [isSelected, setIsSelected] = useState(false);
+  const handleClick = (e: React.MouseEvent) => {
+    setIsSelected(true);
+    setSelected(prev => idx);
+    // adAccountFacebookEmitter.emit(
+    //   adAccountFacebookEmitterEvents.SET_AMOUNT_RADIO_SELECTED,
+    //   idx
+    // );
+  };
+  useEffect(() => {
+    setIsSelected(prev => idx === selected);
+  }, [idx, selected]);
+
+  return (
+    <div
+      className={
+        style.AmountRadio + ' ' + (isSelected ? style.AmountRadioSelected : '')
+      }
+      onClick={handleClick}
+    >
+      {amount}
+    </div>
+  );
+};
+
 export const Advertising = ({ comp }: { comp: string }) => {
   return (
     <div className={style.advertisingContainer}>

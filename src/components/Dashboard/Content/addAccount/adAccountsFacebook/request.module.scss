@@ -112,6 +112,52 @@
   }
 }
 
+.CustomLabelWrapperLabel {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 5px;
+
+  .infoCircle + div {
+    display: none;
+  }
+
+  .infoCircle:hover + div {
+    display: block;
+  }
+
+  .infosContainer {
+    position: absolute;
+    left: calc(100% + 20px);
+    top: 10px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
+    background: #fff;
+    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.06);
+    color: #939393;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 16.8px */
+    z-index: 101;
+    width: max-content;
+    max-width: 300px;
+  }
+
+  .infoCircle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    path {
+      color: #8c8c8c;
+    }
+  }
+}
+
 .stepperIndex1 {
   margin-bottom: 40px;
   p {
@@ -199,7 +245,8 @@
     padding: 25px;
   }
 
-  p, li {
+  p,
+  li {
     color: #939393;
     font-family: Inter;
     font-size: 14px;
@@ -207,6 +254,5 @@
     font-weight: 500;
     line-height: 140%; /* 19.6px */
     letter-spacing: -0.41px;
-
   }
 }

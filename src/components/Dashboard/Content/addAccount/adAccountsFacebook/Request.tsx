@@ -15,6 +15,7 @@ import {
 } from '@mui/material';
 import { CiImageOn } from 'react-icons/ci';
 import { BiLogoBing } from 'react-icons/bi';
+import { FaInfoCircle } from 'react-icons/fa';
 
 const steps = [
   'Ad account details',
@@ -294,11 +295,12 @@ const AdAccountRequest = () => {
 type CustomSelectProps = {
   label: string;
   options: { value: string; title: string }[];
+  infos?: string;
 };
 
-const CustomSelect = ({ label, options }: CustomSelectProps) => {
+export const CustomSelect = ({ label, options, infos }: CustomSelectProps) => {
   return (
-    <CustomLabelWrapper label={label}>
+    <CustomLabelWrapper label={label} infos={infos}>
       <select>
         {options.map((el, idx) => {
           return (
@@ -312,32 +314,58 @@ const CustomSelect = ({ label, options }: CustomSelectProps) => {
   );
 };
 
-const CustomInput = ({
+export const CustomInput = ({
   label,
   placeholder,
+  infos,
+  value,
+  handleKeyUp,
+  handleChange,
 }: {
   label: string;
   placeholder: string;
+  infos?: string;
+  value?: string;
+  handleKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
+  handleChange?: React.ChangeEventHandler<HTMLInputElement>;
 }) => {
   return (
-    <CustomLabelWrapper label={label}>
-      <input type="text" placeholder={placeholder} />
+    <CustomLabelWrapper label={label} infos={infos}>
+      <input
+        type="text"
+        placeholder={placeholder}
+        onChange={handleChange}
+        onKeyUp={handleKeyUp}
+        value={value}
+      />
     </CustomLabelWrapper>
   );
 };
 
-const CustomLabelWrapper = ({
+export const CustomLabelWrapper = ({
   label,
+  infos,
   children,
 }: {
   label: string;
+  infos?: ReactNode;
   children: ReactNode;
 }) => {
   return (
     <>
-      <label>
+      <label className={styles.CustomLabelWrapperLabel}>
         {label}
         <span style={{ color: '#DB242F' }}>*</span>
+        {infos && (
+          <>
+            <span className={styles.infoCircle}>
+              <FaInfoCircle />
+            </span>
+            <div className={styles.infosContainer}>
+              <p>{infos}</p>
+            </div>
+          </>
+        )}
       </label>
       {children}
     </>

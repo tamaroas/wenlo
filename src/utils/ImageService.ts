@@ -15,6 +15,7 @@ export type ImageListObj = {
   "emergency-home": string;
   "favicon.ico": string;
   "group-1": string;
+  "Group-Google": string;
   "group11": string;
   "Group12": string;
   "icon": string;
@@ -35,13 +36,10 @@ export type ImageListObj = {
   "schedule": string;
   "stripe": string;
   "themecolor-identitydefault-skin-tonedefault": string;
-  "tt": string;
-  "Untitled.zip": string;
   "vector-414": string;
   "vector-4141": string;
   "visa-1-1": string;
   "wenlo-logo": string;
-  "Withdrawal": string;
   "xclose": string;
 }
 

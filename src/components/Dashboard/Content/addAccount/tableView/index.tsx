@@ -1,6 +1,8 @@
 import { IoMdInformationCircleOutline } from 'react-icons/io';
+import { IoWarningOutline } from 'react-icons/io5';
 import { Search } from '../../Content1-Main';
 import style from './style.module.scss';
+import { useState } from 'react';
 
 const rows: {
   requestId: string;
@@ -65,7 +67,9 @@ const rows: {
 const TableView = () => {
   return (
     <div className={style.container}>
-      <div><Search /></div>
+      <div>
+        <Search />
+      </div>
       <div>
         <span>01 Mar 2023 - 31 Mar 2023</span>
         <input type="date" hidden />
@@ -156,11 +160,36 @@ const getActionsComp = (actions: string[]) => {
   return actions.map((action, idx) => {
     switch (action) {
       case 'edit':
+        const [isVisible, setIsVisible] = useState(false);
+        const handleLeave = () => {
+          setIsVisible(prev => false);
+        };
+        const handleEnter = () => {
+          setIsVisible(prev => true);
+        };
         return (
-          <button className={style.actionsEdit}>
-            {action} <IoMdInformationCircleOutline />
-          </button>
+          <>
+            {isVisible && (
+              <div className={style.editTitleParent}>
+                <IoWarningOutline />
+                <span>Adjustments are required to process this request</span>
+              </div>
+            )}
+
+            <button className={style.actionsEdit}>
+              {action}{' '}
+              <IoMdInformationCircleOutline
+                onMouseEnter={handleEnter}
+                onMouseLeave={handleLeave}
+              />
+            </button>
+          </>
         );
+
+        case 'see' : 
+              return (
+                <button className={style.actionsSee}>{action}</button>
+              )
       default:
         return <button className={style.actionsSee}>{action}</button>;
     }
