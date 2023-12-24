@@ -211,6 +211,7 @@ export const adAccountFacebookEmitter = new Emitter();
 export const adAccountFacebookEmitterEvents = {
   SET_ACTUAL: 'SET_ACTUAL',
   SET_AMOUNT_RADIO_SELECTED: 'SET_AMOUNT_RADIO_SELECTED',
+  SET_STATUS_VISIBLITY: 'SET_STATUS_VISIBLITY',
 };
 
 function AdAccountsFacebook() {
@@ -243,44 +244,88 @@ type MyRequestProps = {
   comp: string;
 };
 
-const ActionsEmiter = new Emitter();
-
-const ActionsEmiterEvent = {
-  SET_ACTION_SEE: 'SET_ACTION_SEE',
-  SET_ACTION_EDIT: 'SET_ACTION_EDIT',
-};
 export const MyRequest = ({ comp }: MyRequestProps) => {
   const [popUpsVisibility, setPopUpsVisibility] = useState({
     logStatus: false,
     requestSummary: false,
     requestSummarySubmited: false,
-    adAccountApplicationPopup: true,
+    adAccountApplicationPopup: false,
   });
+
+  adAccountFacebookEmitter.on(
+    adAccountFacebookEmitterEvents.SET_STATUS_VISIBLITY,
+    (data: boolean) => {
+      setPopUpsVisibility(prev => {
+        let temp = { ...prev };
+        temp.logStatus = data;
+        return temp;
+      });
+    }
+  );
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate('request');
+  // const handleClick = () => {
+  //   navigate('request');
+  // };
+
+  const handleRequest = () => {
+    let actualComp = comp.toLowerCase();
+    if (actualComp === 'facebook') {
+      navigate('request');
+    } else {
+      setPopUpsVisibility(prev => {
+        let temp = { ...prev };
+        temp.adAccountApplicationPopup = true;
+        return temp;
+      });
+    }
   };
 
+  const handleClose = (name: keyof typeof popUpsVisibility) => () => {
+    setPopUpsVisibility(prev => {
+      let temp = { ...prev };
+      temp[name] = false;
+      return temp;
+    });
+  };
   return (
     <>
       <div className={style.myRequestContainer}>
         <h2>Manage {capitalize(comp)} Ad Accounts Request</h2>
-        <button onClick={handleClick}>Request {comp} ad account</button>
+        <button onClick={handleRequest}>Request {comp} ad account</button>
         <TableView />
       </div>
-      {popUpsVisibility.logStatus && <LogStatusPopUp comp={comp} />}
-      {popUpsVisibility.requestSummary && <RequestSummary comp={comp} />}
+      {popUpsVisibility.logStatus && (
+        <LogStatusPopUp handleClose={handleClose('logStatus')} comp={comp} />
+      )}
+      {popUpsVisibility.requestSummary && (
+        <RequestSummary
+          handleClose={handleClose('requestSummary')}
+          comp={comp}
+        />
+      )}
       {popUpsVisibility.requestSummarySubmited && (
-        <RequestSummarySubmitted comp={comp.toLowerCase()} />
+        <RequestSummarySubmitted
+          handleClose={handleClose('requestSummarySubmited')}
+          comp={comp.toLowerCase()}
+        />
       )}
       {popUpsVisibility.adAccountApplicationPopup && (
-        <AdAccountApplicationPopup comp={comp.toLowerCase()} />
+        <AdAccountApplicationPopup
+          handleClose={handleClose('adAccountApplicationPopup')}
+          comp={comp.toLowerCase()}
+        />
       )}
     </>
   );
 };
 
-const AdAccountApplicationPopup = ({ comp }: { comp: string }) => {
+const AdAccountApplicationPopup = ({
+  handleClose,
+  comp,
+}: {
+  handleClose: () => void;
+  comp: string;
+}) => {
   const [Pages, setPages] = useState([{ id: '', link: '' }]);
   const [stepperIndex, setStepperIndex] = useState(0);
   const handleForwardClick = () => {
@@ -350,8 +395,8 @@ const AdAccountApplicationPopup = ({ comp }: { comp: string }) => {
           <AdAccountApplicationPopup1 comp={comp} />
         ) : null}
         <div className={style.AdAccountApplicationPopupFooter}>
-          <button>Save as draft</button>
-          <button>Cancel</button>
+          <button onClick={handleClose}>Save as draft</button>
+          <button onClick={handleClose}>Cancel</button>
           <button onClick={handleForwardClick}>
             {(comp === 'snapchat' && stepperIndex === snapSteps.length - 1) ||
             (comp !== 'snapchat' && stepperIndex === steps.length - 1)
@@ -867,12 +912,18 @@ const Logs: LogStatusRowProps[] = [
   { date: '3 May 2023', requestId: '#712921', status: 'hold' },
 ];
 
-const LogStatusPopUp = ({ comp }: { comp: string }) => {
+const LogStatusPopUp = ({
+  comp,
+  handleClose,
+}: {
+  handleClose: () => void;
+  comp: string;
+}) => {
   return (
     <div className={style.LogStatusPopUp}>
       <div>
         <div>
-          <p>Log Status</p> <FaXmark />
+          <p>Log Status</p> <FaXmark onClick={handleClose} />
         </div>
         <div>
           {Logs.map((el, idx) => {
@@ -912,7 +963,13 @@ const LogStatusRow = ({ status, date, requestId }: LogStatusRowProps) => {
   );
 };
 
-const RequestSummary = ({ comp }: { comp: string }) => {
+const RequestSummary = ({
+  comp,
+  handleClose,
+}: {
+  comp: string;
+  handleClose: () => void;
+}) => {
   const [domains, setDomains] = useState([
     {
       value: '',
@@ -950,7 +1007,7 @@ const RequestSummary = ({ comp }: { comp: string }) => {
       <div>
         <div>
           <span>Request summary</span>
-          <FaXmark />
+          <FaXmark onClick={handleClose} />
           <span>#8FB28438-0001 </span>
         </div>
         <div>
@@ -1012,7 +1069,7 @@ const RequestSummary = ({ comp }: { comp: string }) => {
   );
 };
 
-const tabAmount = [
+export const tabAmount = [
   {
     amount: '$30',
   },
@@ -1027,7 +1084,13 @@ const tabAmount = [
   },
 ];
 
-const RequestSummarySubmitted = ({ comp }: { comp: string }) => {
+const RequestSummarySubmitted = ({
+  comp,
+  handleClose,
+}: {
+  comp: string;
+  handleClose: () => void;
+}) => {
   const [AmountRadioSelected, setAmountRadioSelected] = useState(0);
   adAccountFacebookEmitter.on(
     adAccountFacebookEmitterEvents.SET_AMOUNT_RADIO_SELECTED,
@@ -1040,7 +1103,7 @@ const RequestSummarySubmitted = ({ comp }: { comp: string }) => {
       <div>
         <div>
           <span>Request summary</span>
-          <FaXmark />
+          <FaXmark onClick={handleClose} />
           <span>
             #8FB28438-0001 <span>On review</span>
           </span>
@@ -1095,7 +1158,7 @@ const RequestSummarySubmitted = ({ comp }: { comp: string }) => {
   );
 };
 
-const AmountRadio = ({
+export const AmountRadio = ({
   amount,
   idx,
   selected,

@@ -3,6 +3,10 @@ import { IoWarningOutline } from 'react-icons/io5';
 import { Search } from '../../Content1-Main';
 import style from './style.module.scss';
 import { useState } from 'react';
+import {
+  adAccountFacebookEmitter,
+  adAccountFacebookEmitterEvents,
+} from '../adAccountsFacebook/adAccountsFacebook';
 
 const rows: {
   requestId: string;
@@ -129,6 +133,12 @@ type CellProps = {
 };
 
 const Cell = ({ row }: CellProps) => {
+  const handleShowStatus = () => {
+    adAccountFacebookEmitter.emit(
+      adAccountFacebookEmitterEvents.SET_STATUS_VISIBLITY,
+      true
+    );
+  };
   return (
     <tr className={style.cellContainer}>
       <td>{row.requestId}</td>
@@ -138,7 +148,7 @@ const Cell = ({ row }: CellProps) => {
       <td>
         {row.requestDate[0]} <small>{row.requestDate[1]}</small>
       </td>
-      <td>{getStatusComp(row.status)}</td>
+      <td onClick={handleShowStatus}>{getStatusComp(row.status)}</td>
       <td>{getActionsComp(row.actions)}</td>
     </tr>
   );
@@ -186,10 +196,8 @@ const getActionsComp = (actions: string[]) => {
           </>
         );
 
-        case 'see' : 
-              return (
-                <button className={style.actionsSee}>{action}</button>
-              )
+      case 'see':
+        return <button className={style.actionsSee}>{action}</button>;
       default:
         return <button className={style.actionsSee}>{action}</button>;
     }

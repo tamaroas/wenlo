@@ -8,6 +8,8 @@ import {
 import LoginRegister from './pages/LoginRegister';
 import Pricing from './pages/Pricing/Index';
 import Dashboard from './pages/Dashboard';
+import ChatBot from './components/ChatBot';
+import styles from './App.module.scss'
 
 const LoginRegisterContainer = [
   '/',
@@ -52,13 +54,18 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      {LoginRegisterContainer}
-      {PricingContainer}
+    <>
+    <div className={styles.ChatBot}>
+    <ChatBot />
+    </div>
+      <Routes>
+        {LoginRegisterContainer}
+        {PricingContainer}
 
-      {/* Add your routes below, as easy as you had done before! */}
-      <Route path="/Dashboard/*" element={<Dashboard />} />
-    </Routes>
+        {/* Add your routes below, as easy as you had done before! */}
+        <Route path="/Dashboard/*" element={<Dashboard />} />
+      </Routes>
+    </>
   );
 }
 export default App;

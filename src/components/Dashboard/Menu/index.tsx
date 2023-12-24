@@ -5,9 +5,8 @@ import { BsClock, BsCurrencyDollar, BsMoon } from 'react-icons/bs';
 import { FaChevronUp, FaFacebookF, FaPlus, FaTiktok } from 'react-icons/fa';
 import {
   FaChevronDown,
-  FaFacebook,
   FaRegCreditCard,
-  FaSnapchat,
+  FaSnapchat
 } from 'react-icons/fa6';
 import { FcGoogle } from 'react-icons/fc';
 import {
@@ -238,6 +237,7 @@ export const MenuItem = ({
 }: MenuItemProps) => {
   const navigate = useNavigate();
   const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation()
     // DashboardMenuEmitter.emit(DashboardMenuEventsList.SET_ITEM_SELECTED, idx);
     if (route && canNavigate) navigate(route);
 

@@ -2,6 +2,7 @@ import imageList from './imagesList.json';
 
 export type ImageListObj = {
   "1f929-starstruck-1024px-01-06-1@2x": string;
+  "alert-triangle": string;
   "arrowcircleright": string;
   "arrownarrowright": string;
   "astronaut": string;
@@ -31,7 +32,9 @@ export type ImageListObj = {
   "money-fly": string;
   "more-vert": string;
   "new-releases": string;
+  "Node-Vs-PHP": string;
   "profile": string;
+  "profile2": string;
   "RectanglePayoneer": string;
   "schedule": string;
   "stripe": string;

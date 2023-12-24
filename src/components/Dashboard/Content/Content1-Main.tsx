@@ -1299,7 +1299,7 @@ export const Section8 = () => {
   );
 };
 
-const getSection8PayementIcon = (state?: string) => {
+export const getSection8PayementIcon = (state?: string) => {
   switch (state) {
     case 'Stripe':
       return (

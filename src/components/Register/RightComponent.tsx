@@ -491,7 +491,7 @@ const RightComponent = () => {
                 className="btn-variant-2"
                 onClick={() => {
                   setStepperIndex(prev => (prev === 2 ? 0 : prev + 1));
-                  navigate('/dashboard');
+                  // navigate('/dashboard');
                 }}
               >
                 Submit
